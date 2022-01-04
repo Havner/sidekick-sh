@@ -1,0 +1,24 @@
+{
+  "Category": "Overlay",
+  "Title": null,
+  "Description": "Copy of Sidekick from AC by Topuz",
+  "Author": "Havner",
+  "ScreenCount": 1.0,
+  "InGameScreensIndexs": [
+    0
+  ],
+  "IdleScreensIndexs": [
+    0
+  ],
+  "MainPreviewIndex": 0,
+  "IsOverlay": true,
+  "ShowInTaskBar": true,
+  "Width": 463.0,
+  "Height": 54.0,
+  "OverlaySizeWarning": false,
+  "MetadataVersion": 2.0,
+  "EnableOnDashboardMessaging": true,
+  "PitScreensIndexs": [
+    0
+  ]
+}
