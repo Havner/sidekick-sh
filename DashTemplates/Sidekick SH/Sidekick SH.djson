@@ -1,9 +1,9 @@
 {
   "$id": "1",
   "Version": 2,
-  "Id": "15c059e8-a3fd-4cba-ab0f-cb0e15a7f405",
+  "Id": "d6387335-6d38-475d-880a-f0dc036fc898",
   "BaseHeight": 54,
-  "BaseWidth": 463,
+  "BaseWidth": 430,
   "BackgroundColor": "#FF000000",
   "Screens": {
     "$id": "2",
@@ -1141,7 +1141,7 @@
                   "$id": "106",
                   "Formula": {
                     "$id": "107",
-                    "Expression": "[SpeedLocalUnit] == 'KMH'"
+                    "Expression": "isnull([SpeedLocalUnit], '') == 'KMH'"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -1207,7 +1207,7 @@
               "BorderTop": 0,
               "Id": "ea9fa6d6-4877-4f5e-afca-bba1af1da2c2",
               "IsFreezed": true,
-              "IsSelected": true,
+              "IsSelected": false,
               "Name": "MPH",
               "RenderingSkip": 0,
               "Sid": 0,
@@ -1234,7 +1234,7 @@
                   "$id": "114",
                   "Formula": {
                     "$id": "115",
-                    "Expression": "[SpeedLocalUnit] == 'MPH'"
+                    "Expression": "isnull([SpeedLocalUnit], '') == 'MPH'"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -2114,7 +2114,7 @@
                         "$id": "191",
                         "Formula": {
                           "$id": "192",
-                          "Expression": "[DataCorePlugin.GameData.TemperatureUnit] == 'Celcius'"
+                          "Expression": "isnull([DataCorePlugin.GameData.TemperatureUnit], '') == 'Celcius'"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Visible"
@@ -2555,7 +2555,7 @@
                         "$id": "230",
                         "Formula": {
                           "$id": "231",
-                          "Expression": "[DataCorePlugin.GameData.TemperatureUnit] == 'Fahrenheit'"
+                          "Expression": "isnull([DataCorePlugin.GameData.TemperatureUnit], '') == 'Fahrenheit'"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Visible"
@@ -2996,7 +2996,7 @@
                         "$id": "269",
                         "Formula": {
                           "$id": "270",
-                          "Expression": "[DataCorePlugin.GameData.TemperatureUnit] == 'Kelvin'"
+                          "Expression": "isnull([DataCorePlugin.GameData.TemperatureUnit], '') == 'Kelvin'"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Visible"
@@ -3105,8 +3105,8 @@
               "Repetitions": 0.0,
               "RepeatLeftOffset": 0.0,
               "RepeatTopOffset": 30.0,
-              "Height": 30.0,
-              "Width": 400.0,
+              "Height": 6.0,
+              "Width": 238.0,
               "BackgroundColor": "#00FFFFFF",
               "BlurRadius": 0.0,
               "Rotation": 0.0,
@@ -3133,12 +3133,21 @@
                 "$values": [
                   {
                     "$id": "284",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-                    "IsRectangleItem": true,
+                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+                    "IsLinearGauge": true,
+                    "GaugeAlignment": 0,
+                    "AutoSize": false,
+                    "AutoSizeScale": 1.0,
+                    "GaugeColor": "#FF00FFFF",
+                    "Minimum": 0.0,
+                    "Maximum": 100.0,
+                    "Value": 80.0,
+                    "Steps": 0.0,
+                    "PAW": 190.0,
                     "Rotation": 0.0,
                     "UseRotation": false,
                     "CanResize": true,
-                    "BackgroundColor": "#FFFFFF00",
+                    "BackgroundColor": "#A8808488",
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
@@ -3156,51 +3165,51 @@
                         "$id": "286"
                       }
                     },
-                    "Height": 30.0,
-                    "Left": 310.0,
+                    "Height": 2.0,
+                    "Left": 67.0,
                     "Opacity": 100.0,
-                    "Top": 10.0,
+                    "Top": 43.0,
                     "Visible": true,
                     "BlinkDelay": 250.0,
                     "BlinkEnabled": false,
-                    "Width": 30.0,
+                    "Width": 238.0,
                     "BorderBottom": 0,
                     "BorderColor": "#FFFFFFFF",
                     "BorderLeft": 0,
                     "BorderRight": 0,
                     "BorderTop": 0,
-                    "Id": "64d86b3c-08c7-4787-a881-874114863036",
-                    "IsFreezed": true,
+                    "Id": "66822ffa-1b72-4132-a4af-8a9ecf17d88d",
+                    "IsFreezed": false,
                     "IsSelected": false,
-                    "Name": "Rectangle L1",
+                    "Name": "Charge",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
                       "$id": "287",
-                      "Visible": {
+                      "Value": {
                         "$id": "288",
                         "Formula": {
                           "$id": "289",
-                          "Expression": "[CarSettings_RPMShiftLight1] > 0"
+                          "Expression": "truncate([GameRawData.Physics.KersCharge]*100)"
                         },
                         "Mode": 2,
-                        "TargetPropertyName": "Visible"
+                        "TargetPropertyName": "Value"
                       },
-                      "BackgroundColor": {
+                      "GaugeColor": {
                         "$id": "290",
                         "Formula": {
                           "$id": "291",
-                          "Expression": "[CarSettings_RPMShiftLight1]"
+                          "Expression": "[GameRawData.Physics.ErsisCharging]"
                         },
-                        "StartColor": "#FFFFFFFF",
+                        "StartColor": "#FF00FFFF",
                         "EnableMiddleColor": false,
                         "MiddleColor": "#FF000000",
                         "MiddleColorValue": 1.0,
-                        "EndColor": "#FFFFFF00",
+                        "EndColor": "#FF00FF00",
                         "StartColorValue": 0.0,
                         "EndColorValue": 1.0,
                         "Mode": 4,
-                        "TargetPropertyName": "BackgroundColor"
+                        "TargetPropertyName": "GaugeColor"
                       }
                     }
                   },
@@ -3211,7 +3220,7 @@
                     "Rotation": 0.0,
                     "UseRotation": false,
                     "CanResize": true,
-                    "BackgroundColor": "#FFFF0000",
+                    "BackgroundColor": "#FFDCDCDC",
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
@@ -3229,75 +3238,50 @@
                         "$id": "294"
                       }
                     },
-                    "Height": 30.0,
-                    "Left": 345.0,
+                    "Height": 6.0,
+                    "Left": 67.0,
                     "Opacity": 100.0,
-                    "Top": 10.0,
+                    "Top": 41.0,
                     "Visible": true,
                     "BlinkDelay": 250.0,
                     "BlinkEnabled": false,
-                    "Width": 30.0,
+                    "Width": 2.0,
                     "BorderBottom": 0,
                     "BorderColor": "#FFFFFFFF",
                     "BorderLeft": 0,
                     "BorderRight": 0,
                     "BorderTop": 0,
-                    "Id": "64d86b3c-08c7-4787-a881-874114863036",
-                    "IsFreezed": true,
+                    "Id": "df07adbf-58df-4311-819c-6fc451288eb6",
+                    "IsFreezed": false,
                     "IsSelected": false,
-                    "Name": "Rectangle L2",
+                    "Name": "CurrentRect",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
                       "$id": "295",
-                      "Visible": {
+                      "Left": {
                         "$id": "296",
                         "Formula": {
                           "$id": "297",
-                          "Expression": "[CarSettings_RPMShiftLight2] > 0"
+                          "Expression": "67 + 2.38 * (truncate([GameRawData.Physics.KersInput]*100))"
                         },
                         "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      },
-                      "BackgroundColor": {
-                        "$id": "298",
-                        "Formula": {
-                          "$id": "299",
-                          "Expression": "[CarSettings_RPMShiftLight2]"
-                        },
-                        "StartColor": "#FFFFFFFF",
-                        "EnableMiddleColor": false,
-                        "MiddleColor": "#FF000000",
-                        "MiddleColorValue": 1.0,
-                        "EndColor": "#FFFF0000",
-                        "StartColorValue": 0.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "BackgroundColor"
+                        "TargetPropertyName": "Left"
                       }
                     }
                   },
                   {
-                    "$id": "300",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
-                    "IsLinearGauge": true,
-                    "GaugeAlignment": 0,
-                    "AutoSize": false,
-                    "AutoSizeScale": 1.0,
-                    "GaugeColor": "#FFFFFF00",
-                    "Minimum": 0.0,
-                    "Maximum": 100.0,
-                    "Value": 0.0,
-                    "Steps": 0.0,
-                    "PAW": 0.0,
+                    "$id": "298",
+                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                    "IsRectangleItem": true,
                     "Rotation": 0.0,
                     "UseRotation": false,
                     "CanResize": true,
-                    "BackgroundColor": "#FF808080",
+                    "BackgroundColor": "#FFFF0000",
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "301",
+                      "$id": "299",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -3308,52 +3292,109 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "302"
+                        "$id": "300"
                       }
                     },
-                    "Height": 30.0,
-                    "Left": 10.0,
+                    "Height": 6.0,
+                    "Left": 67.0,
                     "Opacity": 100.0,
-                    "Top": 10.0,
+                    "Top": 41.0,
                     "Visible": true,
                     "BlinkDelay": 250.0,
                     "BlinkEnabled": false,
-                    "Width": 100.0,
+                    "Width": 2.0,
                     "BorderBottom": 0,
                     "BorderColor": "#FFFFFFFF",
                     "BorderLeft": 0,
                     "BorderRight": 0,
                     "BorderTop": 0,
-                    "Id": "4c68bacd-b415-4de1-8617-9b99dbd961d4",
-                    "IsFreezed": true,
+                    "Id": "df07adbf-58df-4311-819c-6fc451288eb6",
+                    "IsFreezed": false,
                     "IsSelected": false,
-                    "Name": "LinearGaugeItem0",
+                    "Name": "LapRect",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "303",
-                      "Value": {
-                        "$id": "304",
+                      "$id": "301",
+                      "Left": {
+                        "$id": "302",
                         "Formula": {
-                          "$id": "305",
-                          "Expression": "[CarSettings_RPMShiftLight1] * 100"
+                          "$id": "303",
+                          "Expression": "67 + 2.38 * (100-truncate(min([ERSPercent], 100)))"
                         },
                         "Mode": 2,
-                        "TargetPropertyName": "Value"
-                      },
-                      "Visible": {
-                        "$id": "306",
-                        "Formula": {
-                          "$id": "307",
-                          "Expression": "[CarSettings_RPMShiftLight1] > 0"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
+                        "TargetPropertyName": "Left"
                       }
                     }
                   },
                   {
-                    "$id": "308",
+                    "$id": "304",
+                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+                    "IsLinearGauge": true,
+                    "GaugeAlignment": 0,
+                    "AutoSize": false,
+                    "AutoSizeScale": 1.0,
+                    "GaugeColor": "#FFDCDCDC",
+                    "Minimum": 0.0,
+                    "Maximum": 100.0,
+                    "Value": 20.0,
+                    "Steps": 0.0,
+                    "PAW": 48.0,
+                    "Rotation": 0.0,
+                    "UseRotation": false,
+                    "CanResize": true,
+                    "BackgroundColor": "#A8808488",
+                    "BlurRadius": 0.0,
+                    "EnableBlur": false,
+                    "BorderStyle": {
+                      "$id": "305",
+                      "BorderColor": "#FFFFFFFF",
+                      "BorderTop": 0,
+                      "BorderBottom": 0,
+                      "BorderLeft": 0,
+                      "BorderRight": 0,
+                      "RadiusTopLeft": 0,
+                      "RadiusTopRight": 0,
+                      "RadiusBottomLeft": 0,
+                      "RadiusBottomRight": 0,
+                      "Bindings": {
+                        "$id": "306"
+                      }
+                    },
+                    "Height": 6.0,
+                    "Left": 67.0,
+                    "Opacity": 100.0,
+                    "Top": 41.0,
+                    "Visible": false,
+                    "BlinkDelay": 250.0,
+                    "BlinkEnabled": false,
+                    "Width": 238.0,
+                    "BorderBottom": 0,
+                    "BorderColor": "#FFFFFFFF",
+                    "BorderLeft": 0,
+                    "BorderRight": 0,
+                    "BorderTop": 0,
+                    "Id": "66822ffa-1b72-4132-a4af-8a9ecf17d88d",
+                    "IsFreezed": false,
+                    "IsSelected": true,
+                    "Name": "Current",
+                    "RenderingSkip": 0,
+                    "Sid": 0,
+                    "Bindings": {
+                      "$id": "307",
+                      "Value": {
+                        "$id": "308",
+                        "Formula": {
+                          "$id": "309",
+                          "Expression": "truncate([GameRawData.Physics.KersInput]*100)"
+                        },
+                        "Mode": 2,
+                        "TargetPropertyName": "Value"
+                      }
+                    }
+                  },
+                  {
+                    "$id": "310",
                     "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
                     "IsLinearGauge": true,
                     "GaugeAlignment": 0,
@@ -3362,17 +3403,17 @@
                     "GaugeColor": "#FFFF0000",
                     "Minimum": 0.0,
                     "Maximum": 100.0,
-                    "Value": 0.0,
+                    "Value": 50.0,
                     "Steps": 0.0,
-                    "PAW": 0.0,
+                    "PAW": 119.0,
                     "Rotation": 0.0,
                     "UseRotation": false,
                     "CanResize": true,
-                    "BackgroundColor": "#FF808080",
+                    "BackgroundColor": "#A8808488",
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "309",
+                      "$id": "311",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -3383,173 +3424,50 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "310"
+                        "$id": "312"
                       }
                     },
-                    "Height": 30.0,
-                    "Left": 115.0,
+                    "Height": 6.0,
+                    "Left": 67.0,
                     "Opacity": 100.0,
-                    "Top": 10.0,
-                    "Visible": true,
+                    "Top": 41.0,
+                    "Visible": false,
                     "BlinkDelay": 250.0,
                     "BlinkEnabled": false,
-                    "Width": 100.0,
+                    "Width": 238.0,
                     "BorderBottom": 0,
                     "BorderColor": "#FFFFFFFF",
                     "BorderLeft": 0,
                     "BorderRight": 0,
                     "BorderTop": 0,
-                    "Id": "4c68bacd-b415-4de1-8617-9b99dbd961d4",
-                    "IsFreezed": true,
+                    "Id": "66822ffa-1b72-4132-a4af-8a9ecf17d88d",
+                    "IsFreezed": false,
                     "IsSelected": false,
-                    "Name": "LinearGaugeItem0",
+                    "Name": "Lap",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "311",
+                      "$id": "313",
                       "Value": {
-                        "$id": "312",
-                        "Formula": {
-                          "$id": "313",
-                          "Expression": "[CarSettings_RPMShiftLight2] * 100"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Value"
-                      },
-                      "Visible": {
                         "$id": "314",
                         "Formula": {
                           "$id": "315",
-                          "Expression": "[CarSettings_RPMShiftLight2] > 0"
+                          "Expression": "100-truncate(min([ERSPercent], 100))"
                         },
                         "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "316",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-                    "IsRectangleItem": true,
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#FF0000FF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "317",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "318"
-                      }
-                    },
-                    "Height": 30.0,
-                    "Left": 220.0,
-                    "Opacity": 100.0,
-                    "Top": 10.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 30.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "64d86b3c-08c7-4787-a881-874114863036",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Rectangle L3",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "319",
-                      "Visible": {
-                        "$id": "320",
-                        "Formula": {
-                          "$id": "321",
-                          "Expression": "[CarSettings_RPMRedLineReached] > 0"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "322",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
-                    "IsRectangleItem": true,
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#FF0000FF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "323",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "324"
-                      }
-                    },
-                    "Height": 30.0,
-                    "Left": 380.0,
-                    "Opacity": 100.0,
-                    "Top": 10.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 30.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "64d86b3c-08c7-4787-a881-874114863036",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Rectangle L3",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "325",
-                      "Visible": {
-                        "$id": "326",
-                        "Formula": {
-                          "$id": "327",
-                          "Expression": "[CarSettings_RPMRedLineReached] > 0"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
+                        "TargetPropertyName": "Value"
                       }
                     }
                   }
                 ]
               },
-              "Group": false,
+              "Group": true,
               "UseRotation": false,
               "EnableBlur": false,
-              "Left": 10.0,
+              "Left": 67.0,
               "Opacity": 100.0,
-              "Top": 10.0,
-              "Visible": false,
+              "Top": 41.0,
+              "Visible": true,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
               "BorderBottom": 0,
@@ -3557,12 +3475,21 @@
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "42867b7a-7b23-41f4-a201-63aacb73e8e6",
+              "Id": "95ec3a40-dbcb-498b-b81b-436a88b402ed",
               "IsSelected": false,
-              "Name": "TESTS / UNUSED",
+              "Name": "ERS",
               "Sid": 0,
               "Bindings": {
-                "$id": "328"
+                "$id": "316",
+                "Visible": {
+                  "$id": "317",
+                  "Formula": {
+                    "$id": "318",
+                    "Expression": "[DataCorePlugin.CurrentGame] == 'AssettoCorsa' and [GameRawData.StaticInfo.HasERS]"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
               }
             }
           ]
@@ -3571,7 +3498,7 @@
         "Name": "main",
         "Sid": 0,
         "Bindings": {
-          "$id": "329"
+          "$id": "319"
         }
       }
     ]
@@ -3584,59 +3511,59 @@
     "$ref": "3"
   },
   "Images": {
-    "$id": "330",
+    "$id": "320",
     "$values": [
       {
-        "$id": "331",
+        "$id": "321",
         "Name": "background",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "332",
+        "$id": "322",
         "Name": "border_red",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "333",
+        "$id": "323",
         "Name": "border_yellow",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "334",
+        "$id": "324",
         "Name": "plain_background",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "335",
+        "$id": "325",
         "Name": "separators",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "336",
+        "$id": "326",
         "Name": "drs_available",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "337",
+        "$id": "327",
         "Name": "drs_enabled",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "338",
+        "$id": "328",
         "Name": "settings",
         "Extension": ".png",
         "Optimized": true,
@@ -3645,19 +3572,19 @@
     ]
   },
   "Metadata": {
-    "$id": "339",
+    "$id": "329",
     "Category": "Overlay",
     "Description": "Copy of Sidekick from AC by Topuz",
     "Author": "Havner",
     "ScreenCount": 1.0,
     "InGameScreensIndexs": {
-      "$id": "340",
+      "$id": "330",
       "$values": [
         0
       ]
     },
     "IdleScreensIndexs": {
-      "$id": "341",
+      "$id": "331",
       "$values": [
         0
       ]
@@ -3665,13 +3592,13 @@
     "MainPreviewIndex": 0,
     "IsOverlay": true,
     "ShowInTaskBar": true,
-    "Width": 463.0,
+    "Width": 430.0,
     "Height": 54.0,
     "OverlaySizeWarning": false,
     "MetadataVersion": 2.0,
     "EnableOnDashboardMessaging": true,
     "PitScreensIndexs": {
-      "$id": "342",
+      "$id": "332",
       "$values": [
         0
       ]

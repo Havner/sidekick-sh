@@ -1,4 +1,4 @@
-// version 0.6.1
+// version 0.6.2
 
 // This is not a config file, nothing to change here
 // unless you want to modify overlay's behaviour
@@ -65,6 +65,17 @@ function isClipping()
 	}
 
 	return 0;
+}
+
+function handleSessionTime(lapProp, empty)
+{
+	var lap = $prop(lapProp);
+	if (lap == '00:00:00')
+		return empty;
+	if (String(lap)[0] == '-')
+		return empty;
+	else
+		return lap;
 }
 
 function handleGradient2(table, min, max, val)

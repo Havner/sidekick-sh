@@ -1,4 +1,4 @@
-// Version 0.6.1
+// Version 0.6.2
 
 // Make sure not to break this file's syntax as this is JS code
 // and it's required for the overlay to work properly
@@ -14,7 +14,7 @@
 // - shortcuts for switching section's pages
 
 // plain is black transparent, as in original Sidekick
-var usePlainBackground = false;
+var usePlainBackground = true;
 
 // in place of wear/temps/press, section 5
 var showBrakeTempsWhileBraking = true;
@@ -24,7 +24,7 @@ var showLastLapFor = 5000;
 
 // whether to show yellow (avail) and green (in use) DRS markers
 // DRS is finicky in rF2, especially for cars that don't support it
-var useDRS = false;
+var useDRS = ($prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa');
 
 // marks gear and speed in blue
 var usePitLimiterColor = true;
@@ -70,4 +70,4 @@ var tyreTempColorValuesK = [333, 353, 373, 393];
 // [1]-[2] green, [2]-[3] gradient from green to red, above [3] red
 var tyrePressColorValuesBAR = [1.4, 1.7, 2, 2.2];
 var tyrePressColorValuesPSI = [20, 25, 28, 30];
-var tyrePressColorValuesKPA = [140, 170, 200, 220];
+var tyrePressColorValuesKPA = [130, 150, 170, 190];
