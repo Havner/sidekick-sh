@@ -1,7 +1,7 @@
 {
   "$id": "1",
   "Version": 2,
-  "Id": "96f6ec73-b37b-4682-b46e-cb248092090e",
+  "Id": "9a6f72d2-d880-459d-970b-365ce481d0d9",
   "BaseHeight": 31,
   "BaseWidth": 52,
   "BackgroundColor": "#FF000000",
@@ -36,7 +36,7 @@
               "TextWrapping": 1,
               "FontStyle": "Italic",
               "FontSize": 12.0,
-              "Text": "100",
+              "Text": "27.5",
               "TextColor": "#FFDBDBDB",
               "HorizontalAlignment": 1,
               "VerticalAlignment": 1,
@@ -81,9 +81,9 @@
               "BorderRight": 0,
               "BorderTop": 0,
               "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-              "IsFreezed": true,
+              "IsFreezed": false,
               "IsSelected": false,
-              "Name": "Wear FL",
+              "Name": "Press PSI FL",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
@@ -93,24 +93,25 @@
                   "Formula": {
                     "$id": "11",
                     "Interpreter": 1,
-                    "Expression": "var wear = $prop('TyreWearFrontLeft');\r\nreturn SKSH_getGradient2(tyreWearColorValues, 0, 1, wear);\r\n"
+                    "Expression": "var press = SKSH_getTirePressPSI('TyrePressureFrontLeft');\r\nreturn SKSH_getGradient4(tyrePressColorValuesPSI, -1, 0, 1, press);\r\n"
                   },
-                  "StartColor": "#FFFF2B00",
-                  "EnableMiddleColor": false,
-                  "MiddleColor": "#FF000000",
-                  "MiddleColorValue": 1.0,
-                  "EndColor": "#FF2BFF00",
-                  "StartColorValue": 0.0,
+                  "StartColor": "#FF0082FF",
+                  "EnableMiddleColor": true,
+                  "MiddleColor": "#FF2BFF00",
+                  "MiddleColorValue": 0.0,
+                  "EndColor": "#FFFF2B00",
+                  "StartColorValue": -1.0,
                   "EndColorValue": 1.0,
                   "Mode": 4,
                   "TargetPropertyName": "TextColor"
                 },
                 "Text": {
                   "$id": "12",
-                  "FormatString": "0",
+                  "FormatString": "0.0",
                   "Formula": {
                     "$id": "13",
-                    "Expression": "[TyreWearFrontLeft]"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getTirePressPSI('TyrePressureFrontLeft');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -130,7 +131,7 @@
               "TextWrapping": 1,
               "FontStyle": "Italic",
               "FontSize": 12.0,
-              "Text": "100",
+              "Text": "27.5",
               "TextColor": "#FFDBDBDB",
               "HorizontalAlignment": 1,
               "VerticalAlignment": 1,
@@ -175,9 +176,9 @@
               "BorderRight": 0,
               "BorderTop": 0,
               "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-              "IsFreezed": true,
+              "IsFreezed": false,
               "IsSelected": false,
-              "Name": "Wear RL",
+              "Name": "Press PSI RL",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
@@ -187,24 +188,25 @@
                   "Formula": {
                     "$id": "19",
                     "Interpreter": 1,
-                    "Expression": "var wear = $prop('TyreWearRearLeft');\r\nreturn SKSH_getGradient2(tyreWearColorValues, 0, 1, wear);\r\n"
+                    "Expression": "var press = SKSH_getTirePressPSI('TyrePressureRearLeft');\r\nreturn SKSH_getGradient4(tyrePressColorValuesPSI, -1, 0, 1, press);\r\n"
                   },
-                  "StartColor": "#FFFF2B00",
-                  "EnableMiddleColor": false,
-                  "MiddleColor": "#FF000000",
-                  "MiddleColorValue": 1.0,
-                  "EndColor": "#FF2BFF00",
-                  "StartColorValue": 0.0,
+                  "StartColor": "#FF0082FF",
+                  "EnableMiddleColor": true,
+                  "MiddleColor": "#FF2BFF00",
+                  "MiddleColorValue": 0.0,
+                  "EndColor": "#FFFF2B00",
+                  "StartColorValue": -1.0,
                   "EndColorValue": 1.0,
                   "Mode": 4,
                   "TargetPropertyName": "TextColor"
                 },
                 "Text": {
                   "$id": "20",
-                  "FormatString": "0",
+                  "FormatString": "0.0",
                   "Formula": {
                     "$id": "21",
-                    "Expression": "[TyreWearRearLeft]"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getTirePressPSI('TyrePressureRearLeft');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -224,7 +226,7 @@
               "TextWrapping": 1,
               "FontStyle": "Italic",
               "FontSize": 12.0,
-              "Text": "100",
+              "Text": "27.5",
               "TextColor": "#FFDBDBDB",
               "HorizontalAlignment": 1,
               "VerticalAlignment": 1,
@@ -269,9 +271,9 @@
               "BorderRight": 0,
               "BorderTop": 0,
               "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-              "IsFreezed": true,
+              "IsFreezed": false,
               "IsSelected": false,
-              "Name": "Wear FR",
+              "Name": "Press PSI FR",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
@@ -281,24 +283,25 @@
                   "Formula": {
                     "$id": "27",
                     "Interpreter": 1,
-                    "Expression": "var wear = $prop('TyreWearFrontRight');\r\nreturn SKSH_getGradient2(tyreWearColorValues, 0, 1, wear);\r\n"
+                    "Expression": "var press = SKSH_getTirePressPSI('TyrePressureFrontRight');\r\nreturn SKSH_getGradient4(tyrePressColorValuesPSI, -1, 0, 1, press);\r\n"
                   },
-                  "StartColor": "#FFFF2B00",
-                  "EnableMiddleColor": false,
-                  "MiddleColor": "#FF000000",
-                  "MiddleColorValue": 1.0,
-                  "EndColor": "#FF2BFF00",
-                  "StartColorValue": 0.0,
+                  "StartColor": "#FF0082FF",
+                  "EnableMiddleColor": true,
+                  "MiddleColor": "#FF2BFF00",
+                  "MiddleColorValue": 0.0,
+                  "EndColor": "#FFFF2B00",
+                  "StartColorValue": -1.0,
                   "EndColorValue": 1.0,
                   "Mode": 4,
                   "TargetPropertyName": "TextColor"
                 },
                 "Text": {
                   "$id": "28",
-                  "FormatString": "0",
+                  "FormatString": "0.0",
                   "Formula": {
                     "$id": "29",
-                    "Expression": "[TyreWearFrontRight]"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getTirePressPSI('TyrePressureFrontRight');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -318,7 +321,7 @@
               "TextWrapping": 1,
               "FontStyle": "Italic",
               "FontSize": 12.0,
-              "Text": "100",
+              "Text": "27.5",
               "TextColor": "#FFDBDBDB",
               "HorizontalAlignment": 1,
               "VerticalAlignment": 1,
@@ -363,9 +366,9 @@
               "BorderRight": 0,
               "BorderTop": 0,
               "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-              "IsFreezed": true,
+              "IsFreezed": false,
               "IsSelected": false,
-              "Name": "Wear RR",
+              "Name": "Press PSI RR",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
@@ -375,24 +378,25 @@
                   "Formula": {
                     "$id": "35",
                     "Interpreter": 1,
-                    "Expression": "var wear = $prop('TyreWearRearRight');\r\nreturn SKSH_getGradient2(tyreWearColorValues, 0, 1, wear);\r\n"
+                    "Expression": "var press = SKSH_getTirePressPSI('TyrePressureRearRight');\r\nreturn SKSH_getGradient4(tyrePressColorValuesPSI, -1, 0, 1, press);\r\n"
                   },
-                  "StartColor": "#FFFF2B00",
-                  "EnableMiddleColor": false,
-                  "MiddleColor": "#FF000000",
-                  "MiddleColorValue": 1.0,
-                  "EndColor": "#FF2BFF00",
-                  "StartColorValue": 0.0,
+                  "StartColor": "#FF0082FF",
+                  "EnableMiddleColor": true,
+                  "MiddleColor": "#FF2BFF00",
+                  "MiddleColorValue": 0.0,
+                  "EndColor": "#FFFF2B00",
+                  "StartColorValue": -1.0,
                   "EndColorValue": 1.0,
                   "Mode": 4,
                   "TargetPropertyName": "TextColor"
                 },
                 "Text": {
                   "$id": "36",
-                  "FormatString": "0",
+                  "FormatString": "0.0",
                   "Formula": {
                     "$id": "37",
-                    "Expression": "[TyreWearRearRight]"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getTirePressPSI('TyrePressureRearRight');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -442,7 +446,7 @@
               "Id": "8432f5df-c80c-4e8e-9e94-1bbf2f7238f4",
               "IsFreezed": false,
               "IsSelected": false,
-              "Name": "Page 1/5",
+              "Name": "Page 1/3",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
@@ -451,7 +455,7 @@
             }
           ]
         },
-        "Id": "005eb412-358f-4902-bf0c-767fed9b1cac",
+        "Id": "6619be4d-94cb-4f38-adf4-58e08fc3884f",
         "Name": "Screen1",
         "Sid": 0,
         "Bindings": {
@@ -518,7 +522,7 @@
                     "TextWrapping": 1,
                     "FontStyle": "Italic",
                     "FontSize": 12.0,
-                    "Text": "75",
+                    "Text": "100",
                     "TextColor": "#FFDBDBDB",
                     "HorizontalAlignment": 1,
                     "VerticalAlignment": 1,
@@ -612,7 +616,7 @@
                     "TextWrapping": 1,
                     "FontStyle": "Italic",
                     "FontSize": 12.0,
-                    "Text": "75",
+                    "Text": "100",
                     "TextColor": "#FFDBDBDB",
                     "HorizontalAlignment": 1,
                     "VerticalAlignment": 1,
@@ -706,7 +710,7 @@
                     "TextWrapping": 1,
                     "FontStyle": "Italic",
                     "FontSize": 12.0,
-                    "Text": "75",
+                    "Text": "100",
                     "TextColor": "#FFDBDBDB",
                     "HorizontalAlignment": 1,
                     "VerticalAlignment": 1,
@@ -800,7 +804,7 @@
                     "TextWrapping": 1,
                     "FontStyle": "Italic",
                     "FontSize": 12.0,
-                    "Text": "75",
+                    "Text": "100",
                     "TextColor": "#FFDBDBDB",
                     "HorizontalAlignment": 1,
                     "VerticalAlignment": 1,
@@ -1382,7 +1386,7 @@
                 }
               },
               "RenderingSkip": 0,
-              "ShowSelection": false,
+              "ShowSelection": true,
               "CanResize": false,
               "Childrens": {
                 "$id": "127",
@@ -1824,7 +1828,7 @@
                 }
               },
               "Height": 1.0,
-              "Left": 10.0,
+              "Left": 13.0,
               "Opacity": 100.0,
               "Top": 30.0,
               "Visible": true,
@@ -1839,7 +1843,7 @@
               "Id": "8432f5df-c80c-4e8e-9e94-1bbf2f7238f4",
               "IsFreezed": false,
               "IsSelected": false,
-              "Name": "Page 2/5",
+              "Name": "Page 2/4",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
@@ -1848,7 +1852,7 @@
             }
           ]
         },
-        "Id": "bf1c33c2-0f0c-4e79-934e-2de09246137e",
+        "Id": "61e64edc-0d41-49df-9eca-b677db234d1f",
         "Name": "Screen2",
         "Sid": 0,
         "Bindings": {
@@ -1866,1421 +1870,12 @@
           "Interpreter": 1
         },
         "BackgroundColor": "#00FFFFFF",
-        "IsSelected": false,
+        "IsSelected": true,
         "Items": {
           "$id": "170",
           "$values": [
             {
               "$id": "171",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "Repetitions": 0.0,
-              "RepeatLeftOffset": 0.0,
-              "RepeatTopOffset": 30.0,
-              "Height": 30.0,
-              "Width": 52.0,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "Rotation": 0.0,
-              "BorderStyle": {
-                "$id": "172",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "173"
-                }
-              },
-              "RenderingSkip": 0,
-              "ShowSelection": true,
-              "CanResize": false,
-              "Childrens": {
-                "$id": "174",
-                "$values": [
-                  {
-                    "$id": "175",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "2.34",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "176",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "177"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press BAR FL",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "178",
-                      "TextColor": {
-                        "$id": "179",
-                        "Formula": {
-                          "$id": "180",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressBAR('TyrePressureFrontLeft');\r\nreturn SKSH_getGradient4(tyrePressColorValuesBAR, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "181",
-                        "FormatString": "0.00",
-                        "Formula": {
-                          "$id": "182",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressBAR('TyrePressureFrontLeft');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "183",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "2.34",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "184",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "185"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 14.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press BAR RL",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "186",
-                      "TextColor": {
-                        "$id": "187",
-                        "Formula": {
-                          "$id": "188",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressBAR('TyrePressureRearLeft');\r\nreturn SKSH_getGradient4(tyrePressColorValuesBAR, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "189",
-                        "FormatString": "0.00",
-                        "Formula": {
-                          "$id": "190",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressBAR('TyrePressureRearLeft');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "191",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "2.34",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "192",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "193"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 26.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press BAR FR",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "194",
-                      "TextColor": {
-                        "$id": "195",
-                        "Formula": {
-                          "$id": "196",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressBAR('TyrePressureFrontRight');\r\nreturn SKSH_getGradient4(tyrePressColorValuesBAR, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "197",
-                        "FormatString": "0.00",
-                        "Formula": {
-                          "$id": "198",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressBAR('TyrePressureFrontRight');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "199",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "2.34",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "200",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "201"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 26.0,
-                    "Opacity": 100.0,
-                    "Top": 14.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press BAR RR",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "202",
-                      "TextColor": {
-                        "$id": "203",
-                        "Formula": {
-                          "$id": "204",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressBAR('TyrePressureRearRight');\r\nreturn SKSH_getGradient4(tyrePressColorValuesBAR, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "205",
-                        "FormatString": "0.00",
-                        "Formula": {
-                          "$id": "206",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressBAR('TyrePressureRearRight');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  }
-                ]
-              },
-              "Group": true,
-              "UseRotation": false,
-              "EnableBlur": false,
-              "Left": 0.0,
-              "Opacity": 100.0,
-              "Top": 0.0,
-              "Visible": false,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "b3a69897-25ae-4b7e-9e3a-bf453e52fe98",
-              "IsSelected": false,
-              "Name": "BAR",
-              "Sid": 0,
-              "Bindings": {
-                "$id": "207",
-                "Visible": {
-                  "$id": "208",
-                  "Formula": {
-                    "$id": "209",
-                    "Expression": "[DataCorePlugin.CurrentGame] == 'Automobilista2'"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "210",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "Repetitions": 0.0,
-              "RepeatLeftOffset": 0.0,
-              "RepeatTopOffset": 30.0,
-              "Height": 30.0,
-              "Width": 52.0,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "Rotation": 0.0,
-              "BorderStyle": {
-                "$id": "211",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "212"
-                }
-              },
-              "RenderingSkip": 0,
-              "ShowSelection": true,
-              "CanResize": false,
-              "Childrens": {
-                "$id": "213",
-                "$values": [
-                  {
-                    "$id": "214",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "27.5",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "215",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "216"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press PSI FL",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "217",
-                      "TextColor": {
-                        "$id": "218",
-                        "Formula": {
-                          "$id": "219",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressPSI('TyrePressureFrontLeft');\r\nreturn SKSH_getGradient4(tyrePressColorValuesPSI, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "220",
-                        "FormatString": "0.0",
-                        "Formula": {
-                          "$id": "221",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressPSI('TyrePressureFrontLeft');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "222",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "27.5",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "223",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "224"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 14.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press PSI RL",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "225",
-                      "TextColor": {
-                        "$id": "226",
-                        "Formula": {
-                          "$id": "227",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressPSI('TyrePressureRearLeft');\r\nreturn SKSH_getGradient4(tyrePressColorValuesPSI, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "228",
-                        "FormatString": "0.0",
-                        "Formula": {
-                          "$id": "229",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressPSI('TyrePressureRearLeft');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "230",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "27.5",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "231",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "232"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 26.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press PSI FR",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "233",
-                      "TextColor": {
-                        "$id": "234",
-                        "Formula": {
-                          "$id": "235",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressPSI('TyrePressureFrontRight');\r\nreturn SKSH_getGradient4(tyrePressColorValuesPSI, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "236",
-                        "FormatString": "0.0",
-                        "Formula": {
-                          "$id": "237",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressPSI('TyrePressureFrontRight');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "238",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "27.5",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "239",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "240"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 26.0,
-                    "Opacity": 100.0,
-                    "Top": 14.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press PSI RR",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "241",
-                      "TextColor": {
-                        "$id": "242",
-                        "Formula": {
-                          "$id": "243",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressPSI('TyrePressureRearRight');\r\nreturn SKSH_getGradient4(tyrePressColorValuesPSI, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "244",
-                        "FormatString": "0.0",
-                        "Formula": {
-                          "$id": "245",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressPSI('TyrePressureRearRight');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  }
-                ]
-              },
-              "Group": true,
-              "UseRotation": false,
-              "EnableBlur": false,
-              "Left": 0.0,
-              "Opacity": 100.0,
-              "Top": 0.0,
-              "Visible": false,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "18faee5e-6f53-406b-8f9b-04a37d24d676",
-              "IsSelected": false,
-              "Name": "PSI",
-              "Sid": 0,
-              "Bindings": {
-                "$id": "246",
-                "Visible": {
-                  "$id": "247",
-                  "Formula": {
-                    "$id": "248",
-                    "Expression": "[DataCorePlugin.CurrentGame] == 'AssettoCorsa'\r\n"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "249",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "Repetitions": 0.0,
-              "RepeatLeftOffset": 0.0,
-              "RepeatTopOffset": 30.0,
-              "Height": 30.0,
-              "Width": 52.0,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "Rotation": 0.0,
-              "BorderStyle": {
-                "$id": "250",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "251"
-                }
-              },
-              "RenderingSkip": 0,
-              "ShowSelection": false,
-              "CanResize": false,
-              "Childrens": {
-                "$id": "252",
-                "$values": [
-                  {
-                    "$id": "253",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "160",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "254",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "255"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press KPA FL",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "256",
-                      "TextColor": {
-                        "$id": "257",
-                        "Formula": {
-                          "$id": "258",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressKPA('TyrePressureFrontLeft');\r\nreturn SKSH_getGradient4(tyrePressColorValuesKPA, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "259",
-                        "FormatString": "0",
-                        "Formula": {
-                          "$id": "260",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressKPA('TyrePressureFrontLeft');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "261",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "160",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "262",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "263"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 14.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press KPA RL",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "264",
-                      "TextColor": {
-                        "$id": "265",
-                        "Formula": {
-                          "$id": "266",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressKPA('TyrePressureRearLeft');\r\nreturn SKSH_getGradient4(tyrePressColorValuesKPA, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "267",
-                        "FormatString": "0",
-                        "Formula": {
-                          "$id": "268",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressKPA('TyrePressureRearLeft');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "269",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "160",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "270",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "271"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 26.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press KPA FR",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "272",
-                      "TextColor": {
-                        "$id": "273",
-                        "Formula": {
-                          "$id": "274",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressKPA('TyrePressureFrontRight');\r\nreturn SKSH_getGradient4(tyrePressColorValuesKPA, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "275",
-                        "FormatString": "0",
-                        "Formula": {
-                          "$id": "276",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressKPA('TyrePressureFrontRight');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "277",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Italic",
-                    "FontSize": 12.0,
-                    "Text": "160",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "278",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "279"
-                      }
-                    },
-                    "Height": 16.0,
-                    "Left": 26.0,
-                    "Opacity": 100.0,
-                    "Top": 14.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 26.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "Press KPA RR",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "280",
-                      "TextColor": {
-                        "$id": "281",
-                        "Formula": {
-                          "$id": "282",
-                          "Interpreter": 1,
-                          "Expression": "var press = SKSH_getTirePressKPA('TyrePressureRearRight');\r\nreturn SKSH_getGradient4(tyrePressColorValuesKPA, -1, 0, 1, press);\r\n"
-                        },
-                        "StartColor": "#FF0082FF",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FF2BFF00",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      },
-                      "Text": {
-                        "$id": "283",
-                        "FormatString": "0",
-                        "Formula": {
-                          "$id": "284",
-                          "Interpreter": 1,
-                          "Expression": "return SKSH_getTirePressKPA('TyrePressureRearRight');\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      }
-                    }
-                  }
-                ]
-              },
-              "Group": true,
-              "UseRotation": false,
-              "EnableBlur": false,
-              "Left": 0.0,
-              "Opacity": 100.0,
-              "Top": 0.0,
-              "Visible": true,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "18faee5e-6f53-406b-8f9b-04a37d24d676",
-              "IsSelected": false,
-              "Name": "KPA",
-              "Sid": 0,
-              "Bindings": {
-                "$id": "285",
-                "Visible": {
-                  "$id": "286",
-                  "Formula": {
-                    "$id": "287",
-                    "Expression": "[DataCorePlugin.CurrentGame] == 'RFactor2'\r\n"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "288",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "Image": "selection_indicator",
-              "AutoSize": false,
-              "AutoSizeScale": 1.0,
-              "Rotation": 0.0,
-              "UseRotation": false,
-              "CanResize": true,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "EnableBlur": false,
-              "BorderStyle": {
-                "$id": "289",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "290"
-                }
-              },
-              "Height": 1.0,
-              "Left": 18.0,
-              "Opacity": 100.0,
-              "Top": 30.0,
-              "Visible": true,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "Width": 16.0,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "8432f5df-c80c-4e8e-9e94-1bbf2f7238f4",
-              "IsFreezed": false,
-              "IsSelected": false,
-              "Name": "Page 3/5",
-              "RenderingSkip": 0,
-              "Sid": 0,
-              "Bindings": {
-                "$id": "291"
-              }
-            }
-          ]
-        },
-        "Id": "e57d1b1b-a96c-4bc5-bb6d-c9f7e4396318",
-        "Name": "Screen3",
-        "Sid": 0,
-        "Bindings": {
-          "$id": "292"
-        }
-      },
-      {
-        "$id": "293",
-        "RenderingSkip": 0,
-        "InGameScreen": true,
-        "IdleScreen": true,
-        "PitScreen": true,
-        "ScreenScript": {
-          "$id": "294",
-          "Interpreter": 1
-        },
-        "BackgroundColor": "#00FFFFFF",
-        "IsSelected": false,
-        "Items": {
-          "$id": "295",
-          "$values": [
-            {
-              "$id": "296",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
               "NextScreenCommand": 0,
               "PreviousScreenCommand": 0,
@@ -3294,7 +1889,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "297",
+                "$id": "172",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -3305,7 +1900,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "298"
+                  "$id": "173"
                 }
               },
               "Height": 30.0,
@@ -3328,11 +1923,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "299"
+                "$id": "174"
               }
             },
             {
-              "$id": "300",
+              "$id": "175",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
               "Image": "selection_indicator",
               "AutoSize": false,
@@ -3344,7 +1939,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "301",
+                "$id": "176",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -3355,11 +1950,11 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "302"
+                  "$id": "177"
                 }
               },
               "Height": 1.0,
-              "Left": 26.0,
+              "Left": 24.0,
               "Opacity": 100.0,
               "Top": 30.0,
               "Visible": true,
@@ -3373,46 +1968,46 @@
               "BorderTop": 0,
               "Id": "8432f5df-c80c-4e8e-9e94-1bbf2f7238f4",
               "IsFreezed": false,
-              "IsSelected": false,
-              "Name": "Page 4/5",
+              "IsSelected": true,
+              "Name": "Page 3/4",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "303"
+                "$id": "178"
               }
             }
           ]
         },
-        "Id": "01198104-e7d9-4781-9b50-61a5c610a4c0",
-        "Name": "Screen4",
+        "Id": "8dc31c77-ef95-4478-bd6a-8100f9f152ac",
+        "Name": "Screen3",
         "Sid": 0,
         "Bindings": {
-          "$id": "304"
+          "$id": "179"
         }
       },
       {
-        "$id": "305",
+        "$id": "180",
         "RenderingSkip": 0,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
         "ScreenScript": {
-          "$id": "306",
+          "$id": "181",
           "Interpreter": 1
         },
         "BackgroundColor": "#00FFFFFF",
-        "IsSelected": true,
+        "IsSelected": false,
         "Items": {
-          "$id": "307",
+          "$id": "182",
           "$values": [
             {
-              "$id": "308",
+              "$id": "183",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
               "NextScreenCommand": 0,
               "PreviousScreenCommand": 0,
               "AutoSize": true,
               "AutoSizeScale": 1.0,
-              "FileName": "Damage.djson",
+              "FileName": "damage.djson",
               "Rotation": 0.0,
               "UseRotation": false,
               "CanResize": true,
@@ -3420,7 +2015,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "309",
+                "$id": "184",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -3431,7 +2026,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "310"
+                  "$id": "185"
                 }
               },
               "Height": 30.0,
@@ -3447,18 +2042,18 @@
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "93fa0db6-4b38-49c6-8c7c-f79a41eed122",
+              "Id": "9d1fe599-bfb9-4c28-a3ba-4f89ba7da35f",
               "IsFreezed": false,
-              "IsSelected": true,
+              "IsSelected": false,
               "Name": "Damage",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "311"
+                "$id": "186"
               }
             },
             {
-              "$id": "312",
+              "$id": "187",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
               "Image": "selection_indicator",
               "AutoSize": false,
@@ -3470,7 +2065,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "313",
+                "$id": "188",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -3481,7 +2076,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "314"
+                  "$id": "189"
                 }
               },
               "Height": 1.0,
@@ -3500,20 +2095,20 @@
               "Id": "8432f5df-c80c-4e8e-9e94-1bbf2f7238f4",
               "IsFreezed": false,
               "IsSelected": false,
-              "Name": "Page 5/5",
+              "Name": "Page 4/4",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "315"
+                "$id": "190"
               }
             }
           ]
         },
-        "Id": "624ce079-8956-453a-817b-fd5199ac27a5",
-        "Name": "Screen5",
+        "Id": "b17e5a97-48df-4a7f-860f-15336aff6765",
+        "Name": "Screen4",
         "Sid": 0,
         "Bindings": {
-          "$id": "316"
+          "$id": "191"
         }
       }
     ]
@@ -3521,15 +2116,15 @@
   "SnapToGrid": false,
   "HideLabels": true,
   "ShowBoundingRectangles": false,
-  "GridSize": 10,
+  "GridSize": 5,
   "SelectedScreen": {
-    "$ref": "305"
+    "$ref": "168"
   },
   "Images": {
-    "$id": "317",
+    "$id": "192",
     "$values": [
       {
-        "$id": "318",
+        "$id": "193",
         "Name": "selection_indicator",
         "Extension": ".png",
         "Optimized": true,
@@ -3538,26 +2133,24 @@
     ]
   },
   "Metadata": {
-    "$id": "319",
-    "ScreenCount": 5.0,
+    "$id": "194",
+    "ScreenCount": 4.0,
     "InGameScreensIndexs": {
-      "$id": "320",
+      "$id": "195",
       "$values": [
         0,
         1,
         2,
-        3,
-        4
+        3
       ]
     },
     "IdleScreensIndexs": {
-      "$id": "321",
+      "$id": "196",
       "$values": [
         0,
         1,
         2,
-        3,
-        4
+        3
       ]
     },
     "MainPreviewIndex": 0,
@@ -3569,13 +2162,12 @@
     "MetadataVersion": 2.0,
     "EnableOnDashboardMessaging": true,
     "PitScreensIndexs": {
-      "$id": "322",
+      "$id": "197",
       "$values": [
         0,
         1,
         2,
-        3,
-        4
+        3
       ]
     }
   },

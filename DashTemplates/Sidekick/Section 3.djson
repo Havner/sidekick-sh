@@ -1,7 +1,7 @@
 {
   "$id": "1",
   "Version": 2,
-  "Id": "26f7efdb-aaaa-4153-8043-727b18cf7001",
+  "Id": "40caa811-a9c6-40fa-8894-c7ad58212737",
   "BaseHeight": 22,
   "BaseWidth": 58,
   "BackgroundColor": "#FF000000",
@@ -11,7 +11,6 @@
       {
         "$id": "3",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -93,7 +92,7 @@
                   "$id": "10",
                   "Formula": {
                     "$id": "11",
-                    "Expression": "'' + [DataCorePlugin.GameData.Position] + '/' + [DataCorePlugin.GameData.NewData.OpponentsCount]"
+                    "Expression": "'' + [Position] + '/' + [OpponentsCount]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -162,7 +161,6 @@
       {
         "$id": "17",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -244,7 +242,7 @@
                   "$id": "24",
                   "Formula": {
                     "$id": "25",
-                    "Expression": "'' + driverclassposition([DataCorePlugin.GameData.NewData.Position]) + '/' + [DataCorePlugin.GameData.NewData.PlayerClassOpponentsCount]"
+                    "Expression": "'' + driverclassposition([Position]) + '/' + [PlayerClassOpponentsCount]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -313,7 +311,6 @@
       {
         "$id": "31",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -395,7 +392,7 @@
                   "$id": "38",
                   "Formula": {
                     "$id": "39",
-                    "Expression": "'' + [CompletedLaps] + '/' + if([TotalLaps]==0,'--',[TotalLaps])"
+                    "Expression": "'' + [CompletedLaps] + '/' + if([TotalLaps]==0, '--', [TotalLaps])"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -464,7 +461,6 @@
       {
         "$id": "45",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -547,7 +543,8 @@
                   "FormatString": "h\\:mm\\:ss",
                   "Formula": {
                     "$id": "53",
-                    "Expression": "[SessionTimeLeft]"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getTime('SessionTimeLeft', '-:--:--');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"

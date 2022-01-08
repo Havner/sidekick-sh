@@ -1,7 +1,7 @@
 {
   "$id": "1",
   "Version": 2,
-  "Id": "39574fa4-b292-469f-96e0-3d5b5798cde4",
+  "Id": "3ad6c38c-dbb2-479e-9856-7424710bed9f",
   "BaseHeight": 22,
   "BaseWidth": 64,
   "BackgroundColor": "#FF000000",
@@ -11,7 +11,6 @@
       {
         "$id": "3",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -20,7 +19,7 @@
           "Interpreter": 1
         },
         "BackgroundColor": "#00FFFFFF",
-        "IsSelected": false,
+        "IsSelected": true,
         "Items": {
           "$id": "5",
           "$values": [
@@ -94,7 +93,8 @@
                   "FormatString": "m\\:ss\\.f",
                   "Formula": {
                     "$id": "11",
-                    "Expression": "[CurrentLapTime]"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getTime('CurrentLapTime', '-:--.--');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -103,13 +103,14 @@
                   "$id": "12",
                   "Formula": {
                     "$id": "13",
-                    "Expression": "[DataCorePlugin.Computed.Fuel_CurrentLapIsValidForTracking]"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_showLapInvalid();\r\n"
                   },
-                  "StartColor": "#FFFF0000",
+                  "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": false,
                   "MiddleColor": "#FF000000",
                   "MiddleColorValue": 1.0,
-                  "EndColor": "#FFDBDBDB",
+                  "EndColor": "#FFFF0000",
                   "StartColorValue": 0.0,
                   "EndColorValue": 1.0,
                   "Mode": 4,
@@ -179,7 +180,6 @@
       {
         "$id": "19",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -188,7 +188,7 @@
           "Interpreter": 1
         },
         "BackgroundColor": "#00FFFFFF",
-        "IsSelected": true,
+        "IsSelected": false,
         "Items": {
           "$id": "21",
           "$values": [
@@ -251,7 +251,7 @@
               "BorderTop": 0,
               "Id": "3cb2ba89-603f-429b-ad8d-7e820b1b589b",
               "IsFreezed": true,
-              "IsSelected": true,
+              "IsSelected": false,
               "Name": "Last Lap Time",
               "RenderingSkip": 0,
               "Sid": 0,
@@ -262,7 +262,8 @@
                   "FormatString": "m\\:ss\\.ff",
                   "Formula": {
                     "$id": "27",
-                    "Expression": "if('' + [LastLapTime] == '00:00:00', '-:--.--', [LastLapTime])"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getTime('LastLapTime', '-:--.--');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -271,7 +272,8 @@
                   "$id": "28",
                   "Formula": {
                     "$id": "29",
-                    "Expression": "if('' + [DataCorePlugin.GameData.NewData.LastLapTime] == '00:00:00', 0,\r\nif([DataCorePlugin.GameData.NewData.LastLapTime] == [PersistantTrackerPlugin.AllTimeBest], 2,\r\nif([DataCorePlugin.GameData.NewData.LastLapTime] == [PersistantTrackerPlugin.SessionBest], 1, 0)))"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getLastLapColor();\r\n"
                   },
                   "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": true,
@@ -347,7 +349,6 @@
       {
         "$id": "35",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -430,7 +431,8 @@
                   "FormatString": "m\\:ss\\.ff",
                   "Formula": {
                     "$id": "43",
-                    "Expression": "if('' + [PersistantTrackerPlugin.SessionBest] == '00:00:00', '-:--.--', [PersistantTrackerPlugin.SessionBest])\r\n"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getTime('PersistantTrackerPlugin.SessionBest', '-:--.--');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -499,7 +501,6 @@
       {
         "$id": "49",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -571,7 +572,7 @@
               "BorderTop": 0,
               "Id": "3cb2ba89-603f-429b-ad8d-7e820b1b589b",
               "IsFreezed": true,
-              "IsSelected": false,
+              "IsSelected": true,
               "Name": "All Time Best Lap Time",
               "RenderingSkip": 0,
               "Sid": 0,
@@ -582,7 +583,8 @@
                   "FormatString": "m\\:ss\\.ff",
                   "Formula": {
                     "$id": "57",
-                    "Expression": "if('' + [PersistantTrackerPlugin.AllTimeBest] == '00:00:00', '-:--.--', [PersistantTrackerPlugin.AllTimeBest])\r\n"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getTime('PersistantTrackerPlugin.AllTimeBest', '-:--.--');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -655,7 +657,7 @@
   "ShowBoundingRectangles": false,
   "GridSize": 10,
   "SelectedScreen": {
-    "$ref": "19"
+    "$ref": "3"
   },
   "Images": {
     "$id": "63",

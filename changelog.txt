@@ -1,0 +1,29 @@
+0.7
+- AC support including ERS and DRS (same as in original sidekick)
+- ACC support
+- AMS2 support including ERS (no DRS in telemetry) and probably pCars2, although not tested
+- damage display added to section 5 (for all 4 games), also shown automatically when damaged
+- DRS moved left a little so overlaps settings button that's unusable
+  (width of the whole sidekick doesn't change regardless of DRS visibility)
+- pressures will be in the default game unit regardless what is set in SimHub
+- brake temps added to section 5
+- fuel per lap and remaining laps shows WIP instead of 0.0 when not calculated
+- lots of internal code changes and cleanups
+- renamed 'Sidekick SH' to 'Sidekick'
+- better defaults for temps
+- green rpm bar added (simhub rpm shift light1), off by default
+- option for inverted +/- on next/prev driver gap
+- headlights added for ACC/RF2/AMS2
+
+0.6.1
+- Added session time remaining to Section 3 (it was in the original sidekick, forgot about it)
+- Made Sidekick react properly when MPH are set in SimHub settings. It will display mph instead of km/h
+
+0.6
+- added green/red marks to delta pages showing the delta trend (as in original Sidekick)
+- added 3rd and 4th page to Section 2 showing gap to the car in front and behind
+- fixed blue color for last lap showing personal best (was cyan)
+
+0.5.1
+- dropped GarySwallow plugin dependency
+- showLastLapFor is in milisecs now

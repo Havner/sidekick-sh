@@ -1,7 +1,7 @@
 {
   "$id": "1",
   "Version": 2,
-  "Id": "48aa7def-c42c-4a95-9b99-6523b3019c05",
+  "Id": "830a0f71-8903-4df1-aeb1-4339593c80ce",
   "BaseHeight": 22,
   "BaseWidth": 52,
   "BackgroundColor": "#FF000000",
@@ -11,7 +11,6 @@
       {
         "$id": "3",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -26,10 +25,7 @@
           "$values": [
             {
               "$id": "6",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.FuelText, SimHub.Plugins",
-              "Category": "Fuel",
-              "Format": "0.0",
-              "NoDataText": "N/A",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "IsTextItem": true,
               "ShadowDepth": 0,
               "ShadowBlur": 0,
@@ -40,6 +36,7 @@
               "TextWrapping": 1,
               "FontStyle": "Italic",
               "FontSize": 16.0,
+              "Text": "35.2",
               "TextColor": "#FFDBDBDB",
               "HorizontalAlignment": 1,
               "VerticalAlignment": 1,
@@ -83,7 +80,7 @@
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "7acbe43d-570f-46a6-a95a-08de9c28475d",
+              "Id": "2de5c090-c33b-4471-9cc6-865ae98f0296",
               "IsFreezed": true,
               "IsSelected": false,
               "Name": "Fuel",
@@ -96,7 +93,7 @@
                   "Formula": {
                     "$id": "11",
                     "Interpreter": 1,
-                    "Expression": "return showFuelWarn();"
+                    "Expression": "return SKSH_showFuelWarn();\r\n"
                   },
                   "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": false,
@@ -107,11 +104,21 @@
                   "EndColorValue": 1.0,
                   "Mode": 4,
                   "TargetPropertyName": "TextColor"
+                },
+                "Text": {
+                  "$id": "12",
+                  "FormatString": "0.0",
+                  "Formula": {
+                    "$id": "13",
+                    "Expression": "[Fuel]\r\n"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
                 }
               }
             },
             {
-              "$id": "12",
+              "$id": "14",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
               "Image": "selection_indicator",
               "AutoSize": false,
@@ -123,7 +130,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "13",
+                "$id": "15",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -134,7 +141,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "14"
+                  "$id": "16"
                 }
               },
               "Height": 1.0,
@@ -157,7 +164,7 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "15"
+                "$id": "17"
               }
             }
           ]
@@ -166,31 +173,27 @@
         "Name": "Screen1",
         "Sid": 0,
         "Bindings": {
-          "$id": "16"
+          "$id": "18"
         }
       },
       {
-        "$id": "17",
+        "$id": "19",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
         "ScreenScript": {
-          "$id": "18",
+          "$id": "20",
           "Interpreter": 1
         },
         "BackgroundColor": "#00FFFFFF",
-        "IsSelected": true,
+        "IsSelected": false,
         "Items": {
-          "$id": "19",
+          "$id": "21",
           "$values": [
             {
-              "$id": "20",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.FuelLiterPerLapsText, SimHub.Plugins",
-              "Category": "Fuel",
-              "Format": "0.00",
-              "NoDataText": "N/A",
+              "$id": "22",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "IsTextItem": true,
               "ShadowDepth": 0,
               "ShadowBlur": 0,
@@ -201,6 +204,7 @@
               "TextWrapping": 1,
               "FontStyle": "Italic",
               "FontSize": 16.0,
+              "Text": "2.73",
               "TextColor": "#FFDBDBDB",
               "HorizontalAlignment": 1,
               "VerticalAlignment": 1,
@@ -217,7 +221,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "21",
+                "$id": "23",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -228,7 +232,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "22"
+                  "$id": "24"
                 }
               },
               "Height": 20.0,
@@ -244,20 +248,20 @@
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "23f6ee2c-c35c-4e0f-aa68-01431c13d804",
-              "IsFreezed": true,
-              "IsSelected": true,
+              "Id": "2de5c090-c33b-4471-9cc6-865ae98f0296",
+              "IsFreezed": false,
+              "IsSelected": false,
               "Name": "Fuel Liter Per Laps",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "23",
+                "$id": "25",
                 "TextColor": {
-                  "$id": "24",
+                  "$id": "26",
                   "Formula": {
-                    "$id": "25",
+                    "$id": "27",
                     "Interpreter": 1,
-                    "Expression": "return showFuelWarn();"
+                    "Expression": "return SKSH_showFuelWarn();\r\n"
                   },
                   "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": false,
@@ -268,11 +272,22 @@
                   "EndColorValue": 1.0,
                   "Mode": 4,
                   "TargetPropertyName": "TextColor"
+                },
+                "Text": {
+                  "$id": "28",
+                  "FormatString": "0.00",
+                  "Formula": {
+                    "$id": "29",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getValue('DataCorePlugin.Computed.Fuel_LitersPerLap', 'WIP');\r\n"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
                 }
               }
             },
             {
-              "$id": "26",
+              "$id": "30",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
               "Image": "selection_indicator",
               "AutoSize": false,
@@ -284,7 +299,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "27",
+                "$id": "31",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -295,7 +310,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "28"
+                  "$id": "32"
                 }
               },
               "Height": 1.0,
@@ -318,7 +333,7 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "29"
+                "$id": "33"
               }
             }
           ]
@@ -327,31 +342,27 @@
         "Name": "Screen2",
         "Sid": 0,
         "Bindings": {
-          "$id": "30"
+          "$id": "34"
         }
       },
       {
-        "$id": "31",
+        "$id": "35",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
         "ScreenScript": {
-          "$id": "32",
+          "$id": "36",
           "Interpreter": 1
         },
         "BackgroundColor": "#00FFFFFF",
-        "IsSelected": false,
+        "IsSelected": true,
         "Items": {
-          "$id": "33",
+          "$id": "37",
           "$values": [
             {
-              "$id": "34",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.FuelRemainingLapsText, SimHub.Plugins",
-              "Category": "Fuel",
-              "Format": "0.0",
-              "NoDataText": "N/A",
+              "$id": "38",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "IsTextItem": true,
               "ShadowDepth": 0,
               "ShadowBlur": 0,
@@ -360,8 +371,9 @@
               "Font": "Roboto",
               "FontWeight": "Normal",
               "TextWrapping": 1,
-              "FontStyle": "Normal",
+              "FontStyle": "Italic",
               "FontSize": 16.0,
+              "Text": "9.3",
               "TextColor": "#FFDBDBDB",
               "HorizontalAlignment": 1,
               "VerticalAlignment": 1,
@@ -378,7 +390,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "35",
+                "$id": "39",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -389,7 +401,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "36"
+                  "$id": "40"
                 }
               },
               "Height": 20.0,
@@ -405,20 +417,20 @@
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "af697d37-49e1-4bf8-afce-bd706e516e08",
-              "IsFreezed": true,
-              "IsSelected": false,
+              "Id": "2de5c090-c33b-4471-9cc6-865ae98f0296",
+              "IsFreezed": false,
+              "IsSelected": true,
               "Name": "Fuel Remaining Laps",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "37",
+                "$id": "41",
                 "TextColor": {
-                  "$id": "38",
+                  "$id": "42",
                   "Formula": {
-                    "$id": "39",
+                    "$id": "43",
                     "Interpreter": 1,
-                    "Expression": "return showFuelWarn();"
+                    "Expression": "return SKSH_showFuelWarn();\r\n"
                   },
                   "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": false,
@@ -429,11 +441,22 @@
                   "EndColorValue": 1.0,
                   "Mode": 4,
                   "TargetPropertyName": "TextColor"
+                },
+                "Text": {
+                  "$id": "44",
+                  "FormatString": "0.0",
+                  "Formula": {
+                    "$id": "45",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getValue('DataCorePlugin.Computed.Fuel_RemainingLaps', 'WIP');\r\n"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
                 }
               }
             },
             {
-              "$id": "40",
+              "$id": "46",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
               "Image": "selection_indicator",
               "AutoSize": false,
@@ -445,7 +468,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "41",
+                "$id": "47",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -456,7 +479,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "42"
+                  "$id": "48"
                 }
               },
               "Height": 1.0,
@@ -479,7 +502,7 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "43"
+                "$id": "49"
               }
             }
           ]
@@ -488,7 +511,7 @@
         "Name": "Screen3",
         "Sid": 0,
         "Bindings": {
-          "$id": "44"
+          "$id": "50"
         }
       }
     ]
@@ -498,13 +521,13 @@
   "ShowBoundingRectangles": false,
   "GridSize": 10,
   "SelectedScreen": {
-    "$ref": "17"
+    "$ref": "35"
   },
   "Images": {
-    "$id": "45",
+    "$id": "51",
     "$values": [
       {
-        "$id": "46",
+        "$id": "52",
         "Name": "selection_indicator",
         "Extension": ".png",
         "Optimized": true,
@@ -513,10 +536,10 @@
     ]
   },
   "Metadata": {
-    "$id": "47",
+    "$id": "53",
     "ScreenCount": 3.0,
     "InGameScreensIndexs": {
-      "$id": "48",
+      "$id": "54",
       "$values": [
         0,
         1,
@@ -524,7 +547,7 @@
       ]
     },
     "IdleScreensIndexs": {
-      "$id": "49",
+      "$id": "55",
       "$values": [
         0,
         1,
@@ -540,7 +563,7 @@
     "MetadataVersion": 2.0,
     "EnableOnDashboardMessaging": true,
     "PitScreensIndexs": {
-      "$id": "50",
+      "$id": "56",
       "$values": [
         0,
         1,

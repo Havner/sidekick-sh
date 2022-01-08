@@ -1,5 +1,5 @@
 Sidekick SimHub edition
-Version: 0.6.1
+Version: 0.7
 Idea: Topuz
 Author: Havner
 
@@ -31,12 +31,13 @@ Assetto Corsa is sorely missing here.
 
 This overlay is as close re-implementation of Sidekick as I possibly
 could do with SimHub and my skills. I tried to be as pixel accurate
-and as feature complete as I could.
+and as feature complete as I could (although 0.7 has few more
+functionalities).
 
 The final result looks, behaves and feels like the original Sidekick.
 
-This overlay is implemented for rFactor 2. It will work in other sims
-to some extent (maybe fully), but have not been tested.
+This overlay is implemented for rFactor 2. Since 0.7 it also works
+with AC, ACC and AMS2 (possibly with pCars2 as well, but not tested).
 
 3. Installation
 
@@ -48,7 +49,7 @@ Copy the "JavascriptExtensions" and "DashTemplates" to the SimHub
 installation directory, e.g.: "C:\Program Files (x86)\SimHub". Install
 the fonts (right click and "Install" or "Install for all users").
 
-When you launch the SimHub the "Sidekick SH" should appear in "Dash
+When you launch the SimHub the "Sidekick" should appear in "Dash
 Studio" section, "Overlays" tab in "Available Overlays". You need to
 either create a new "Overlay Layout" and add it there or add it to
 some layout of yours.
@@ -61,24 +62,27 @@ The overlay consists of the following sections:
   2. Deltas.
   3. Lap/Position
   4. Fuel
-  5. Tyres/Brakes
+  5. Tyres/Brakes/Damage
 
-  6. Gear/Speed
+  6. Gear/Speed/Headlights
   7. RPM bar
-  8. RPM shift bars (yellow and red)
-  9. Pedals/FFB
+  8. ERS/Turbo bar
+  9. RPM shift bars (yellow and red)
+  10. Pedals/FFB
 
 Sections 1-5 have multiple pages switchable with assignable SimHub
 keys. Contrary to Assetto Corsa version they are not clickable. Also
 the shortcuts works differently. There is no key to switch the active
 section. Each section have its separate button that changes its pages.
 
-5. Gear, speed, RPM, pedals, FFB
+5. Gear, speed, headlights, RPM, ERS, pedals, FFB
 
 Gear and speed on the left show exactly that. Speedo can be set to
 km/h or mph in the SimHub. Sidekick will detect this and react
 accordingly. The only additional thing is that they will turn blue if
 Pit Limiter is enabled. This can be disabled in the config.
+
+Headlights show green or blue gradient below gear/speed.
 
 RPM bar's range can be set in SimHub. Minimum and maximum RPM. The
 maximum value is guessed by the SimHub. Sometimes it works, sometimes
@@ -86,7 +90,8 @@ it doesn't. Can be set per car.
 
 Shift light points are also configurable in the SimHub. Red light will
 light up at "Red line" setting. Yellow at "Shift light 2 offset"
-setting. "Shift light 1 offset" is not used in Sidekick SH.
+setting. "Shift light 1 offset" is used for green shift bar. Can be
+enabled in config.
 
 Rule of a thumb to configure it:
 
@@ -127,7 +132,8 @@ This table shows the summary of switchable sections
 | Page 1   | Current lap time   | sb delta  | Position       | Total fuel       | Tyre wear        |
 | Page 2   | Last lap time      | pb delta  | Class position | Avg fuel per lap | Tyre temps       |
 | Page 3   | Session best (sb)  | gap front | Laps           | Laps remaining   | Tyre pressures   |
-| Page 4   | Personal best (pb) | gap back  | Session        |                  |                  |
+| Page 4   | Personal best (pb) | gap back  | Session        |                  | Brake temps      |
+| Page 5   |                    |           |                |                  | Damage           |
 |----------+--------------------+-----------+----------------+------------------+------------------|
 | Shortcut | Action A           | Action B  | Action C       | Action D         | Prev dash screen |
 |----------+--------------------+-----------+----------------+------------------+------------------|
@@ -169,7 +175,8 @@ page set) for 5s after finishing the lap. The 5s timeout can be
 configured in the config file.
 
 Also front and back gap. Time gap to the car in front on the track or
-to a car behind.
+to a car behind. Can be inverted (+/-) in a config. Detects game style
+by default.
 
   Section 3
 
@@ -193,20 +200,23 @@ SimHub itself.
 
   Section 5
 
-Tyre wear in percent. 100 is green, 70 and below is red. Gradient in
+Tyre wear in percent. 100 is green, 5 and below is red. Gradient in
 between. Configurable in the config.
 
 Tyre temperatures can be shown in Celcius, Fahrenheit and
 Kelvin. Switchable in SimHub settings. Color gradient configurable in
 the config. Separate options per unit.
 
-Tyre pressures can be shown in BAR, PSI and KPA. Switchable in the
-SimHub settings. Color gradient configurable in the config. Separate
-options per unit.
+Tyre pressures can be shown in BAR, PSI and KPA. Detected with the
+current game running. Color gradient configurable in the
+config. Separate options per unit.
 
 By default the whole section will show brake temperatures when
 braking. Can be disabled in the config. Same remark with the units and
 gradient as in tyre pressures.
+
+It will also show damage when damaged by default. Can also be disabled
+in config.
 
 7. Configuration
 
@@ -224,10 +234,8 @@ Some others worth mentioning:
 
 usePlainBackground: same setting as in the original Sidekick
 
-useDRS: false by default as rFactor 2 behaves finicky with DRS
-values. If enabled it should behave the same as in Assetto Corsa. But
-most of the time it shows DRS availbale, even if the car you drive
-does not have DRS at all. Nothing I can do here. rFactor 2 issue.
+classesWithDrs: only for rF2, put car classes that should have DRS
+enabled (rF2 telemetry doesn't have this option).
 
 Make sure not to break the config file syntax. It needs to be a
 correct JavaScript file.

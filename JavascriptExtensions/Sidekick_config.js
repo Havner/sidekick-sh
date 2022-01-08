@@ -1,4 +1,4 @@
-// Version 0.6.2
+// Version 0.7
 
 // Make sure not to break this file's syntax as this is JS code
 // and it's required for the overlay to work properly
@@ -14,60 +14,72 @@
 // - shortcuts for switching section's pages
 
 // plain is black transparent, as in original Sidekick
-var usePlainBackground = true;
+const usePlainBackground = true;
 
 // in place of wear/temps/press, section 5
-var showBrakeTempsWhileBraking = true;
+const showDamageWhenDamaged = 10000;   // for how long in miliseconds, 0 to disable
+const showBrakeTempsWhileBraking = true;
 
 // in miliseconds, shows last lap time and last lap diff to best after a lap
-var showLastLapFor = 5000;
+const showLastLapFor = 5000;
 
-// whether to show yellow (avail) and green (in use) DRS markers
-// DRS is finicky in rF2, especially for cars that don't support it
-var useDRS = ($prop('DataCorePlugin.CurrentGame') == 'AssettoCorsa');
+// list of cars classes that should have DRS enabled in rF2 (AC autodetets)
+const classesWithDrs = ['Formula Pro', 'BMW M4 Class 1 2021'];
 
-// marks gear and speed in blue
-var usePitLimiterColor = true;
+// marks gear and speed in blue (AMS2 telemetry is broken here)
+const usePitLimiterColor = true;
+
+// use the RPM green bar before they yellow (on simhub rpm shif light 1)
+const useGreenBar = false;
 
 // in miliseconds, set to 0 for immediate, -1 to disable, marks the FFB bar red
-var FBBClippingTime = 500;
+const FBBClippingTime = 500;
+
+// opponent gap style
+// 1 is default simhub and RF2 (in front minus, behind plus)
+// -1 is AC/ACC/AMS2 style (in front plus, behind minus)
+// 0 follows current game style (autodetect)
+const invertedGapStyle = 0;
 
 // used for calulcating red/green marks for deltas increasing or decreasing,
 // increase this value if those marks are too sensitive, causes delay
-var deltaHistory = 200;
+const deltaHistory = 200;
 
 // set the fuel indicator to red on any of those conditions, disabled if 0
 // sidekick also reacts to the alert set in SimHub
-var warnFuelOnValue = 0;      // number of liters / galons
-var warnFuelOnPercent = 0;    // total fuel percent
-var warnFuelOnLaps = 2;       // number of laps remaining
+const warnFuelOnValue = 0;      // number of liters / galons
+const warnFuelOnPercent = 0;    // total fuel percent
+const warnFuelOnLaps = 2;       // number of laps remaining
 
 // values below [0] will be green, above [1] will be red, values in between
 // will be a gradient from green, through white (at ([1] - [2])/2) to red
 // to make it sharp green/white/red set to:
-//var liveDeltaColorValues = [-0.001, 0.001];
-var liveDeltaColorValues = [-0.5, 0.5];
+//const liveDeltaColorValues = [-0.001, 0.001];
+const liveDeltaColorValues = [-0.5, 0.5];
 
 // values below [0] will be green, above [1] will be red, values in between
 // will be a gradient from green to red
-var tyreWearColorValues = [70, 100];
+const tyreWearColorValues = [50, 100];
 
 // TODO: sensible values for below?
 
 // values below [0] will be blue, [0]-[1] gradient from blue to green
 // [1]-[2] green, [2]-[3] gradient from green to red, above [3] red
-var tyreBrakeColorValuesC = [400, 500, 600, 700];
-var tyreBrakeColorValuesF = [752, 932, 1112, 1292];
-var tyreBrakeColorValuesK = [673, 773, 873, 973];
+const brakeTempColorValuesC = [100, 200, 400, 800];
+const brakeTempColorValuesF = [212, 392, 752, 1472];
+const brakeTempColorValuesK = [373, 473, 673, 1073];
 
 // values below [0] will be blue, [0]-[1] gradient from blue to green
 // [1]-[2] green, [2]-[3] gradient from green to red, above [3] red
-var tyreTempColorValuesC = [60, 80, 100, 120];
-var tyreTempColorValuesF = [140, 176, 212, 248];
-var tyreTempColorValuesK = [333, 353, 373, 393];
+const tyreTempColorValuesC = [30, 70, 110, 140];
+const tyreTempColorValuesF = [86, 158, 230, 284];
+const tyreTempColorValuesK = [303, 343, 383, 413];
+
+// set depending on the game, rF2: KPA, AC(C): PSI, AMS2: BAR
+// car/tire dependent, defaults might not suit you
 
 // values below [0] will be blue, [0]-[1] gradient from blue to green
 // [1]-[2] green, [2]-[3] gradient from green to red, above [3] red
-var tyrePressColorValuesBAR = [1.4, 1.7, 2, 2.2];
-var tyrePressColorValuesPSI = [20, 25, 28, 30];
-var tyrePressColorValuesKPA = [130, 150, 170, 190];
+const tyrePressColorValuesPSI = [20, 25, 28, 30];       // AC, ACC
+const tyrePressColorValuesBAR = [1.4, 1.7, 2.0, 2.2];   // AMS2
+const tyrePressColorValuesKPA = [130, 150, 170, 190];   // rFactor2

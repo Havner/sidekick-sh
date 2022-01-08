@@ -1,7 +1,7 @@
 {
   "$id": "1",
   "Version": 2,
-  "Id": "76b72603-e934-465f-ad52-75fb0b5b53b5",
+  "Id": "340e93a4-233e-406c-8f04-9124b61fefbb",
   "BaseHeight": 22,
   "BaseWidth": 54,
   "BackgroundColor": "#FF000000",
@@ -11,7 +11,6 @@
       {
         "$id": "3",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -26,33 +25,15 @@
           "$values": [
             {
               "$id": "6",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "IsTextItem": true,
-              "ShadowDepth": 0,
-              "ShadowBlur": 0,
-              "ShadowDirection": 315,
-              "ShadowColor": "#FF808080",
-              "Font": "Roboto",
-              "FontWeight": "Normal",
-              "TextWrapping": 1,
-              "FontStyle": "Normal",
-              "FontSize": 16.0,
-              "Text": "-.--",
-              "TextColor": "#FFDBDBDB",
-              "HorizontalAlignment": 1,
-              "VerticalAlignment": 1,
-              "UseMonospacedText": false,
-              "CharWidth": 40.0,
-              "SpecialCharsWidth": 20.0,
-              "SpecialChars": ".,:;",
-              "TextMask": "",
-              "TextMaskColor": "#FF808080",
-              "Rotation": 0.0,
-              "UseRotation": false,
-              "CanResize": true,
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "Repetitions": 0.0,
+              "RepeatLeftOffset": 0.0,
+              "RepeatTopOffset": 30.0,
+              "Height": 22.0,
+              "Width": 54.0,
               "BackgroundColor": "#00FFFFFF",
               "BlurRadius": 0.0,
-              "EnableBlur": false,
+              "Rotation": 0.0,
               "BorderStyle": {
                 "$id": "7",
                 "BorderColor": "#FFFFFFFF",
@@ -68,73 +49,14 @@
                   "$id": "8"
                 }
               },
-              "Height": 20.0,
-              "Left": 0.0,
-              "Opacity": 100.0,
-              "Top": 0.0,
-              "Visible": true,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "Width": 54.0,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
-              "IsFreezed": true,
-              "IsSelected": false,
-              "Name": "Invalid Lap Delta (-1)",
               "RenderingSkip": 0,
-              "Sid": 0,
-              "Bindings": {
-                "$id": "9",
-                "Visible": {
-                  "$id": "10",
-                  "Formula": {
-                    "$id": "11",
-                    "Interpreter": 1,
-                    "Expression": "return showLastLapDelta('PersistantTrackerPlugin.SessionBest') == -1;"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "12",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "Repetitions": 0.0,
-              "RepeatLeftOffset": 0.0,
-              "RepeatTopOffset": 30.0,
-              "Height": 22.0,
-              "Width": 54.0,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "Rotation": 0.0,
-              "BorderStyle": {
-                "$id": "13",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "14"
-                }
-              },
-              "RenderingSkip": 0,
-              "ShowSelection": false,
+              "ShowSelection": true,
               "CanResize": false,
               "Childrens": {
-                "$id": "15",
+                "$id": "9",
                 "$values": [
                   {
-                    "$id": "16",
+                    "$id": "10",
                     "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
                     "IsTextItem": true,
                     "ShadowDepth": 0,
@@ -163,7 +85,7 @@
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "17",
+                      "$id": "11",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -174,7 +96,7 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "18"
+                        "$id": "12"
                       }
                     },
                     "Height": 20.0,
@@ -193,36 +115,28 @@
                     "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
                     "IsFreezed": true,
                     "IsSelected": false,
-                    "Name": "SessionBestLiveDelta XX",
+                    "Name": "SessionBestLiveDelta",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "19",
+                      "$id": "13",
                       "Text": {
-                        "$id": "20",
+                        "$id": "14",
                         "FormatString": "0.00",
                         "Formula": {
-                          "$id": "21",
-                          "Expression": "format([PersistantTrackerPlugin.SessionBestLiveDeltaSeconds], '0.00', 1)"
+                          "$id": "15",
+                          "Interpreter": 1,
+                          "Expression": "return SKSH_getDelta('PersistantTrackerPlugin.SessionBest', 'PersistantTrackerPlugin.SessionBestLiveDeltaSeconds', '-.--');\r\n"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Text"
                       },
-                      "Visible": {
-                        "$id": "22",
-                        "Formula": {
-                          "$id": "23",
-                          "Expression": "abs([PersistantTrackerPlugin.SessionBestLiveDeltaSeconds]) < 10"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      },
                       "TextColor": {
-                        "$id": "24",
+                        "$id": "16",
                         "Formula": {
-                          "$id": "25",
+                          "$id": "17",
                           "Interpreter": 1,
-                          "Expression": "var time = $prop('PersistantTrackerPlugin.SessionBestLiveDeltaSeconds');\r\nreturn handleGradient2(liveDeltaColorValues, -1, 1, time);\r\n"
+                          "Expression": "var delta = SKSH_getDelta('PersistantTrackerPlugin.SessionBest', 'PersistantTrackerPlugin.SessionBestLiveDeltaSeconds', 0);\r\nreturn SKSH_getGradient2(liveDeltaColorValues, -1, 1, delta);\r\n"
                         },
                         "StartColor": "#FF2BFF00",
                         "EnableMiddleColor": true,
@@ -237,170 +151,7 @@
                     }
                   },
                   {
-                    "$id": "26",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Normal",
-                    "FontSize": 16.0,
-                    "Text": "-.-",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "27",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "28"
-                      }
-                    },
-                    "Height": 20.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": false,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 54.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "SessionBestLiveDelta X",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "29",
-                      "Text": {
-                        "$id": "30",
-                        "FormatString": "0.0",
-                        "Formula": {
-                          "$id": "31",
-                          "Expression": "format([PersistantTrackerPlugin.SessionBestLiveDeltaSeconds], '0.0', 1)"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      },
-                      "Visible": {
-                        "$id": "32",
-                        "Formula": {
-                          "$id": "33",
-                          "Expression": "abs([PersistantTrackerPlugin.SessionBestLiveDeltaSeconds]) >= 10"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      },
-                      "TextColor": {
-                        "$id": "34",
-                        "Formula": {
-                          "$id": "35",
-                          "Interpreter": 1,
-                          "Expression": "var time = $prop('PersistantTrackerPlugin.SessionBestLiveDeltaSeconds');\r\nreturn handleGradient2(liveDeltaColorValues, -1, 1, time);\r\n"
-                        },
-                        "StartColor": "#FF2BFF00",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FFDBDBDB",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "36",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-                    "Image": "delta_bad",
-                    "AutoSize": false,
-                    "AutoSizeScale": 1.0,
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "37",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "38"
-                      }
-                    },
-                    "Height": 22.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 54.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "dcd0e318-11b3-473a-90c9-9be0e6c6734e",
-                    "IsFreezed": false,
-                    "IsSelected": false,
-                    "Name": "Bad",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "39",
-                      "Visible": {
-                        "$id": "40",
-                        "Formula": {
-                          "$id": "41",
-                          "Interpreter": 1,
-                          "Expression": "return SBtrend() > 0;"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "42",
+                    "$id": "18",
                     "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
                     "Image": "delta_good",
                     "AutoSize": false,
@@ -412,7 +163,7 @@
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "43",
+                      "$id": "19",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -423,7 +174,7 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "44"
+                        "$id": "20"
                       }
                     },
                     "Height": 22.0,
@@ -440,19 +191,79 @@
                     "BorderRight": 0,
                     "BorderTop": 0,
                     "Id": "dcd0e318-11b3-473a-90c9-9be0e6c6734e",
-                    "IsFreezed": false,
+                    "IsFreezed": true,
                     "IsSelected": false,
                     "Name": "Good",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "45",
+                      "$id": "21",
                       "Visible": {
-                        "$id": "46",
+                        "$id": "22",
                         "Formula": {
-                          "$id": "47",
+                          "$id": "23",
                           "Interpreter": 1,
-                          "Expression": "return SBtrend() < 0;"
+                          "Expression": "return SKSH_showSBtrend() < 0;\r\n"
+                        },
+                        "Mode": 2,
+                        "TargetPropertyName": "Visible"
+                      }
+                    }
+                  },
+                  {
+                    "$id": "24",
+                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                    "Image": "delta_bad",
+                    "AutoSize": false,
+                    "AutoSizeScale": 1.0,
+                    "Rotation": 0.0,
+                    "UseRotation": false,
+                    "CanResize": true,
+                    "BackgroundColor": "#00FFFFFF",
+                    "BlurRadius": 0.0,
+                    "EnableBlur": false,
+                    "BorderStyle": {
+                      "$id": "25",
+                      "BorderColor": "#FFFFFFFF",
+                      "BorderTop": 0,
+                      "BorderBottom": 0,
+                      "BorderLeft": 0,
+                      "BorderRight": 0,
+                      "RadiusTopLeft": 0,
+                      "RadiusTopRight": 0,
+                      "RadiusBottomLeft": 0,
+                      "RadiusBottomRight": 0,
+                      "Bindings": {
+                        "$id": "26"
+                      }
+                    },
+                    "Height": 22.0,
+                    "Left": 0.0,
+                    "Opacity": 100.0,
+                    "Top": 0.0,
+                    "Visible": true,
+                    "BlinkDelay": 250.0,
+                    "BlinkEnabled": false,
+                    "Width": 54.0,
+                    "BorderBottom": 0,
+                    "BorderColor": "#FFFFFFFF",
+                    "BorderLeft": 0,
+                    "BorderRight": 0,
+                    "BorderTop": 0,
+                    "Id": "dcd0e318-11b3-473a-90c9-9be0e6c6734e",
+                    "IsFreezed": true,
+                    "IsSelected": false,
+                    "Name": "Bad",
+                    "RenderingSkip": 0,
+                    "Sid": 0,
+                    "Bindings": {
+                      "$id": "27",
+                      "Visible": {
+                        "$id": "28",
+                        "Formula": {
+                          "$id": "29",
+                          "Interpreter": 1,
+                          "Expression": "return SKSH_showSBtrend() > 0;\r\n"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Visible"
@@ -467,7 +278,7 @@
               "Left": 0.0,
               "Opacity": 100.0,
               "Top": 0.0,
-              "Visible": false,
+              "Visible": true,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
               "BorderBottom": 0,
@@ -475,18 +286,18 @@
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "35021578-2aec-4b9b-8bf7-0378278f378c",
+              "Id": "33c629ae-b4e0-4e15-8ea5-708900053bc1",
               "IsSelected": false,
-              "Name": "Live Delta (0)",
+              "Name": "SessionBestLiveDelta",
               "Sid": 0,
               "Bindings": {
-                "$id": "48",
+                "$id": "30",
                 "Visible": {
-                  "$id": "49",
+                  "$id": "31",
                   "Formula": {
-                    "$id": "50",
+                    "$id": "32",
                     "Interpreter": 1,
-                    "Expression": "return showLastLapDelta('PersistantTrackerPlugin.SessionBest') == 0;"
+                    "Expression": "return !SKSH_showLastLapDelta('PersistantTrackerPlugin.SessionBest');"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -494,12 +305,189 @@
               }
             },
             {
+              "$id": "33",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "IsTextItem": true,
+              "ShadowDepth": 0,
+              "ShadowBlur": 0,
+              "ShadowDirection": 315,
+              "ShadowColor": "#FF808080",
+              "Font": "Roboto",
+              "FontWeight": "Normal",
+              "TextWrapping": 1,
+              "FontStyle": "Normal",
+              "FontSize": 16.0,
+              "Text": "-.--",
+              "TextColor": "#FFDBDBDB",
+              "HorizontalAlignment": 1,
+              "VerticalAlignment": 1,
+              "UseMonospacedText": false,
+              "CharWidth": 40.0,
+              "SpecialCharsWidth": 20.0,
+              "SpecialChars": ".,:;",
+              "TextMask": "",
+              "TextMaskColor": "#FF808080",
+              "Rotation": 0.0,
+              "UseRotation": false,
+              "CanResize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "BlurRadius": 0.0,
+              "EnableBlur": false,
+              "BorderStyle": {
+                "$id": "34",
+                "BorderColor": "#FFFFFFFF",
+                "BorderTop": 0,
+                "BorderBottom": 0,
+                "BorderLeft": 0,
+                "BorderRight": 0,
+                "RadiusTopLeft": 0,
+                "RadiusTopRight": 0,
+                "RadiusBottomLeft": 0,
+                "RadiusBottomRight": 0,
+                "Bindings": {
+                  "$id": "35"
+                }
+              },
+              "Height": 20.0,
+              "Left": 0.0,
+              "Opacity": 100.0,
+              "Top": 0.0,
+              "Visible": false,
+              "BlinkDelay": 250.0,
+              "BlinkEnabled": false,
+              "Width": 54.0,
+              "BorderBottom": 0,
+              "BorderColor": "#FFFFFFFF",
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderTop": 0,
+              "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
+              "IsFreezed": true,
+              "IsSelected": false,
+              "Name": "SessionBestLastLapDelta",
+              "RenderingSkip": 0,
+              "Sid": 0,
+              "Bindings": {
+                "$id": "36",
+                "Text": {
+                  "$id": "37",
+                  "FormatString": "0.00",
+                  "Formula": {
+                    "$id": "38",
+                    "Expression": "format([PersistantTrackerPlugin.SessionBestLastLapDelta], '0.00', 1)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "$id": "39",
+                  "Formula": {
+                    "$id": "40",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_showLastLapDelta('PersistantTrackerPlugin.SessionBest');"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                },
+                "TextColor": {
+                  "$id": "41",
+                  "Formula": {
+                    "$id": "42",
+                    "Expression": "[PersistantTrackerPlugin.SessionBestLastLapDelta]"
+                  },
+                  "StartColor": "#FF2BFF00",
+                  "EnableMiddleColor": true,
+                  "MiddleColor": "#FFDBDBDB",
+                  "MiddleColorValue": 0.0,
+                  "EndColor": "#FFFF2B00",
+                  "StartColorValue": -0.01,
+                  "EndColorValue": 0.01,
+                  "Mode": 4,
+                  "TargetPropertyName": "TextColor"
+                }
+              }
+            },
+            {
+              "$id": "43",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "Image": "selection_indicator",
+              "AutoSize": false,
+              "AutoSizeScale": 1.0,
+              "Rotation": 0.0,
+              "UseRotation": false,
+              "CanResize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "BlurRadius": 0.0,
+              "EnableBlur": false,
+              "BorderStyle": {
+                "$id": "44",
+                "BorderColor": "#FFFFFFFF",
+                "BorderTop": 0,
+                "BorderBottom": 0,
+                "BorderLeft": 0,
+                "BorderRight": 0,
+                "RadiusTopLeft": 0,
+                "RadiusTopRight": 0,
+                "RadiusBottomLeft": 0,
+                "RadiusBottomRight": 0,
+                "Bindings": {
+                  "$id": "45"
+                }
+              },
+              "Height": 1.0,
+              "Left": 0.0,
+              "Opacity": 100.0,
+              "Top": 21.0,
+              "Visible": true,
+              "BlinkDelay": 250.0,
+              "BlinkEnabled": false,
+              "Width": 16.0,
+              "BorderBottom": 0,
+              "BorderColor": "#FFFFFFFF",
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderTop": 0,
+              "Id": "ef2b33c4-4ed4-43d2-88b1-d5a1da426200",
+              "IsFreezed": true,
+              "IsSelected": false,
+              "Name": "Page 1/4",
+              "RenderingSkip": 0,
+              "Sid": 0,
+              "Bindings": {
+                "$id": "46"
+              }
+            }
+          ]
+        },
+        "Id": "cb8f1867-7d6e-44c0-8437-0943e4f1cd46",
+        "Name": "Screen1",
+        "Sid": 0,
+        "Bindings": {
+          "$id": "47"
+        }
+      },
+      {
+        "$id": "48",
+        "RenderingSkip": 0,
+        "InGameScreen": true,
+        "IdleScreen": true,
+        "PitScreen": true,
+        "ScreenScript": {
+          "$id": "49",
+          "Interpreter": 1
+        },
+        "BackgroundColor": "#00FFFFFF",
+        "IsSelected": false,
+        "Items": {
+          "$id": "50",
+          "$values": [
+            {
               "$id": "51",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
               "Repetitions": 0.0,
               "RepeatLeftOffset": 0.0,
               "RepeatTopOffset": 30.0,
-              "Height": 20.0,
+              "Height": 22.0,
               "Width": 54.0,
               "BackgroundColor": "#00FFFFFF",
               "BlurRadius": 0.0,
@@ -585,7 +573,7 @@
                     "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
                     "IsFreezed": true,
                     "IsSelected": false,
-                    "Name": "SessionBestLastLapDelta XX",
+                    "Name": "AllTimeBestLiveDelta",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
@@ -595,61 +583,37 @@
                         "FormatString": "0.00",
                         "Formula": {
                           "$id": "60",
-                          "Expression": "format([PersistantTrackerPlugin.SessionBestLastLapDelta], '0.00', 1)"
+                          "Interpreter": 1,
+                          "Expression": "return SKSH_getDelta('PersistantTrackerPlugin.AllTimeBest', 'PersistantTrackerPlugin.AllTimeBestLiveDeltaSeconds', '-.--');\r\n"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Text"
                       },
-                      "Visible": {
+                      "TextColor": {
                         "$id": "61",
                         "Formula": {
                           "$id": "62",
-                          "Expression": "abs([PersistantTrackerPlugin.SessionBestLastLapDelta]) < 10"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      },
-                      "TextColor": {
-                        "$id": "63",
-                        "Formula": {
-                          "$id": "64",
-                          "Expression": "[PersistantTrackerPlugin.SessionBestLastLapDelta]"
+                          "Interpreter": 1,
+                          "Expression": "var delta = SKSH_getDelta('PersistantTrackerPlugin.AllTimeBest', 'PersistantTrackerPlugin.AllTimeBestLiveDeltaSeconds', 0);\r\nreturn SKSH_getGradient2(liveDeltaColorValues, -1, 1, delta);\r\n"
                         },
                         "StartColor": "#FF2BFF00",
                         "EnableMiddleColor": true,
                         "MiddleColor": "#FFDBDBDB",
                         "MiddleColorValue": 0.0,
                         "EndColor": "#FFFF2B00",
-                        "StartColorValue": -0.01,
-                        "EndColorValue": 0.01,
+                        "StartColorValue": -1.0,
+                        "EndColorValue": 1.0,
                         "Mode": 4,
                         "TargetPropertyName": "TextColor"
                       }
                     }
                   },
                   {
-                    "$id": "65",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Normal",
-                    "FontSize": 16.0,
-                    "Text": "-.-",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
+                    "$id": "63",
+                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                    "Image": "delta_good",
+                    "AutoSize": false,
+                    "AutoSizeScale": 1.0,
                     "Rotation": 0.0,
                     "UseRotation": false,
                     "CanResize": true,
@@ -657,7 +621,7 @@
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "66",
+                      "$id": "64",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -668,14 +632,14 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "67"
+                        "$id": "65"
                       }
                     },
-                    "Height": 20.0,
+                    "Height": 22.0,
                     "Left": 0.0,
                     "Opacity": 100.0,
                     "Top": 0.0,
-                    "Visible": false,
+                    "Visible": true,
                     "BlinkDelay": 250.0,
                     "BlinkEnabled": false,
                     "Width": 54.0,
@@ -684,48 +648,83 @@
                     "BorderLeft": 0,
                     "BorderRight": 0,
                     "BorderTop": 0,
-                    "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
+                    "Id": "dcd0e318-11b3-473a-90c9-9be0e6c6734e",
                     "IsFreezed": true,
                     "IsSelected": false,
-                    "Name": "SessionBestLastLapDelta X",
+                    "Name": "Good",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "68",
-                      "Text": {
-                        "$id": "69",
-                        "FormatString": "0.0",
-                        "Formula": {
-                          "$id": "70",
-                          "Expression": "format([PersistantTrackerPlugin.SessionBestLastLapDelta], '0.0', 1)"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      },
+                      "$id": "66",
                       "Visible": {
-                        "$id": "71",
+                        "$id": "67",
                         "Formula": {
-                          "$id": "72",
-                          "Expression": "abs([PersistantTrackerPlugin.SessionBestLastLapDelta]) >= 10"
+                          "$id": "68",
+                          "Interpreter": 1,
+                          "Expression": "return SKSH_showPBtrend() < 0;\r\n"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Visible"
-                      },
-                      "TextColor": {
+                      }
+                    }
+                  },
+                  {
+                    "$id": "69",
+                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+                    "Image": "delta_bad",
+                    "AutoSize": false,
+                    "AutoSizeScale": 1.0,
+                    "Rotation": 0.0,
+                    "UseRotation": false,
+                    "CanResize": true,
+                    "BackgroundColor": "#00FFFFFF",
+                    "BlurRadius": 0.0,
+                    "EnableBlur": false,
+                    "BorderStyle": {
+                      "$id": "70",
+                      "BorderColor": "#FFFFFFFF",
+                      "BorderTop": 0,
+                      "BorderBottom": 0,
+                      "BorderLeft": 0,
+                      "BorderRight": 0,
+                      "RadiusTopLeft": 0,
+                      "RadiusTopRight": 0,
+                      "RadiusBottomLeft": 0,
+                      "RadiusBottomRight": 0,
+                      "Bindings": {
+                        "$id": "71"
+                      }
+                    },
+                    "Height": 22.0,
+                    "Left": 0.0,
+                    "Opacity": 100.0,
+                    "Top": 0.0,
+                    "Visible": true,
+                    "BlinkDelay": 250.0,
+                    "BlinkEnabled": false,
+                    "Width": 54.0,
+                    "BorderBottom": 0,
+                    "BorderColor": "#FFFFFFFF",
+                    "BorderLeft": 0,
+                    "BorderRight": 0,
+                    "BorderTop": 0,
+                    "Id": "dcd0e318-11b3-473a-90c9-9be0e6c6734e",
+                    "IsFreezed": true,
+                    "IsSelected": true,
+                    "Name": "Bad",
+                    "RenderingSkip": 0,
+                    "Sid": 0,
+                    "Bindings": {
+                      "$id": "72",
+                      "Visible": {
                         "$id": "73",
                         "Formula": {
                           "$id": "74",
-                          "Expression": "[PersistantTrackerPlugin.SessionBestLastLapDelta]"
+                          "Interpreter": 1,
+                          "Expression": "return SKSH_showPBtrend() > 0;\r\n"
                         },
-                        "StartColor": "#FF2BFF00",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FFDBDBDB",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -0.01,
-                        "EndColorValue": 0.01,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
+                        "Mode": 2,
+                        "TargetPropertyName": "Visible"
                       }
                     }
                   }
@@ -737,7 +736,7 @@
               "Left": 0.0,
               "Opacity": 100.0,
               "Top": 0.0,
-              "Visible": false,
+              "Visible": true,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
               "BorderBottom": 0,
@@ -745,9 +744,9 @@
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "47fe5008-463d-4bfb-9946-724ed6be8ca7",
+              "Id": "dd85962e-ce29-42a3-9460-910a2ea2db26",
               "IsSelected": false,
-              "Name": "Last Lap Delta for few secs (1)",
+              "Name": "AllTimeBestLiveDelta",
               "Sid": 0,
               "Bindings": {
                 "$id": "75",
@@ -756,7 +755,7 @@
                   "Formula": {
                     "$id": "77",
                     "Interpreter": 1,
-                    "Expression": "return showLastLapDelta('PersistantTrackerPlugin.SessionBest') == 1;"
+                    "Expression": "return !SKSH_showLastLapDelta('PersistantTrackerPlugin.AllTimeBest');"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -765,81 +764,6 @@
             },
             {
               "$id": "78",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "Image": "selection_indicator",
-              "AutoSize": false,
-              "AutoSizeScale": 1.0,
-              "Rotation": 0.0,
-              "UseRotation": false,
-              "CanResize": true,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "EnableBlur": false,
-              "BorderStyle": {
-                "$id": "79",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "80"
-                }
-              },
-              "Height": 1.0,
-              "Left": 0.0,
-              "Opacity": 100.0,
-              "Top": 21.0,
-              "Visible": true,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "Width": 16.0,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "ef2b33c4-4ed4-43d2-88b1-d5a1da426200",
-              "IsFreezed": true,
-              "IsSelected": false,
-              "Name": "Page 1/4",
-              "RenderingSkip": 0,
-              "Sid": 0,
-              "Bindings": {
-                "$id": "81"
-              }
-            }
-          ]
-        },
-        "Id": "cb8f1867-7d6e-44c0-8437-0943e4f1cd46",
-        "Name": "Screen1",
-        "Sid": 0,
-        "Bindings": {
-          "$id": "82"
-        }
-      },
-      {
-        "$id": "83",
-        "RenderingSkip": 0,
-        "IsFreezed": false,
-        "InGameScreen": true,
-        "IdleScreen": true,
-        "PitScreen": true,
-        "ScreenScript": {
-          "$id": "84",
-          "Interpreter": 1
-        },
-        "BackgroundColor": "#00FFFFFF",
-        "IsSelected": true,
-        "Items": {
-          "$id": "85",
-          "$values": [
-            {
-              "$id": "86",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "IsTextItem": true,
               "ShadowDepth": 0,
@@ -868,7 +792,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "87",
+                "$id": "79",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -879,14 +803,14 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "88"
+                  "$id": "80"
                 }
               },
               "Height": 20.0,
               "Left": 0.0,
               "Opacity": 100.0,
               "Top": 0.0,
-              "Visible": true,
+              "Visible": false,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
               "Width": 54.0,
@@ -898,687 +822,51 @@
               "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
               "IsFreezed": true,
               "IsSelected": false,
-              "Name": "Invalid Lap Delta (-1)",
+              "Name": "AllTimeBestLastLapDelta",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "89",
-                "Visible": {
-                  "$id": "90",
+                "$id": "81",
+                "Text": {
+                  "$id": "82",
+                  "FormatString": "0.00",
                   "Formula": {
-                    "$id": "91",
+                    "$id": "83",
+                    "Expression": "format([PersistantTrackerPlugin.AllTimeBestLastLapDelta], '0.00', 1)\r\n"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "$id": "84",
+                  "Formula": {
+                    "$id": "85",
                     "Interpreter": 1,
-                    "Expression": "return showLastLapDelta('PersistantTrackerPlugin.AllTimeBest') == -1;"
+                    "Expression": "return SKSH_showLastLapDelta('PersistantTrackerPlugin.AllTimeBest');"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
+                },
+                "TextColor": {
+                  "$id": "86",
+                  "Formula": {
+                    "$id": "87",
+                    "Expression": "[PersistantTrackerPlugin.AllTimeBestLastLapDelta]"
+                  },
+                  "StartColor": "#FF2BFF00",
+                  "EnableMiddleColor": true,
+                  "MiddleColor": "#FFDBDBDB",
+                  "MiddleColorValue": 0.0,
+                  "EndColor": "#FFFF2B00",
+                  "StartColorValue": -0.01,
+                  "EndColorValue": 0.01,
+                  "Mode": 4,
+                  "TargetPropertyName": "TextColor"
                 }
               }
             },
             {
-              "$id": "92",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "Repetitions": 0.0,
-              "RepeatLeftOffset": 0.0,
-              "RepeatTopOffset": 30.0,
-              "Height": 22.0,
-              "Width": 54.0,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "Rotation": 0.0,
-              "BorderStyle": {
-                "$id": "93",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "94"
-                }
-              },
-              "RenderingSkip": 0,
-              "ShowSelection": false,
-              "CanResize": false,
-              "Childrens": {
-                "$id": "95",
-                "$values": [
-                  {
-                    "$id": "96",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Normal",
-                    "FontSize": 16.0,
-                    "Text": "-.--",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "97",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "98"
-                      }
-                    },
-                    "Height": 20.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 54.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "AllTimeBestDelta XX",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "99",
-                      "Text": {
-                        "$id": "100",
-                        "FormatString": "0.00",
-                        "Formula": {
-                          "$id": "101",
-                          "Expression": "format([PersistantTrackerPlugin.AllTimeBestLiveDeltaSeconds], '0.00', 1)\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      },
-                      "Visible": {
-                        "$id": "102",
-                        "Formula": {
-                          "$id": "103",
-                          "Expression": "abs([PersistantTrackerPlugin.AllTimeBestLiveDeltaSeconds]) < 10"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      },
-                      "TextColor": {
-                        "$id": "104",
-                        "Formula": {
-                          "$id": "105",
-                          "Interpreter": 1,
-                          "Expression": "var time = $prop('PersistantTrackerPlugin.AllTimeBestLiveDeltaSeconds');\r\nreturn handleGradient2(liveDeltaColorValues, -1, 1, time);\r\n"
-                        },
-                        "StartColor": "#FF2BFF00",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FFDBDBDB",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "106",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Normal",
-                    "FontSize": 16.0,
-                    "Text": "-.-",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "107",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "108"
-                      }
-                    },
-                    "Height": 20.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": false,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 54.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "AllTimeBestDelta X",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "109",
-                      "Text": {
-                        "$id": "110",
-                        "FormatString": "0.0",
-                        "Formula": {
-                          "$id": "111",
-                          "Expression": "format([PersistantTrackerPlugin.AllTimeBestLiveDeltaSeconds], '0.0', 1)"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      },
-                      "Visible": {
-                        "$id": "112",
-                        "Formula": {
-                          "$id": "113",
-                          "Expression": "abs([PersistantTrackerPlugin.AllTimeBestLiveDeltaSeconds]) >= 10"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      },
-                      "TextColor": {
-                        "$id": "114",
-                        "Formula": {
-                          "$id": "115",
-                          "Interpreter": 1,
-                          "Expression": "var time = $prop('PersistantTrackerPlugin.AllTimeBestLiveDeltaSeconds');\r\nreturn handleGradient2(liveDeltaColorValues, -1, 1, time);\r\n"
-                        },
-                        "StartColor": "#FF2BFF00",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FFDBDBDB",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -1.0,
-                        "EndColorValue": 1.0,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "116",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-                    "Image": "delta_bad",
-                    "AutoSize": false,
-                    "AutoSizeScale": 1.0,
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "117",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "118"
-                      }
-                    },
-                    "Height": 22.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 54.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "dcd0e318-11b3-473a-90c9-9be0e6c6734e",
-                    "IsFreezed": false,
-                    "IsSelected": true,
-                    "Name": "Bad",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "119",
-                      "Visible": {
-                        "$id": "120",
-                        "Formula": {
-                          "$id": "121",
-                          "Interpreter": 1,
-                          "Expression": "return PBtrend() > 0;"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "122",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-                    "Image": "delta_good",
-                    "AutoSize": false,
-                    "AutoSizeScale": 1.0,
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "123",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "124"
-                      }
-                    },
-                    "Height": 22.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 54.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "dcd0e318-11b3-473a-90c9-9be0e6c6734e",
-                    "IsFreezed": false,
-                    "IsSelected": false,
-                    "Name": "Good",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "125",
-                      "Visible": {
-                        "$id": "126",
-                        "Formula": {
-                          "$id": "127",
-                          "Interpreter": 1,
-                          "Expression": "return PBtrend() < 0;"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      }
-                    }
-                  }
-                ]
-              },
-              "Group": true,
-              "UseRotation": false,
-              "EnableBlur": false,
-              "Left": 0.0,
-              "Opacity": 100.0,
-              "Top": 0.0,
-              "Visible": false,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "02bbb891-c7c1-4619-af85-f057319d48f1",
-              "IsSelected": false,
-              "Name": "Live Delta (0)",
-              "Sid": 0,
-              "Bindings": {
-                "$id": "128",
-                "Visible": {
-                  "$id": "129",
-                  "Formula": {
-                    "$id": "130",
-                    "Interpreter": 1,
-                    "Expression": "return showLastLapDelta('PersistantTrackerPlugin.AllTimeBest') == 0;"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "131",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "Repetitions": 0.0,
-              "RepeatLeftOffset": 0.0,
-              "RepeatTopOffset": 30.0,
-              "Height": 20.0,
-              "Width": 54.0,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "Rotation": 0.0,
-              "BorderStyle": {
-                "$id": "132",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "133"
-                }
-              },
-              "RenderingSkip": 0,
-              "ShowSelection": true,
-              "CanResize": false,
-              "Childrens": {
-                "$id": "134",
-                "$values": [
-                  {
-                    "$id": "135",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Normal",
-                    "FontSize": 16.0,
-                    "Text": "-.--",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "136",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "137"
-                      }
-                    },
-                    "Height": 20.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": true,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 54.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "AllTimeBestLastLapDelta XX",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "138",
-                      "Text": {
-                        "$id": "139",
-                        "FormatString": "0.00",
-                        "Formula": {
-                          "$id": "140",
-                          "Expression": "format([PersistantTrackerPlugin.AllTimeBestLastLapDelta], '0.00', 1)\r\n"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      },
-                      "Visible": {
-                        "$id": "141",
-                        "Formula": {
-                          "$id": "142",
-                          "Expression": "abs([PersistantTrackerPlugin.AllTimeBestLastLapDelta]) < 10"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      },
-                      "TextColor": {
-                        "$id": "143",
-                        "Formula": {
-                          "$id": "144",
-                          "Expression": "[PersistantTrackerPlugin.AllTimeBestLastLapDelta]"
-                        },
-                        "StartColor": "#FF2BFF00",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FFDBDBDB",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -0.01,
-                        "EndColorValue": 0.01,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "145",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                    "IsTextItem": true,
-                    "ShadowDepth": 0,
-                    "ShadowBlur": 0,
-                    "ShadowDirection": 315,
-                    "ShadowColor": "#FF808080",
-                    "Font": "Roboto",
-                    "FontWeight": "Normal",
-                    "TextWrapping": 1,
-                    "FontStyle": "Normal",
-                    "FontSize": 16.0,
-                    "Text": "-.-",
-                    "TextColor": "#FFDBDBDB",
-                    "HorizontalAlignment": 1,
-                    "VerticalAlignment": 1,
-                    "UseMonospacedText": false,
-                    "CharWidth": 40.0,
-                    "SpecialCharsWidth": 20.0,
-                    "SpecialChars": ".,:;",
-                    "TextMask": "",
-                    "TextMaskColor": "#FF808080",
-                    "Rotation": 0.0,
-                    "UseRotation": false,
-                    "CanResize": true,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "EnableBlur": false,
-                    "BorderStyle": {
-                      "$id": "146",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "147"
-                      }
-                    },
-                    "Height": 20.0,
-                    "Left": 0.0,
-                    "Opacity": 100.0,
-                    "Top": 0.0,
-                    "Visible": false,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
-                    "Width": 54.0,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
-                    "IsFreezed": true,
-                    "IsSelected": false,
-                    "Name": "AllTimeBestLastLapDelta X",
-                    "RenderingSkip": 0,
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "148",
-                      "Text": {
-                        "$id": "149",
-                        "FormatString": "0.0",
-                        "Formula": {
-                          "$id": "150",
-                          "Expression": "format([PersistantTrackerPlugin.AllTimeBestLastLapDelta], '0.0', 1)"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Text"
-                      },
-                      "Visible": {
-                        "$id": "151",
-                        "Formula": {
-                          "$id": "152",
-                          "Expression": "abs([PersistantTrackerPlugin.AllTimeBestLastLapDelta]) >= 10"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      },
-                      "TextColor": {
-                        "$id": "153",
-                        "Formula": {
-                          "$id": "154",
-                          "Expression": "[PersistantTrackerPlugin.AllTimeBestLastLapDelta]"
-                        },
-                        "StartColor": "#FF2BFF00",
-                        "EnableMiddleColor": true,
-                        "MiddleColor": "#FFDBDBDB",
-                        "MiddleColorValue": 0.0,
-                        "EndColor": "#FFFF2B00",
-                        "StartColorValue": -0.01,
-                        "EndColorValue": 0.01,
-                        "Mode": 4,
-                        "TargetPropertyName": "TextColor"
-                      }
-                    }
-                  }
-                ]
-              },
-              "Group": true,
-              "UseRotation": false,
-              "EnableBlur": false,
-              "Left": 0.0,
-              "Opacity": 100.0,
-              "Top": 0.0,
-              "Visible": false,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "47fe5008-463d-4bfb-9946-724ed6be8ca7",
-              "IsSelected": false,
-              "Name": "Last Lap Delta for few secs (1)",
-              "Sid": 0,
-              "Bindings": {
-                "$id": "155",
-                "Visible": {
-                  "$id": "156",
-                  "Formula": {
-                    "$id": "157",
-                    "Interpreter": 1,
-                    "Expression": "return showLastLapDelta('PersistantTrackerPlugin.AllTimeBest') == 1;"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "158",
+              "$id": "88",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
               "Image": "selection_indicator",
               "AutoSize": false,
@@ -1590,7 +878,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "159",
+                "$id": "89",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1601,7 +889,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "160"
+                  "$id": "90"
                 }
               },
               "Height": 1.0,
@@ -1624,7 +912,7 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "161"
+                "$id": "91"
               }
             }
           ]
@@ -1633,27 +921,26 @@
         "Name": "Screen2",
         "Sid": 0,
         "Bindings": {
-          "$id": "162"
+          "$id": "92"
         }
       },
       {
-        "$id": "163",
+        "$id": "93",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
         "ScreenScript": {
-          "$id": "164",
+          "$id": "94",
           "Interpreter": 1
         },
         "BackgroundColor": "#00FFFFFF",
         "IsSelected": false,
         "Items": {
-          "$id": "165",
+          "$id": "95",
           "$values": [
             {
-              "$id": "166",
+              "$id": "96",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "IsTextItem": true,
               "ShadowDepth": 0,
@@ -1682,7 +969,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "167",
+                "$id": "97",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1693,83 +980,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "168"
-                }
-              },
-              "Height": 20.0,
-              "Left": 0.0,
-              "Opacity": 100.0,
-              "Top": 0.0,
-              "Visible": true,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "Width": 54.0,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
-              "IsFreezed": false,
-              "IsSelected": false,
-              "Name": "Invalid Gap Front",
-              "RenderingSkip": 0,
-              "Sid": 0,
-              "Bindings": {
-                "$id": "169",
-                "Visible": {
-                  "$id": "170",
-                  "Formula": {
-                    "$id": "171",
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_00_Position] <= 0"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "172",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "IsTextItem": true,
-              "ShadowDepth": 0,
-              "ShadowBlur": 0,
-              "ShadowDirection": 315,
-              "ShadowColor": "#FF808080",
-              "Font": "Roboto",
-              "FontWeight": "Normal",
-              "TextWrapping": 1,
-              "FontStyle": "Normal",
-              "FontSize": 16.0,
-              "Text": "-.-",
-              "TextColor": "#FFDBDBDB",
-              "HorizontalAlignment": 1,
-              "VerticalAlignment": 1,
-              "UseMonospacedText": false,
-              "CharWidth": 40.0,
-              "SpecialCharsWidth": 20.0,
-              "SpecialChars": ".,:;",
-              "TextMask": "",
-              "TextMaskColor": "#FF808080",
-              "Rotation": 0.0,
-              "UseRotation": false,
-              "CanResize": true,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "EnableBlur": false,
-              "BorderStyle": {
-                "$id": "173",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "174"
+                  "$id": "98"
                 }
               },
               "Height": 20.0,
@@ -1792,22 +1003,14 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "175",
-                "Visible": {
-                  "$id": "176",
-                  "Formula": {
-                    "$id": "177",
-                    "Expression": "[PersistantTrackerPlugin.DriverAhead_00_Position] > 0"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                },
+                "$id": "99",
                 "Text": {
-                  "$id": "178",
+                  "$id": "100",
                   "FormatString": "0.0",
                   "Formula": {
-                    "$id": "179",
-                    "Expression": "format([PersistantTrackerPlugin.DriverAhead_00_Gap] * -1, '0.0', 1)"
+                    "$id": "101",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getGap('PersistantTrackerPlugin.DriverAhead_00');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -1815,7 +1018,7 @@
               }
             },
             {
-              "$id": "180",
+              "$id": "102",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
               "Image": "selection_indicator",
               "AutoSize": false,
@@ -1827,7 +1030,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "181",
+                "$id": "103",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1838,7 +1041,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "182"
+                  "$id": "104"
                 }
               },
               "Height": 1.0,
@@ -1861,7 +1064,7 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "183"
+                "$id": "105"
               }
             }
           ]
@@ -1870,27 +1073,26 @@
         "Name": "Screen3",
         "Sid": 0,
         "Bindings": {
-          "$id": "184"
+          "$id": "106"
         }
       },
       {
-        "$id": "185",
+        "$id": "107",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
         "ScreenScript": {
-          "$id": "186",
+          "$id": "108",
           "Interpreter": 1
         },
         "BackgroundColor": "#00FFFFFF",
-        "IsSelected": false,
+        "IsSelected": true,
         "Items": {
-          "$id": "187",
+          "$id": "109",
           "$values": [
             {
-              "$id": "188",
+              "$id": "110",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "IsTextItem": true,
               "ShadowDepth": 0,
@@ -1919,7 +1121,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "189",
+                "$id": "111",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1930,7 +1132,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "190"
+                  "$id": "112"
                 }
               },
               "Height": 20.0,
@@ -1948,103 +1150,19 @@
               "BorderTop": 0,
               "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
               "IsFreezed": false,
-              "IsSelected": false,
-              "Name": "Invalid Gap Back",
-              "RenderingSkip": 0,
-              "Sid": 0,
-              "Bindings": {
-                "$id": "191",
-                "Visible": {
-                  "$id": "192",
-                  "Formula": {
-                    "$id": "193",
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_00_Position] <= 0"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "194",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-              "IsTextItem": true,
-              "ShadowDepth": 0,
-              "ShadowBlur": 0,
-              "ShadowDirection": 315,
-              "ShadowColor": "#FF808080",
-              "Font": "Roboto",
-              "FontWeight": "Normal",
-              "TextWrapping": 1,
-              "FontStyle": "Normal",
-              "FontSize": 16.0,
-              "Text": "-.-",
-              "TextColor": "#FFDBDBDB",
-              "HorizontalAlignment": 1,
-              "VerticalAlignment": 1,
-              "UseMonospacedText": false,
-              "CharWidth": 40.0,
-              "SpecialCharsWidth": 20.0,
-              "SpecialChars": ".,:;",
-              "TextMask": "",
-              "TextMaskColor": "#FF808080",
-              "Rotation": 0.0,
-              "UseRotation": false,
-              "CanResize": true,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "EnableBlur": false,
-              "BorderStyle": {
-                "$id": "195",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "196"
-                }
-              },
-              "Height": 20.0,
-              "Left": 0.0,
-              "Opacity": 100.0,
-              "Top": 0.0,
-              "Visible": true,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "Width": 54.0,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "5aa454f5-6249-4cf9-a152-c5d2434f71ec",
-              "IsFreezed": false,
-              "IsSelected": false,
+              "IsSelected": true,
               "Name": "Gap Back",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "197",
-                "Visible": {
-                  "$id": "198",
-                  "Formula": {
-                    "$id": "199",
-                    "Expression": "[PersistantTrackerPlugin.DriverBehind_00_Position] > 0"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                },
+                "$id": "113",
                 "Text": {
-                  "$id": "200",
+                  "$id": "114",
                   "FormatString": "0.0",
                   "Formula": {
-                    "$id": "201",
-                    "Expression": "format([PersistantTrackerPlugin.DriverBehind_00_Gap] * -1, '0.0', 1)\r\n"
+                    "$id": "115",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getGap('PersistantTrackerPlugin.DriverBehind_00');\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
@@ -2052,7 +1170,7 @@
               }
             },
             {
-              "$id": "202",
+              "$id": "116",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
               "Image": "selection_indicator",
               "AutoSize": false,
@@ -2064,7 +1182,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "203",
+                "$id": "117",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -2075,7 +1193,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "204"
+                  "$id": "118"
                 }
               },
               "Height": 1.0,
@@ -2098,7 +1216,7 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "205"
+                "$id": "119"
               }
             }
           ]
@@ -2107,7 +1225,7 @@
         "Name": "Screen4",
         "Sid": 0,
         "Bindings": {
-          "$id": "206"
+          "$id": "120"
         }
       }
     ]
@@ -2117,27 +1235,27 @@
   "ShowBoundingRectangles": false,
   "GridSize": 10,
   "SelectedScreen": {
-    "$ref": "83"
+    "$ref": "107"
   },
   "Images": {
-    "$id": "207",
+    "$id": "121",
     "$values": [
       {
-        "$id": "208",
+        "$id": "122",
         "Name": "selection_indicator",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "209",
+        "$id": "123",
         "Name": "delta_bad",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "210",
+        "$id": "124",
         "Name": "delta_good",
         "Extension": ".png",
         "Optimized": true,
@@ -2146,10 +1264,10 @@
     ]
   },
   "Metadata": {
-    "$id": "211",
+    "$id": "125",
     "ScreenCount": 4.0,
     "InGameScreensIndexs": {
-      "$id": "212",
+      "$id": "126",
       "$values": [
         0,
         1,
@@ -2158,7 +1276,7 @@
       ]
     },
     "IdleScreensIndexs": {
-      "$id": "213",
+      "$id": "127",
       "$values": [
         0,
         1,
@@ -2175,7 +1293,7 @@
     "MetadataVersion": 2.0,
     "EnableOnDashboardMessaging": true,
     "PitScreensIndexs": {
-      "$id": "214",
+      "$id": "128",
       "$values": [
         0,
         1,

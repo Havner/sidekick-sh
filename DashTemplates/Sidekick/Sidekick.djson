@@ -1,9 +1,9 @@
 {
   "$id": "1",
   "Version": 2,
-  "Id": "d6387335-6d38-475d-880a-f0dc036fc898",
+  "Id": "badde5bf-e78c-4359-855f-e5b132cd37f9",
   "BaseHeight": 54,
-  "BaseWidth": 430,
+  "BaseWidth": 416,
   "BackgroundColor": "#FF000000",
   "Screens": {
     "$id": "2",
@@ -11,7 +11,6 @@
       {
         "$id": "3",
         "RenderingSkip": 0,
-        "IsFreezed": false,
         "InGameScreen": true,
         "IdleScreen": true,
         "PitScreen": true,
@@ -86,10 +85,31 @@
             },
             {
               "$id": "12",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "Image": "border_yellow",
-              "AutoSize": false,
-              "AutoSizeScale": 1.0,
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GradientItem, SimHub.Plugins",
+              "Color": {
+                "RadialGradientBrush": {
+                  "@Center": "0.5,0.5",
+                  "@RadiusX": "0.5",
+                  "@RadiusY": "0.5",
+                  "@GradientOrigin": "0.5,0.5",
+                  "@MappingMode": "RelativeToBoundingBox",
+                  "@SpreadMethod": "Pad",
+                  "@Opacity": "1",
+                  "@xmlns": "http://schemas.microsoft.com/winfx/2006/xaml/presentation",
+                  "RadialGradientBrush.GradientStops": {
+                    "GradientStop": [
+                      {
+                        "@Color": "#802BFF00",
+                        "@Offset": "0"
+                      },
+                      {
+                        "@Color": "#00FFFFFF",
+                        "@Offset": "1"
+                      }
+                    ]
+                  }
+                }
+              },
               "Rotation": 0.0,
               "UseRotation": false,
               "CanResize": true,
@@ -111,23 +131,23 @@
                   "$id": "14"
                 }
               },
-              "Height": 54.0,
-              "Left": 0.0,
+              "Height": 35.0,
+              "Left": 10.0,
               "Opacity": 100.0,
-              "Top": 0.0,
-              "Visible": false,
+              "Top": 10.0,
+              "Visible": true,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
-              "Width": 416.0,
+              "Width": 50.0,
               "BorderBottom": 0,
               "BorderColor": "#FFFFFFFF",
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "4f86b0f3-ae64-450c-aaca-88c35d28d53c",
+              "Id": "8e3536ca-9e0c-448e-94bf-0c2d254baa95",
               "IsFreezed": true,
               "IsSelected": false,
-              "Name": "RPM yellow",
+              "Name": "Headlights",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
@@ -136,7 +156,8 @@
                   "$id": "16",
                   "Formula": {
                     "$id": "17",
-                    "Expression": "[CarSettings_RPMShiftLight2] > 0 and not [CarSettings_RPMRedLineReached]"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_showHeadlights();\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -145,10 +166,31 @@
             },
             {
               "$id": "18",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "Image": "border_red",
-              "AutoSize": false,
-              "AutoSizeScale": 1.0,
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GradientItem, SimHub.Plugins",
+              "Color": {
+                "RadialGradientBrush": {
+                  "@Center": "0.5,0.5",
+                  "@RadiusX": "0.5",
+                  "@RadiusY": "0.5",
+                  "@GradientOrigin": "0.5,0.5",
+                  "@MappingMode": "RelativeToBoundingBox",
+                  "@SpreadMethod": "Pad",
+                  "@Opacity": "1",
+                  "@xmlns": "http://schemas.microsoft.com/winfx/2006/xaml/presentation",
+                  "RadialGradientBrush.GradientStops": {
+                    "GradientStop": [
+                      {
+                        "@Color": "#800082FF",
+                        "@Offset": "0"
+                      },
+                      {
+                        "@Color": "#00FFFFFF",
+                        "@Offset": "1"
+                      }
+                    ]
+                  }
+                }
+              },
               "Rotation": 0.0,
               "UseRotation": false,
               "CanResize": true,
@@ -170,23 +212,23 @@
                   "$id": "20"
                 }
               },
-              "Height": 54.0,
-              "Left": 0.0,
+              "Height": 35.0,
+              "Left": 10.0,
               "Opacity": 100.0,
-              "Top": 0.0,
+              "Top": 10.0,
               "Visible": false,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
-              "Width": 416.0,
+              "Width": 50.0,
               "BorderBottom": 0,
               "BorderColor": "#FFFFFFFF",
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "ed80fed6-0ad1-47db-bc65-05a4490868ec",
+              "Id": "8e3536ca-9e0c-448e-94bf-0c2d254baa95",
               "IsFreezed": true,
               "IsSelected": false,
-              "Name": "RPM red",
+              "Name": "HighBeams",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
@@ -195,7 +237,8 @@
                   "$id": "22",
                   "Formula": {
                     "$id": "23",
-                    "Expression": "[CarSettings_RPMRedLineReached]"
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_showHighBeams();\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -205,7 +248,7 @@
             {
               "$id": "24",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "Image": "drs_available",
+              "Image": "settings",
               "AutoSize": false,
               "AutoSizeScale": 1.0,
               "Rotation": 0.0,
@@ -230,152 +273,152 @@
                 }
               },
               "Height": 46.0,
-              "Left": 410.0,
-              "Opacity": 100.0,
-              "Top": 4.0,
-              "Visible": false,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "Width": 20.0,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "66dc06f2-699b-4ac7-9707-8c329604ef8a",
-              "IsFreezed": true,
-              "IsSelected": false,
-              "Name": "DRS avail",
-              "RenderingSkip": 0,
-              "Sid": 0,
-              "Bindings": {
-                "$id": "27",
-                "Visible": {
-                  "$id": "28",
-                  "Formula": {
-                    "$id": "29",
-                    "Interpreter": 1,
-                    "Expression": "return showDRSAvail();"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "30",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "Image": "drs_enabled",
-              "AutoSize": false,
-              "AutoSizeScale": 1.0,
-              "Rotation": 0.0,
-              "UseRotation": false,
-              "CanResize": true,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "EnableBlur": false,
-              "BorderStyle": {
-                "$id": "31",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "32"
-                }
-              },
-              "Height": 46.0,
-              "Left": 410.0,
-              "Opacity": 100.0,
-              "Top": 4.0,
-              "Visible": false,
-              "BlinkDelay": 250.0,
-              "BlinkEnabled": false,
-              "Width": 20.0,
-              "BorderBottom": 0,
-              "BorderColor": "#FFFFFFFF",
-              "BorderLeft": 0,
-              "BorderRight": 0,
-              "BorderTop": 0,
-              "Id": "edccf177-d29c-4b39-a69a-37551eba1b61",
-              "IsFreezed": true,
-              "IsSelected": false,
-              "Name": "DRS enabled",
-              "RenderingSkip": 0,
-              "Sid": 0,
-              "Bindings": {
-                "$id": "33",
-                "Visible": {
-                  "$id": "34",
-                  "Formula": {
-                    "$id": "35",
-                    "Interpreter": 1,
-                    "Expression": "return showDRSEnabled();\r\n"
-                  },
-                  "Mode": 2,
-                  "TargetPropertyName": "Visible"
-                }
-              }
-            },
-            {
-              "$id": "36",
-              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "Image": "separators",
-              "AutoSize": false,
-              "AutoSizeScale": 1.0,
-              "Rotation": 0.0,
-              "UseRotation": false,
-              "CanResize": true,
-              "BackgroundColor": "#00FFFFFF",
-              "BlurRadius": 0.0,
-              "EnableBlur": false,
-              "BorderStyle": {
-                "$id": "37",
-                "BorderColor": "#FFFFFFFF",
-                "BorderTop": 0,
-                "BorderBottom": 0,
-                "BorderLeft": 0,
-                "BorderRight": 0,
-                "RadiusTopLeft": 0,
-                "RadiusTopRight": 0,
-                "RadiusBottomLeft": 0,
-                "RadiusBottomRight": 0,
-                "Bindings": {
-                  "$id": "38"
-                }
-              },
-              "Height": 50.0,
-              "Left": -1.0,
+              "Left": 401.0,
               "Opacity": 100.0,
               "Top": 4.0,
               "Visible": true,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
-              "Width": 381.0,
+              "Width": 14.0,
               "BorderBottom": 0,
               "BorderColor": "#FFFFFFFF",
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "5ee99346-b946-434c-a81a-87a0fc616837",
+              "Id": "65fe04a1-3c4e-48f3-a121-98f26b87097e",
               "IsFreezed": true,
               "IsSelected": false,
-              "Name": "Separators",
+              "Name": "Settings (NOP)",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "39"
+                "$id": "27"
+              }
+            },
+            {
+              "$id": "28",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "Image": "border_green",
+              "AutoSize": false,
+              "AutoSizeScale": 1.0,
+              "Rotation": 0.0,
+              "UseRotation": false,
+              "CanResize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "BlurRadius": 0.0,
+              "EnableBlur": false,
+              "BorderStyle": {
+                "$id": "29",
+                "BorderColor": "#FFFFFFFF",
+                "BorderTop": 0,
+                "BorderBottom": 0,
+                "BorderLeft": 0,
+                "BorderRight": 0,
+                "RadiusTopLeft": 0,
+                "RadiusTopRight": 0,
+                "RadiusBottomLeft": 0,
+                "RadiusBottomRight": 0,
+                "Bindings": {
+                  "$id": "30"
+                }
+              },
+              "Height": 54.0,
+              "Left": 0.0,
+              "Opacity": 100.0,
+              "Top": 0.0,
+              "Visible": false,
+              "BlinkDelay": 250.0,
+              "BlinkEnabled": false,
+              "Width": 416.0,
+              "BorderBottom": 0,
+              "BorderColor": "#FFFFFFFF",
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderTop": 0,
+              "Id": "4f86b0f3-ae64-450c-aaca-88c35d28d53c",
+              "IsFreezed": true,
+              "IsSelected": false,
+              "Name": "RPM green",
+              "RenderingSkip": 0,
+              "Sid": 0,
+              "Bindings": {
+                "$id": "31",
+                "Visible": {
+                  "$id": "32",
+                  "Formula": {
+                    "$id": "33",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getShiftLight() == 1;"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              }
+            },
+            {
+              "$id": "34",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "Image": "border_yellow",
+              "AutoSize": false,
+              "AutoSizeScale": 1.0,
+              "Rotation": 0.0,
+              "UseRotation": false,
+              "CanResize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "BlurRadius": 0.0,
+              "EnableBlur": false,
+              "BorderStyle": {
+                "$id": "35",
+                "BorderColor": "#FFFFFFFF",
+                "BorderTop": 0,
+                "BorderBottom": 0,
+                "BorderLeft": 0,
+                "BorderRight": 0,
+                "RadiusTopLeft": 0,
+                "RadiusTopRight": 0,
+                "RadiusBottomLeft": 0,
+                "RadiusBottomRight": 0,
+                "Bindings": {
+                  "$id": "36"
+                }
+              },
+              "Height": 54.0,
+              "Left": 0.0,
+              "Opacity": 100.0,
+              "Top": 0.0,
+              "Visible": false,
+              "BlinkDelay": 250.0,
+              "BlinkEnabled": false,
+              "Width": 416.0,
+              "BorderBottom": 0,
+              "BorderColor": "#FFFFFFFF",
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderTop": 0,
+              "Id": "4f86b0f3-ae64-450c-aaca-88c35d28d53c",
+              "IsFreezed": true,
+              "IsSelected": false,
+              "Name": "RPM yellow",
+              "RenderingSkip": 0,
+              "Sid": 0,
+              "Bindings": {
+                "$id": "37",
+                "Visible": {
+                  "$id": "38",
+                  "Formula": {
+                    "$id": "39",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getShiftLight() == 2;"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
               }
             },
             {
               "$id": "40",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
-              "Image": "settings",
+              "Image": "border_red",
               "AutoSize": false,
               "AutoSizeScale": 1.0,
               "Rotation": 0.0,
@@ -399,31 +442,211 @@
                   "$id": "42"
                 }
               },
-              "Height": 46.0,
-              "Left": 401.0,
+              "Height": 54.0,
+              "Left": 0.0,
               "Opacity": 100.0,
-              "Top": 4.0,
-              "Visible": true,
+              "Top": 0.0,
+              "Visible": false,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
-              "Width": 14.0,
+              "Width": 416.0,
               "BorderBottom": 0,
               "BorderColor": "#FFFFFFFF",
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "65fe04a1-3c4e-48f3-a121-98f26b87097e",
+              "Id": "ed80fed6-0ad1-47db-bc65-05a4490868ec",
               "IsFreezed": true,
               "IsSelected": false,
-              "Name": "Settings (NOP)",
+              "Name": "RPM red",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "43"
+                "$id": "43",
+                "Visible": {
+                  "$id": "44",
+                  "Formula": {
+                    "$id": "45",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getShiftLight() == 3;"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
               }
             },
             {
-              "$id": "44",
+              "$id": "46",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "Image": "drs_available",
+              "AutoSize": false,
+              "AutoSizeScale": 1.0,
+              "Rotation": 0.0,
+              "UseRotation": false,
+              "CanResize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "BlurRadius": 0.0,
+              "EnableBlur": false,
+              "BorderStyle": {
+                "$id": "47",
+                "BorderColor": "#FFFFFFFF",
+                "BorderTop": 0,
+                "BorderBottom": 0,
+                "BorderLeft": 0,
+                "BorderRight": 0,
+                "RadiusTopLeft": 0,
+                "RadiusTopRight": 0,
+                "RadiusBottomLeft": 0,
+                "RadiusBottomRight": 0,
+                "Bindings": {
+                  "$id": "48"
+                }
+              },
+              "Height": 46.0,
+              "Left": 396.0,
+              "Opacity": 100.0,
+              "Top": 4.0,
+              "Visible": false,
+              "BlinkDelay": 250.0,
+              "BlinkEnabled": false,
+              "Width": 20.0,
+              "BorderBottom": 0,
+              "BorderColor": "#FFFFFFFF",
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderTop": 0,
+              "Id": "66dc06f2-699b-4ac7-9707-8c329604ef8a",
+              "IsFreezed": true,
+              "IsSelected": false,
+              "Name": "DRS avail",
+              "RenderingSkip": 0,
+              "Sid": 0,
+              "Bindings": {
+                "$id": "49",
+                "Visible": {
+                  "$id": "50",
+                  "Formula": {
+                    "$id": "51",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_showDRSAvail();"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              }
+            },
+            {
+              "$id": "52",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "Image": "drs_enabled",
+              "AutoSize": false,
+              "AutoSizeScale": 1.0,
+              "Rotation": 0.0,
+              "UseRotation": false,
+              "CanResize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "BlurRadius": 0.0,
+              "EnableBlur": false,
+              "BorderStyle": {
+                "$id": "53",
+                "BorderColor": "#FFFFFFFF",
+                "BorderTop": 0,
+                "BorderBottom": 0,
+                "BorderLeft": 0,
+                "BorderRight": 0,
+                "RadiusTopLeft": 0,
+                "RadiusTopRight": 0,
+                "RadiusBottomLeft": 0,
+                "RadiusBottomRight": 0,
+                "Bindings": {
+                  "$id": "54"
+                }
+              },
+              "Height": 46.0,
+              "Left": 396.0,
+              "Opacity": 100.0,
+              "Top": 4.0,
+              "Visible": false,
+              "BlinkDelay": 250.0,
+              "BlinkEnabled": false,
+              "Width": 20.0,
+              "BorderBottom": 0,
+              "BorderColor": "#FFFFFFFF",
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderTop": 0,
+              "Id": "edccf177-d29c-4b39-a69a-37551eba1b61",
+              "IsFreezed": true,
+              "IsSelected": false,
+              "Name": "DRS enabled",
+              "RenderingSkip": 0,
+              "Sid": 0,
+              "Bindings": {
+                "$id": "55",
+                "Visible": {
+                  "$id": "56",
+                  "Formula": {
+                    "$id": "57",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_showDRSEnabled();\r\n"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              }
+            },
+            {
+              "$id": "58",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "Image": "separators",
+              "AutoSize": false,
+              "AutoSizeScale": 1.0,
+              "Rotation": 0.0,
+              "UseRotation": false,
+              "CanResize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "BlurRadius": 0.0,
+              "EnableBlur": false,
+              "BorderStyle": {
+                "$id": "59",
+                "BorderColor": "#FFFFFFFF",
+                "BorderTop": 0,
+                "BorderBottom": 0,
+                "BorderLeft": 0,
+                "BorderRight": 0,
+                "RadiusTopLeft": 0,
+                "RadiusTopRight": 0,
+                "RadiusBottomLeft": 0,
+                "RadiusBottomRight": 0,
+                "Bindings": {
+                  "$id": "60"
+                }
+              },
+              "Height": 50.0,
+              "Left": -1.0,
+              "Opacity": 100.0,
+              "Top": 4.0,
+              "Visible": true,
+              "BlinkDelay": 250.0,
+              "BlinkEnabled": false,
+              "Width": 381.0,
+              "BorderBottom": 0,
+              "BorderColor": "#FFFFFFFF",
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderTop": 0,
+              "Id": "5ee99346-b946-434c-a81a-87a0fc616837",
+              "IsFreezed": true,
+              "IsSelected": false,
+              "Name": "Separators",
+              "RenderingSkip": 0,
+              "Sid": 0,
+              "Bindings": {
+                "$id": "61"
+              }
+            },
+            {
+              "$id": "62",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
               "IsLinearGauge": true,
               "GaugeAlignment": 0,
@@ -442,7 +665,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "45",
+                "$id": "63",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -453,7 +676,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "46"
+                  "$id": "64"
                 }
               },
               "Height": 4.0,
@@ -476,11 +699,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "47",
+                "$id": "65",
                 "Value": {
-                  "$id": "48",
+                  "$id": "66",
                   "Formula": {
-                    "$id": "49",
+                    "$id": "67",
                     "Expression": "if([Clutch] > 95, 95, [Clutch])"
                   },
                   "Mode": 2,
@@ -489,7 +712,7 @@
               }
             },
             {
-              "$id": "50",
+              "$id": "68",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
               "IsLinearGauge": true,
               "GaugeAlignment": 0,
@@ -508,7 +731,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "51",
+                "$id": "69",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -519,7 +742,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "52"
+                  "$id": "70"
                 }
               },
               "Height": 4.0,
@@ -542,11 +765,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "53",
+                "$id": "71",
                 "Value": {
-                  "$id": "54",
+                  "$id": "72",
                   "Formula": {
-                    "$id": "55",
+                    "$id": "73",
                     "Expression": "if([Brake] > 95, 95, [Brake])"
                   },
                   "Mode": 2,
@@ -555,7 +778,7 @@
               }
             },
             {
-              "$id": "56",
+              "$id": "74",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
               "IsLinearGauge": true,
               "GaugeAlignment": 0,
@@ -574,7 +797,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "57",
+                "$id": "75",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -585,7 +808,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "58"
+                  "$id": "76"
                 }
               },
               "Height": 4.0,
@@ -608,11 +831,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "59",
+                "$id": "77",
                 "Value": {
-                  "$id": "60",
+                  "$id": "78",
                   "Formula": {
-                    "$id": "61",
+                    "$id": "79",
                     "Expression": "if([Throttle] > 95, 95, [Throttle])"
                   },
                   "Mode": 2,
@@ -621,7 +844,7 @@
               }
             },
             {
-              "$id": "62",
+              "$id": "80",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "IsRectangleItem": true,
               "Rotation": 0.0,
@@ -631,7 +854,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "63",
+                "$id": "81",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -642,7 +865,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "64"
+                  "$id": "82"
                 }
               },
               "Height": 2.0,
@@ -665,11 +888,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "65",
+                "$id": "83",
                 "BackgroundColor": {
-                  "$id": "66",
+                  "$id": "84",
                   "Formula": {
-                    "$id": "67",
+                    "$id": "85",
                     "Expression": "[Clutch] == 100"
                   },
                   "StartColor": "#A8808488",
@@ -685,7 +908,7 @@
               }
             },
             {
-              "$id": "68",
+              "$id": "86",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "IsRectangleItem": true,
               "Rotation": 0.0,
@@ -695,7 +918,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "69",
+                "$id": "87",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -706,7 +929,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "70"
+                  "$id": "88"
                 }
               },
               "Height": 2.0,
@@ -729,11 +952,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "71",
+                "$id": "89",
                 "BackgroundColor": {
-                  "$id": "72",
+                  "$id": "90",
                   "Formula": {
-                    "$id": "73",
+                    "$id": "91",
                     "Expression": "[Brake] == 100"
                   },
                   "StartColor": "#A8808488",
@@ -749,7 +972,7 @@
               }
             },
             {
-              "$id": "74",
+              "$id": "92",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
               "IsRectangleItem": true,
               "Rotation": 0.0,
@@ -759,7 +982,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "75",
+                "$id": "93",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -770,7 +993,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "76"
+                  "$id": "94"
                 }
               },
               "Height": 2.0,
@@ -793,11 +1016,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "77",
+                "$id": "95",
                 "BackgroundColor": {
-                  "$id": "78",
+                  "$id": "96",
                   "Formula": {
-                    "$id": "79",
+                    "$id": "97",
                     "Expression": "[Throttle] == 100"
                   },
                   "StartColor": "#A8808488",
@@ -813,7 +1036,7 @@
               }
             },
             {
-              "$id": "80",
+              "$id": "98",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
               "IsLinearGauge": true,
               "GaugeAlignment": 0,
@@ -832,7 +1055,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "81",
+                "$id": "99",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -843,7 +1066,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "82"
+                  "$id": "100"
                 }
               },
               "Height": 4.0,
@@ -866,22 +1089,22 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "83",
+                "$id": "101",
                 "Value": {
-                  "$id": "84",
+                  "$id": "102",
                   "Formula": {
-                    "$id": "85",
-                    "Expression": "abs([DataCorePlugin.GameRawData.forceFeedback.mForceValue])*100\r\n"
+                    "$id": "103",
+                    "Expression": "abs(isnull([DataCorePlugin.GameRawData.forceFeedback.mForceValue], 0))*100\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Value"
                 },
                 "GaugeColor": {
-                  "$id": "86",
+                  "$id": "104",
                   "Formula": {
-                    "$id": "87",
+                    "$id": "105",
                     "Interpreter": 1,
-                    "Expression": "return isClipping()"
+                    "Expression": "return SKSH_isClipping()"
                   },
                   "StartColor": "#FFA0A2A3",
                   "EnableMiddleColor": false,
@@ -896,7 +1119,7 @@
               }
             },
             {
-              "$id": "88",
+              "$id": "106",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
               "IsLinearGauge": true,
               "GaugeAlignment": 0,
@@ -915,7 +1138,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "89",
+                "$id": "107",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -926,7 +1149,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "90"
+                  "$id": "108"
                 }
               },
               "Height": 2.0,
@@ -949,11 +1172,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "91",
+                "$id": "109",
                 "Value": {
-                  "$id": "92",
+                  "$id": "110",
                   "Formula": {
-                    "$id": "93",
+                    "$id": "111",
                     "Expression": "[CarSettings_CurrentDisplayedRPMPercent]"
                   },
                   "Mode": 2,
@@ -962,7 +1185,7 @@
               }
             },
             {
-              "$id": "94",
+              "$id": "112",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.GearText, SimHub.Plugins",
               "Category": "Engine",
               "GearBlinkText": false,
@@ -1001,7 +1224,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "95",
+                "$id": "113",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1012,7 +1235,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "96"
+                  "$id": "114"
                 }
               },
               "Height": 38.0,
@@ -1035,13 +1258,13 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "97",
+                "$id": "115",
                 "GearTextColor": {
-                  "$id": "98",
+                  "$id": "116",
                   "Formula": {
-                    "$id": "99",
+                    "$id": "117",
                     "Interpreter": 1,
-                    "Expression": "return showPitLimiter();"
+                    "Expression": "return SKSH_showPitLimiter();"
                   },
                   "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": false,
@@ -1056,7 +1279,7 @@
               }
             },
             {
-              "$id": "100",
+              "$id": "118",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "IsTextItem": true,
               "ShadowDepth": 0,
@@ -1085,7 +1308,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "101",
+                "$id": "119",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1096,7 +1319,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "102"
+                  "$id": "120"
                 }
               },
               "Height": 16.0,
@@ -1119,13 +1342,13 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "103",
+                "$id": "121",
                 "TextColor": {
-                  "$id": "104",
+                  "$id": "122",
                   "Formula": {
-                    "$id": "105",
+                    "$id": "123",
                     "Interpreter": 1,
-                    "Expression": "return showPitLimiter();"
+                    "Expression": "return SKSH_showPitLimiter();"
                   },
                   "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": false,
@@ -1138,9 +1361,9 @@
                   "TargetPropertyName": "TextColor"
                 },
                 "Visible": {
-                  "$id": "106",
+                  "$id": "124",
                   "Formula": {
-                    "$id": "107",
+                    "$id": "125",
                     "Expression": "isnull([SpeedLocalUnit], '') == 'KMH'"
                   },
                   "Mode": 2,
@@ -1149,7 +1372,7 @@
               }
             },
             {
-              "$id": "108",
+              "$id": "126",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "IsTextItem": true,
               "ShadowDepth": 0,
@@ -1178,7 +1401,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "109",
+                "$id": "127",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1189,7 +1412,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "110"
+                  "$id": "128"
                 }
               },
               "Height": 16.0,
@@ -1212,13 +1435,13 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "111",
+                "$id": "129",
                 "TextColor": {
-                  "$id": "112",
+                  "$id": "130",
                   "Formula": {
-                    "$id": "113",
+                    "$id": "131",
                     "Interpreter": 1,
-                    "Expression": "return showPitLimiter();"
+                    "Expression": "return SKSH_showPitLimiter();"
                   },
                   "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": false,
@@ -1231,9 +1454,9 @@
                   "TargetPropertyName": "TextColor"
                 },
                 "Visible": {
-                  "$id": "114",
+                  "$id": "132",
                   "Formula": {
-                    "$id": "115",
+                    "$id": "133",
                     "Expression": "isnull([SpeedLocalUnit], '') == 'MPH'"
                   },
                   "Mode": 2,
@@ -1242,7 +1465,7 @@
               }
             },
             {
-              "$id": "116",
+              "$id": "134",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.SpeedText, SimHub.Plugins",
               "Category": "Engine",
               "Format": "0",
@@ -1273,7 +1496,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "117",
+                "$id": "135",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1284,7 +1507,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "118"
+                  "$id": "136"
                 }
               },
               "Height": 20.0,
@@ -1307,13 +1530,13 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "119",
+                "$id": "137",
                 "TextColor": {
-                  "$id": "120",
+                  "$id": "138",
                   "Formula": {
-                    "$id": "121",
+                    "$id": "139",
                     "Interpreter": 1,
-                    "Expression": "return showPitLimiter();"
+                    "Expression": "return SKSH_showPitLimiter();"
                   },
                   "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": false,
@@ -1328,7 +1551,7 @@
               }
             },
             {
-              "$id": "122",
+              "$id": "140",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
               "IsTextItem": true,
               "ShadowDepth": 0,
@@ -1357,7 +1580,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "123",
+                "$id": "141",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1368,7 +1591,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "124"
+                  "$id": "142"
                 }
               },
               "Height": 20.0,
@@ -1391,32 +1614,33 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "125",
+                "$id": "143",
                 "Text": {
-                  "$id": "126",
+                  "$id": "144",
                   "FormatString": "m\\:ss\\.ff",
                   "Formula": {
-                    "$id": "127",
+                    "$id": "145",
                     "Expression": "[LastLapTime]"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Text"
                 },
                 "Visible": {
-                  "$id": "128",
+                  "$id": "146",
                   "Formula": {
-                    "$id": "129",
+                    "$id": "147",
                     "Interpreter": 1,
-                    "Expression": "return showLastLapTime();\r\n"
+                    "Expression": "return SKSH_showLastLapTime();\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
                 },
                 "TextColor": {
-                  "$id": "130",
+                  "$id": "148",
                   "Formula": {
-                    "$id": "131",
-                    "Expression": "if('' + [DataCorePlugin.GameData.NewData.LastLapTime] == '00:00:00', 0,\r\nif([DataCorePlugin.GameData.NewData.LastLapTime] == [PersistantTrackerPlugin.AllTimeBest], 2,\r\nif([DataCorePlugin.GameData.NewData.LastLapTime] == [PersistantTrackerPlugin.SessionBest], 1, 0)))"
+                    "$id": "149",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_getLastLapColor();\r\n"
                   },
                   "StartColor": "#FFDBDBDB",
                   "EnableMiddleColor": true,
@@ -1431,7 +1655,7 @@
               }
             },
             {
-              "$id": "132",
+              "$id": "150",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
               "NextScreenCommand": 1,
               "PreviousScreenCommand": 0,
@@ -1445,7 +1669,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "133",
+                "$id": "151",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1456,7 +1680,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "134"
+                  "$id": "152"
                 }
               },
               "Height": 22.0,
@@ -1479,13 +1703,13 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "135",
+                "$id": "153",
                 "Visible": {
-                  "$id": "136",
+                  "$id": "154",
                   "Formula": {
-                    "$id": "137",
+                    "$id": "155",
                     "Interpreter": 1,
-                    "Expression": "return !showLastLapTime();"
+                    "Expression": "return !SKSH_showLastLapTime();\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -1493,7 +1717,7 @@
               }
             },
             {
-              "$id": "138",
+              "$id": "156",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
               "NextScreenCommand": 2,
               "PreviousScreenCommand": 0,
@@ -1507,7 +1731,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "139",
+                "$id": "157",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1518,7 +1742,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "140"
+                  "$id": "158"
                 }
               },
               "Height": 22.0,
@@ -1541,11 +1765,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "141"
+                "$id": "159"
               }
             },
             {
-              "$id": "142",
+              "$id": "160",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
               "NextScreenCommand": 4,
               "PreviousScreenCommand": 0,
@@ -1559,7 +1783,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "143",
+                "$id": "161",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1570,7 +1794,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "144"
+                  "$id": "162"
                 }
               },
               "Height": 22.0,
@@ -1593,11 +1817,11 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "145"
+                "$id": "163"
               }
             },
             {
-              "$id": "146",
+              "$id": "164",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
               "NextScreenCommand": 5,
               "PreviousScreenCommand": 0,
@@ -1611,7 +1835,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "147",
+                "$id": "165",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1622,7 +1846,7 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "148"
+                  "$id": "166"
                 }
               },
               "Height": 22.0,
@@ -1645,22 +1869,22 @@
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "149"
+                "$id": "167"
               }
             },
             {
-              "$id": "150",
+              "$id": "168",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
               "Repetitions": 0.0,
               "RepeatLeftOffset": 0.0,
               "RepeatTopOffset": 30.0,
-              "Height": 30.0,
+              "Height": 31.0,
               "Width": 52.0,
               "BackgroundColor": "#00FFFFFF",
               "BlurRadius": 0.0,
               "Rotation": 0.0,
               "BorderStyle": {
-                "$id": "151",
+                "$id": "169",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -1671,28 +1895,31 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "152"
+                  "$id": "170"
                 }
               },
               "RenderingSkip": 0,
-              "ShowSelection": true,
+              "ShowSelection": false,
               "CanResize": false,
               "Childrens": {
-                "$id": "153",
+                "$id": "171",
                 "$values": [
                   {
-                    "$id": "154",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-                    "Repetitions": 0.0,
-                    "RepeatLeftOffset": 0.0,
-                    "RepeatTopOffset": 30.0,
-                    "Height": 30.0,
-                    "Width": 52.0,
+                    "$id": "172",
+                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+                    "NextScreenCommand": 6,
+                    "PreviousScreenCommand": 0,
+                    "AutoSize": true,
+                    "AutoSizeScale": 1.0,
+                    "FileName": "Section 5.djson",
+                    "Rotation": 0.0,
+                    "UseRotation": false,
+                    "CanResize": true,
                     "BackgroundColor": "#00FFFFFF",
                     "BlurRadius": 0.0,
-                    "Rotation": 0.0,
+                    "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "155",
+                      "$id": "173",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -1703,418 +1930,35 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "156"
+                        "$id": "174"
                       }
                     },
-                    "RenderingSkip": 0,
-                    "ShowSelection": true,
-                    "CanResize": false,
-                    "Childrens": {
-                      "$id": "157",
-                      "$values": [
-                        {
-                          "$id": "158",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "159",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "160"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 310.0,
-                          "Opacity": 100.0,
-                          "Top": 12.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": true,
-                          "IsSelected": false,
-                          "Name": "Brake Temp C FL",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "161",
-                            "TextColor": {
-                              "$id": "162",
-                              "Formula": {
-                                "$id": "163",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureFrontLeft');\r\nreturn handleGradient4(tyreBrakeColorValuesC, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "164",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "165",
-                                "Expression": "[BrakeTemperatureFrontLeft]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        },
-                        {
-                          "$id": "166",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "167",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "168"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 310.0,
-                          "Opacity": 100.0,
-                          "Top": 26.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": true,
-                          "IsSelected": false,
-                          "Name": "Brake Temp C RL",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "169",
-                            "TextColor": {
-                              "$id": "170",
-                              "Formula": {
-                                "$id": "171",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureRearLeft');\r\nreturn handleGradient4(tyreBrakeColorValuesC, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "172",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "173",
-                                "Expression": "[BrakeTemperatureRearLeft]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        },
-                        {
-                          "$id": "174",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "175",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "176"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 336.0,
-                          "Opacity": 100.0,
-                          "Top": 12.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": true,
-                          "IsSelected": false,
-                          "Name": "Brake Temp C FR",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "177",
-                            "TextColor": {
-                              "$id": "178",
-                              "Formula": {
-                                "$id": "179",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureFrontRight');\r\nreturn handleGradient4(tyreBrakeColorValuesC, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "180",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "181",
-                                "Expression": "[BrakeTemperatureFrontRight]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        },
-                        {
-                          "$id": "182",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "183",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "184"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 336.0,
-                          "Opacity": 100.0,
-                          "Top": 26.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": true,
-                          "IsSelected": false,
-                          "Name": "Brake Temp C RR",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "185",
-                            "TextColor": {
-                              "$id": "186",
-                              "Formula": {
-                                "$id": "187",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureRearRight');\r\nreturn handleGradient4(tyreBrakeColorValuesC, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "188",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "189",
-                                "Expression": "[BrakeTemperatureRearRight]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    "Group": true,
-                    "UseRotation": false,
-                    "EnableBlur": false,
+                    "Height": 31.0,
                     "Left": 310.0,
                     "Opacity": 100.0,
                     "Top": 12.0,
                     "Visible": true,
                     "BlinkDelay": 250.0,
                     "BlinkEnabled": false,
+                    "Width": 52.0,
                     "BorderBottom": 0,
                     "BorderColor": "#FFFFFFFF",
                     "BorderLeft": 0,
                     "BorderRight": 0,
                     "BorderTop": 0,
-                    "Id": "1003ae55-5be3-4f7a-a47e-fad800d3e98f",
-                    "IsSelected": false,
-                    "Name": "Celcius",
+                    "Id": "efe2a9e7-83ec-4898-a5cc-3578ab992871",
+                    "IsFreezed": true,
+                    "IsSelected": true,
+                    "Name": "Regular",
+                    "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "190",
+                      "$id": "175",
                       "Visible": {
-                        "$id": "191",
+                        "$id": "176",
                         "Formula": {
-                          "$id": "192",
-                          "Expression": "isnull([DataCorePlugin.GameData.TemperatureUnit], '') == 'Celcius'"
+                          "$id": "177",
+                          "Expression": "[DataCorePlugin.CurrentGame] == 'RFactor2' or [DataCorePlugin.CurrentGame] == 'Automobilista2' or [DataCorePlugin.CurrentGame] == 'AssettoCorsa'"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Visible"
@@ -2122,18 +1966,21 @@
                     }
                   },
                   {
-                    "$id": "193",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-                    "Repetitions": 0.0,
-                    "RepeatLeftOffset": 0.0,
-                    "RepeatTopOffset": 30.0,
-                    "Height": 30.0,
-                    "Width": 52.0,
+                    "$id": "178",
+                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+                    "NextScreenCommand": 6,
+                    "PreviousScreenCommand": 0,
+                    "AutoSize": true,
+                    "AutoSizeScale": 1.0,
+                    "FileName": "Section 5 ACC.djson",
+                    "Rotation": 0.0,
+                    "UseRotation": false,
+                    "CanResize": true,
                     "BackgroundColor": "#00FFFFFF",
                     "BlurRadius": 0.0,
-                    "Rotation": 0.0,
+                    "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "194",
+                      "$id": "179",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -2144,859 +1991,35 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "195"
+                        "$id": "180"
                       }
                     },
-                    "RenderingSkip": 0,
-                    "ShowSelection": true,
-                    "CanResize": false,
-                    "Childrens": {
-                      "$id": "196",
-                      "$values": [
-                        {
-                          "$id": "197",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "198",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "199"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 310.0,
-                          "Opacity": 100.0,
-                          "Top": 12.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": true,
-                          "IsSelected": false,
-                          "Name": "Brake Temp F FL",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "200",
-                            "TextColor": {
-                              "$id": "201",
-                              "Formula": {
-                                "$id": "202",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureFrontLeft');\r\nreturn handleGradient4(tyreBrakeColorValuesF, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "203",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "204",
-                                "Expression": "[BrakeTemperatureFrontLeft]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        },
-                        {
-                          "$id": "205",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "206",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "207"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 310.0,
-                          "Opacity": 100.0,
-                          "Top": 26.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": true,
-                          "IsSelected": false,
-                          "Name": "Brake Temp F RL",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "208",
-                            "TextColor": {
-                              "$id": "209",
-                              "Formula": {
-                                "$id": "210",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureRearLeft');\r\nreturn handleGradient4(tyreBrakeColorValuesF, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "211",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "212",
-                                "Expression": "[BrakeTemperatureRearLeft]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        },
-                        {
-                          "$id": "213",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "214",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "215"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 336.0,
-                          "Opacity": 100.0,
-                          "Top": 12.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": true,
-                          "IsSelected": false,
-                          "Name": "Brake Temp F FR",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "216",
-                            "TextColor": {
-                              "$id": "217",
-                              "Formula": {
-                                "$id": "218",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureFrontRight');\r\nreturn handleGradient4(tyreBrakeColorValuesF, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "219",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "220",
-                                "Expression": "[BrakeTemperatureFrontRight]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        },
-                        {
-                          "$id": "221",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "222",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "223"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 336.0,
-                          "Opacity": 100.0,
-                          "Top": 26.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": true,
-                          "IsSelected": false,
-                          "Name": "Brake Temp F RR",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "224",
-                            "TextColor": {
-                              "$id": "225",
-                              "Formula": {
-                                "$id": "226",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureRearRight');\r\nreturn handleGradient4(tyreBrakeColorValuesF, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "227",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "228",
-                                "Expression": "[BrakeTemperatureRearRight]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    "Group": true,
-                    "UseRotation": false,
-                    "EnableBlur": false,
+                    "Height": 31.0,
                     "Left": 310.0,
                     "Opacity": 100.0,
                     "Top": 12.0,
                     "Visible": false,
                     "BlinkDelay": 250.0,
                     "BlinkEnabled": false,
-                    "BorderBottom": 0,
-                    "BorderColor": "#FFFFFFFF",
-                    "BorderLeft": 0,
-                    "BorderRight": 0,
-                    "BorderTop": 0,
-                    "Id": "bae24acf-6136-41fd-9901-82df0cecbe57",
-                    "IsSelected": false,
-                    "Name": "Fahrenheit",
-                    "Sid": 0,
-                    "Bindings": {
-                      "$id": "229",
-                      "Visible": {
-                        "$id": "230",
-                        "Formula": {
-                          "$id": "231",
-                          "Expression": "isnull([DataCorePlugin.GameData.TemperatureUnit], '') == 'Fahrenheit'"
-                        },
-                        "Mode": 2,
-                        "TargetPropertyName": "Visible"
-                      }
-                    }
-                  },
-                  {
-                    "$id": "232",
-                    "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-                    "Repetitions": 0.0,
-                    "RepeatLeftOffset": 0.0,
-                    "RepeatTopOffset": 30.0,
-                    "Height": 30.0,
                     "Width": 52.0,
-                    "BackgroundColor": "#00FFFFFF",
-                    "BlurRadius": 0.0,
-                    "Rotation": 0.0,
-                    "BorderStyle": {
-                      "$id": "233",
-                      "BorderColor": "#FFFFFFFF",
-                      "BorderTop": 0,
-                      "BorderBottom": 0,
-                      "BorderLeft": 0,
-                      "BorderRight": 0,
-                      "RadiusTopLeft": 0,
-                      "RadiusTopRight": 0,
-                      "RadiusBottomLeft": 0,
-                      "RadiusBottomRight": 0,
-                      "Bindings": {
-                        "$id": "234"
-                      }
-                    },
-                    "RenderingSkip": 0,
-                    "ShowSelection": true,
-                    "CanResize": false,
-                    "Childrens": {
-                      "$id": "235",
-                      "$values": [
-                        {
-                          "$id": "236",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "237",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "238"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 310.0,
-                          "Opacity": 100.0,
-                          "Top": 12.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": false,
-                          "IsSelected": false,
-                          "Name": "Brake Temp K FL",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "239",
-                            "TextColor": {
-                              "$id": "240",
-                              "Formula": {
-                                "$id": "241",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureFrontLeft');\r\nreturn handleGradient4(tyreBrakeColorValuesK, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "242",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "243",
-                                "Expression": "[BrakeTemperatureFrontLeft]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        },
-                        {
-                          "$id": "244",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "245",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "246"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 310.0,
-                          "Opacity": 100.0,
-                          "Top": 26.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": false,
-                          "IsSelected": false,
-                          "Name": "Brake Temp K RL",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "247",
-                            "TextColor": {
-                              "$id": "248",
-                              "Formula": {
-                                "$id": "249",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureRearLeft');\r\nreturn handleGradient4(tyreBrakeColorValuesK, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "250",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "251",
-                                "Expression": "[BrakeTemperatureRearLeft]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        },
-                        {
-                          "$id": "252",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "253",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "254"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 336.0,
-                          "Opacity": 100.0,
-                          "Top": 12.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": false,
-                          "IsSelected": false,
-                          "Name": "Brake Temp K FR",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "255",
-                            "TextColor": {
-                              "$id": "256",
-                              "Formula": {
-                                "$id": "257",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureFrontRight');\r\nreturn handleGradient4(tyreBrakeColorValuesK, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "258",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "259",
-                                "Expression": "[BrakeTemperatureFrontRight]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        },
-                        {
-                          "$id": "260",
-                          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                          "IsTextItem": true,
-                          "ShadowDepth": 0,
-                          "ShadowBlur": 0,
-                          "ShadowDirection": 315,
-                          "ShadowColor": "#FF808080",
-                          "Font": "Segoe UI",
-                          "FontWeight": "Normal",
-                          "TextWrapping": 1,
-                          "FontStyle": "Italic",
-                          "FontSize": 12.0,
-                          "Text": "100",
-                          "TextColor": "#FFDBDBDB",
-                          "HorizontalAlignment": 1,
-                          "VerticalAlignment": 1,
-                          "UseMonospacedText": false,
-                          "CharWidth": 40.0,
-                          "SpecialCharsWidth": 20.0,
-                          "SpecialChars": ".,:;",
-                          "TextMask": "",
-                          "TextMaskColor": "#FF808080",
-                          "Rotation": 0.0,
-                          "UseRotation": false,
-                          "CanResize": true,
-                          "BackgroundColor": "#00FFFFFF",
-                          "BlurRadius": 0.0,
-                          "EnableBlur": false,
-                          "BorderStyle": {
-                            "$id": "261",
-                            "BorderColor": "#FFFFFFFF",
-                            "BorderTop": 0,
-                            "BorderBottom": 0,
-                            "BorderLeft": 0,
-                            "BorderRight": 0,
-                            "RadiusTopLeft": 0,
-                            "RadiusTopRight": 0,
-                            "RadiusBottomLeft": 0,
-                            "RadiusBottomRight": 0,
-                            "Bindings": {
-                              "$id": "262"
-                            }
-                          },
-                          "Height": 16.0,
-                          "Left": 336.0,
-                          "Opacity": 100.0,
-                          "Top": 26.0,
-                          "Visible": true,
-                          "BlinkDelay": 250.0,
-                          "BlinkEnabled": false,
-                          "Width": 26.0,
-                          "BorderBottom": 0,
-                          "BorderColor": "#FFFFFFFF",
-                          "BorderLeft": 0,
-                          "BorderRight": 0,
-                          "BorderTop": 0,
-                          "Id": "fad7e97f-d19f-4ee3-9845-c57a8a6124be",
-                          "IsFreezed": false,
-                          "IsSelected": false,
-                          "Name": "Brake Temp K RR",
-                          "RenderingSkip": 0,
-                          "Sid": 0,
-                          "Bindings": {
-                            "$id": "263",
-                            "TextColor": {
-                              "$id": "264",
-                              "Formula": {
-                                "$id": "265",
-                                "Interpreter": 1,
-                                "Expression": "var brake = $prop('BrakeTemperatureRearRight');\r\nreturn handleGradient4(tyreBrakeColorValuesK, -1, 0, 1, brake);\r\n"
-                              },
-                              "StartColor": "#FF0082FF",
-                              "EnableMiddleColor": true,
-                              "MiddleColor": "#FF2BFF00",
-                              "MiddleColorValue": 0.0,
-                              "EndColor": "#FFFF2B00",
-                              "StartColorValue": -1.0,
-                              "EndColorValue": 1.0,
-                              "Mode": 4,
-                              "TargetPropertyName": "TextColor"
-                            },
-                            "Text": {
-                              "$id": "266",
-                              "FormatString": "0",
-                              "Formula": {
-                                "$id": "267",
-                                "Expression": "[BrakeTemperatureRearRight]"
-                              },
-                              "Mode": 2,
-                              "TargetPropertyName": "Text"
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    "Group": true,
-                    "UseRotation": false,
-                    "EnableBlur": false,
-                    "Left": 310.0,
-                    "Opacity": 100.0,
-                    "Top": 12.0,
-                    "Visible": false,
-                    "BlinkDelay": 250.0,
-                    "BlinkEnabled": false,
                     "BorderBottom": 0,
                     "BorderColor": "#FFFFFFFF",
                     "BorderLeft": 0,
                     "BorderRight": 0,
                     "BorderTop": 0,
-                    "Id": "985e4417-4a6e-4cbe-80db-5820ffbce208",
+                    "Id": "a12513c6-1a16-4c0c-8785-3514cd125247",
+                    "IsFreezed": true,
                     "IsSelected": false,
-                    "Name": "Kelvin",
+                    "Name": "ACC",
+                    "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "268",
+                      "$id": "181",
                       "Visible": {
-                        "$id": "269",
+                        "$id": "182",
                         "Formula": {
-                          "$id": "270",
-                          "Expression": "isnull([DataCorePlugin.GameData.TemperatureUnit], '') == 'Kelvin'"
+                          "$id": "183",
+                          "Expression": "[DataCorePlugin.CurrentGame] == 'AssettoCorsaCompetizione'"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Visible"
@@ -3011,7 +2034,7 @@
               "Left": 310.0,
               "Opacity": 100.0,
               "Top": 12.0,
-              "Visible": false,
+              "Visible": true,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
               "BorderBottom": 0,
@@ -3019,18 +2042,18 @@
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "9fec328e-b518-48e6-b3cb-12a92540e333",
+              "Id": "8a5a46b4-e640-4700-af68-23daf6da1131",
               "IsSelected": false,
-              "Name": "Section 5 - Brake Temps",
+              "Name": "Section 5",
               "Sid": 0,
               "Bindings": {
-                "$id": "271",
+                "$id": "184",
                 "Visible": {
-                  "$id": "272",
+                  "$id": "185",
                   "Formula": {
-                    "$id": "273",
+                    "$id": "186",
                     "Interpreter": 1,
-                    "Expression": "return showBrakeTemps();"
+                    "Expression": "return SKSH_section5() == 0;"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -3038,13 +2061,13 @@
               }
             },
             {
-              "$id": "274",
+              "$id": "187",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
-              "NextScreenCommand": 6,
+              "NextScreenCommand": 0,
               "PreviousScreenCommand": 0,
               "AutoSize": true,
               "AutoSizeScale": 1.0,
-              "FileName": "Section 5.djson",
+              "FileName": "BrakeTemps.djson",
               "Rotation": 0.0,
               "UseRotation": false,
               "CanResize": true,
@@ -3052,7 +2075,7 @@
               "BlurRadius": 0.0,
               "EnableBlur": false,
               "BorderStyle": {
-                "$id": "275",
+                "$id": "188",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -3063,14 +2086,14 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "276"
+                  "$id": "189"
                 }
               },
-              "Height": 31.0,
+              "Height": 30.0,
               "Left": 310.0,
               "Opacity": 100.0,
               "Top": 12.0,
-              "Visible": true,
+              "Visible": false,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
               "Width": 52.0,
@@ -3079,20 +2102,20 @@
               "BorderLeft": 0,
               "BorderRight": 0,
               "BorderTop": 0,
-              "Id": "efe2a9e7-83ec-4898-a5cc-3578ab992871",
+              "Id": "cf9b9142-c3e6-49ab-b779-a137c339648b",
               "IsFreezed": true,
               "IsSelected": false,
-              "Name": "Section 5",
+              "Name": "Section 5 - Brake Temps",
               "RenderingSkip": 0,
               "Sid": 0,
               "Bindings": {
-                "$id": "277",
+                "$id": "190",
                 "Visible": {
-                  "$id": "278",
+                  "$id": "191",
                   "Formula": {
-                    "$id": "279",
+                    "$id": "192",
                     "Interpreter": 1,
-                    "Expression": "return !showBrakeTemps();"
+                    "Expression": "return SKSH_section5() == 1;"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -3100,7 +2123,69 @@
               }
             },
             {
-              "$id": "280",
+              "$id": "193",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+              "NextScreenCommand": 0,
+              "PreviousScreenCommand": 0,
+              "AutoSize": true,
+              "AutoSizeScale": 1.0,
+              "FileName": "Damage.djson",
+              "Rotation": 0.0,
+              "UseRotation": false,
+              "CanResize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "BlurRadius": 0.0,
+              "EnableBlur": false,
+              "BorderStyle": {
+                "$id": "194",
+                "BorderColor": "#FFFFFFFF",
+                "BorderTop": 0,
+                "BorderBottom": 0,
+                "BorderLeft": 0,
+                "BorderRight": 0,
+                "RadiusTopLeft": 0,
+                "RadiusTopRight": 0,
+                "RadiusBottomLeft": 0,
+                "RadiusBottomRight": 0,
+                "Bindings": {
+                  "$id": "195"
+                }
+              },
+              "Height": 30.0,
+              "Left": 310.0,
+              "Opacity": 100.0,
+              "Top": 12.0,
+              "Visible": false,
+              "BlinkDelay": 250.0,
+              "BlinkEnabled": false,
+              "Width": 52.0,
+              "BorderBottom": 0,
+              "BorderColor": "#FFFFFFFF",
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderTop": 0,
+              "Id": "d2ea7e2e-daf9-439f-b763-cdf48904f86b",
+              "IsFreezed": true,
+              "IsSelected": false,
+              "Name": "Section 5 - Damage",
+              "RenderingSkip": 0,
+              "Sid": 0,
+              "Bindings": {
+                "$id": "196",
+                "Visible": {
+                  "$id": "197",
+                  "Formula": {
+                    "$id": "198",
+                    "Interpreter": 1,
+                    "Expression": "return SKSH_section5() == 2;"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              }
+            },
+            {
+              "$id": "199",
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
               "Repetitions": 0.0,
               "RepeatLeftOffset": 0.0,
@@ -3111,7 +2196,7 @@
               "BlurRadius": 0.0,
               "Rotation": 0.0,
               "BorderStyle": {
-                "$id": "281",
+                "$id": "200",
                 "BorderColor": "#FFFFFFFF",
                 "BorderTop": 0,
                 "BorderBottom": 0,
@@ -3122,17 +2207,17 @@
                 "RadiusBottomLeft": 0,
                 "RadiusBottomRight": 0,
                 "Bindings": {
-                  "$id": "282"
+                  "$id": "201"
                 }
               },
               "RenderingSkip": 0,
-              "ShowSelection": false,
+              "ShowSelection": true,
               "CanResize": false,
               "Childrens": {
-                "$id": "283",
+                "$id": "202",
                 "$values": [
                   {
-                    "$id": "284",
+                    "$id": "203",
                     "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
                     "IsLinearGauge": true,
                     "GaugeAlignment": 0,
@@ -3151,7 +2236,7 @@
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "285",
+                      "$id": "204",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -3162,7 +2247,7 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "286"
+                        "$id": "205"
                       }
                     },
                     "Height": 2.0,
@@ -3179,26 +2264,26 @@
                     "BorderRight": 0,
                     "BorderTop": 0,
                     "Id": "66822ffa-1b72-4132-a4af-8a9ecf17d88d",
-                    "IsFreezed": false,
+                    "IsFreezed": true,
                     "IsSelected": false,
                     "Name": "Charge",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "287",
+                      "$id": "206",
                       "Value": {
-                        "$id": "288",
+                        "$id": "207",
                         "Formula": {
-                          "$id": "289",
-                          "Expression": "truncate([GameRawData.Physics.KersCharge]*100)"
+                          "$id": "208",
+                          "Expression": "truncate(isnull([GameRawData.Physics.KersCharge], 0) * 100)"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Value"
                       },
                       "GaugeColor": {
-                        "$id": "290",
+                        "$id": "209",
                         "Formula": {
-                          "$id": "291",
+                          "$id": "210",
                           "Expression": "[GameRawData.Physics.ErsisCharging]"
                         },
                         "StartColor": "#FF00FFFF",
@@ -3214,7 +2299,7 @@
                     }
                   },
                   {
-                    "$id": "292",
+                    "$id": "211",
                     "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                     "IsRectangleItem": true,
                     "Rotation": 0.0,
@@ -3224,7 +2309,7 @@
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "293",
+                      "$id": "212",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -3235,7 +2320,7 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "294"
+                        "$id": "213"
                       }
                     },
                     "Height": 6.0,
@@ -3252,18 +2337,18 @@
                     "BorderRight": 0,
                     "BorderTop": 0,
                     "Id": "df07adbf-58df-4311-819c-6fc451288eb6",
-                    "IsFreezed": false,
+                    "IsFreezed": true,
                     "IsSelected": false,
                     "Name": "CurrentRect",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "295",
+                      "$id": "214",
                       "Left": {
-                        "$id": "296",
+                        "$id": "215",
                         "Formula": {
-                          "$id": "297",
-                          "Expression": "67 + 2.38 * (truncate([GameRawData.Physics.KersInput]*100))"
+                          "$id": "216",
+                          "Expression": "67 + 2.38 * (truncate(isnull([GameRawData.Physics.KersInput], 0)*100))"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Left"
@@ -3271,7 +2356,7 @@
                     }
                   },
                   {
-                    "$id": "298",
+                    "$id": "217",
                     "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                     "IsRectangleItem": true,
                     "Rotation": 0.0,
@@ -3281,7 +2366,7 @@
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "299",
+                      "$id": "218",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -3292,7 +2377,7 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "300"
+                        "$id": "219"
                       }
                     },
                     "Height": 6.0,
@@ -3309,17 +2394,17 @@
                     "BorderRight": 0,
                     "BorderTop": 0,
                     "Id": "df07adbf-58df-4311-819c-6fc451288eb6",
-                    "IsFreezed": false,
+                    "IsFreezed": true,
                     "IsSelected": false,
                     "Name": "LapRect",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "301",
+                      "$id": "220",
                       "Left": {
-                        "$id": "302",
+                        "$id": "221",
                         "Formula": {
-                          "$id": "303",
+                          "$id": "222",
                           "Expression": "67 + 2.38 * (100-truncate(min([ERSPercent], 100)))"
                         },
                         "Mode": 2,
@@ -3328,7 +2413,7 @@
                     }
                   },
                   {
-                    "$id": "304",
+                    "$id": "223",
                     "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
                     "IsLinearGauge": true,
                     "GaugeAlignment": 0,
@@ -3347,7 +2432,7 @@
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "305",
+                      "$id": "224",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -3358,7 +2443,7 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "306"
+                        "$id": "225"
                       }
                     },
                     "Height": 6.0,
@@ -3375,18 +2460,18 @@
                     "BorderRight": 0,
                     "BorderTop": 0,
                     "Id": "66822ffa-1b72-4132-a4af-8a9ecf17d88d",
-                    "IsFreezed": false,
-                    "IsSelected": true,
+                    "IsFreezed": true,
+                    "IsSelected": false,
                     "Name": "Current",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "307",
+                      "$id": "226",
                       "Value": {
-                        "$id": "308",
+                        "$id": "227",
                         "Formula": {
-                          "$id": "309",
-                          "Expression": "truncate([GameRawData.Physics.KersInput]*100)"
+                          "$id": "228",
+                          "Expression": "truncate(isnull([GameRawData.Physics.KersInput], 0)*100)"
                         },
                         "Mode": 2,
                         "TargetPropertyName": "Value"
@@ -3394,7 +2479,7 @@
                     }
                   },
                   {
-                    "$id": "310",
+                    "$id": "229",
                     "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
                     "IsLinearGauge": true,
                     "GaugeAlignment": 0,
@@ -3413,7 +2498,7 @@
                     "BlurRadius": 0.0,
                     "EnableBlur": false,
                     "BorderStyle": {
-                      "$id": "311",
+                      "$id": "230",
                       "BorderColor": "#FFFFFFFF",
                       "BorderTop": 0,
                       "BorderBottom": 0,
@@ -3424,7 +2509,7 @@
                       "RadiusBottomLeft": 0,
                       "RadiusBottomRight": 0,
                       "Bindings": {
-                        "$id": "312"
+                        "$id": "231"
                       }
                     },
                     "Height": 6.0,
@@ -3441,17 +2526,17 @@
                     "BorderRight": 0,
                     "BorderTop": 0,
                     "Id": "66822ffa-1b72-4132-a4af-8a9ecf17d88d",
-                    "IsFreezed": false,
+                    "IsFreezed": true,
                     "IsSelected": false,
                     "Name": "Lap",
                     "RenderingSkip": 0,
                     "Sid": 0,
                     "Bindings": {
-                      "$id": "313",
+                      "$id": "232",
                       "Value": {
-                        "$id": "314",
+                        "$id": "233",
                         "Formula": {
-                          "$id": "315",
+                          "$id": "234",
                           "Expression": "100-truncate(min([ERSPercent], 100))"
                         },
                         "Mode": 2,
@@ -3467,7 +2552,7 @@
               "Left": 67.0,
               "Opacity": 100.0,
               "Top": 41.0,
-              "Visible": true,
+              "Visible": false,
               "BlinkDelay": 250.0,
               "BlinkEnabled": false,
               "BorderBottom": 0,
@@ -3480,12 +2565,103 @@
               "Name": "ERS",
               "Sid": 0,
               "Bindings": {
-                "$id": "316",
+                "$id": "235",
                 "Visible": {
-                  "$id": "317",
+                  "$id": "236",
                   "Formula": {
-                    "$id": "318",
-                    "Expression": "[DataCorePlugin.CurrentGame] == 'AssettoCorsa' and [GameRawData.StaticInfo.HasERS]"
+                    "$id": "237",
+                    "Expression": "[DataCorePlugin.CurrentGame] == 'AssettoCorsa' and isnull([GameRawData.StaticInfo.HasERS], false)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              }
+            },
+            {
+              "$id": "238",
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+              "IsLinearGauge": true,
+              "GaugeAlignment": 0,
+              "AutoSize": false,
+              "AutoSizeScale": 1.0,
+              "GaugeColor": "#FFDBDBDB",
+              "Minimum": 0.0,
+              "Maximum": 100.0,
+              "Value": 80.0,
+              "Steps": 0.0,
+              "PAW": 190.0,
+              "Rotation": 0.0,
+              "UseRotation": false,
+              "CanResize": true,
+              "BackgroundColor": "#A8808488",
+              "BlurRadius": 0.0,
+              "EnableBlur": false,
+              "BorderStyle": {
+                "$id": "239",
+                "BorderColor": "#FFFFFFFF",
+                "BorderTop": 0,
+                "BorderBottom": 0,
+                "BorderLeft": 0,
+                "BorderRight": 0,
+                "RadiusTopLeft": 0,
+                "RadiusTopRight": 0,
+                "RadiusBottomLeft": 0,
+                "RadiusBottomRight": 0,
+                "Bindings": {
+                  "$id": "240"
+                }
+              },
+              "Height": 2.0,
+              "Left": 67.0,
+              "Opacity": 100.0,
+              "Top": 43.0,
+              "Visible": true,
+              "BlinkDelay": 250.0,
+              "BlinkEnabled": false,
+              "Width": 238.0,
+              "BorderBottom": 0,
+              "BorderColor": "#FFFFFFFF",
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderTop": 0,
+              "Id": "66822ffa-1b72-4132-a4af-8a9ecf17d88d",
+              "IsFreezed": true,
+              "IsSelected": false,
+              "Name": "Turbo",
+              "RenderingSkip": 0,
+              "Sid": 0,
+              "Bindings": {
+                "$id": "241",
+                "Value": {
+                  "$id": "242",
+                  "Formula": {
+                    "$id": "243",
+                    "Expression": "isnull([GameRawData.mBoostAmount], 0)"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Value"
+                },
+                "GaugeColor": {
+                  "$id": "244",
+                  "Formula": {
+                    "$id": "245",
+                    "Expression": "if([GameRawData.mBoostActive], 1, 0)"
+                  },
+                  "StartColor": "#FFDBDBDB",
+                  "EnableMiddleColor": false,
+                  "MiddleColor": "#FF000000",
+                  "MiddleColorValue": 1.0,
+                  "EndColor": "#FF00FF00",
+                  "StartColorValue": 0.0,
+                  "EndColorValue": 1.0,
+                  "Mode": 4,
+                  "TargetPropertyName": "GaugeColor"
+                },
+                "Visible": {
+                  "$id": "246",
+                  "Formula": {
+                    "$id": "247",
+                    "Expression": "[DataCorePlugin.CurrentGame] == 'Automobilista2' and isnull([GameRawData.mBoostAmount], 0) > 0"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -3498,7 +2674,7 @@
         "Name": "main",
         "Sid": 0,
         "Bindings": {
-          "$id": "319"
+          "$id": "248"
         }
       }
     ]
@@ -3511,80 +2687,87 @@
     "$ref": "3"
   },
   "Images": {
-    "$id": "320",
+    "$id": "249",
     "$values": [
       {
-        "$id": "321",
+        "$id": "250",
         "Name": "background",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "322",
+        "$id": "251",
         "Name": "border_red",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "323",
+        "$id": "252",
         "Name": "border_yellow",
         "Extension": ".png",
         "Optimized": true,
         "Data": "iVBORw0KGgoAAAANSUhEUgAAAaAAAAA2CAYAAACBfk2zAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACHDwAAjA8AAP1SAACBQAAAfXkAAOmLAAA85QAAGcxzPIV3AAAKOWlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAEjHnZZ3VFTXFofPvXd6oc0wAlKG3rvAANJ7k15FYZgZYCgDDjM0sSGiAhFFRJoiSFDEgNFQJFZEsRAUVLAHJAgoMRhFVCxvRtaLrqy89/Ly++Osb+2z97n77L3PWhcAkqcvl5cGSwGQyhPwgzyc6RGRUXTsAIABHmCAKQBMVka6X7B7CBDJy82FniFyAl8EAfB6WLwCcNPQM4BOB/+fpFnpfIHomAARm7M5GSwRF4g4JUuQLrbPipgalyxmGCVmvihBEcuJOWGRDT77LLKjmNmpPLaIxTmns1PZYu4V8bZMIUfEiK+ICzO5nCwR3xKxRoowlSviN+LYVA4zAwAUSWwXcFiJIjYRMYkfEuQi4uUA4EgJX3HcVyzgZAvEl3JJS8/hcxMSBXQdli7d1NqaQffkZKVwBALDACYrmcln013SUtOZvBwAFu/8WTLi2tJFRbY0tba0NDQzMv2qUP91829K3NtFehn4uWcQrf+L7a/80hoAYMyJarPziy2uCoDOLQDI3fti0zgAgKSobx3Xv7oPTTwviQJBuo2xcVZWlhGXwzISF/QP/U+Hv6GvvmckPu6P8tBdOfFMYYqALq4bKy0lTcinZ6QzWRy64Z+H+B8H/nUeBkGceA6fwxNFhImmjMtLELWbx+YKuGk8Opf3n5r4D8P+pMW5FonS+BFQY4yA1HUqQH7tBygKESDR+8Vd/6NvvvgwIH554SqTi3P/7zf9Z8Gl4iWDm/A5ziUohM4S8jMX98TPEqABAUgCKpAHykAd6ABDYAasgC1wBG7AG/iDEBAJVgMWSASpgA+yQB7YBApBMdgJ9oBqUAcaQTNoBcdBJzgFzoNL4Bq4AW6D+2AUTIBnYBa8BgsQBGEhMkSB5CEVSBPSh8wgBmQPuUG+UBAUCcVCCRAPEkJ50GaoGCqDqqF6qBn6HjoJnYeuQIPQXWgMmoZ+h97BCEyCqbASrAUbwwzYCfaBQ+BVcAK8Bs6FC+AdcCXcAB+FO+Dz8DX4NjwKP4PnEIAQERqiihgiDMQF8UeikHiEj6xHipAKpAFpRbqRPuQmMorMIG9RGBQFRUcZomxRnqhQFAu1BrUeVYKqRh1GdaB6UTdRY6hZ1Ec0Ga2I1kfboL3QEegEdBa6EF2BbkK3oy+ib6Mn0K8xGAwNo42xwnhiIjFJmLWYEsw+TBvmHGYQM46Zw2Kx8lh9rB3WH8vECrCF2CrsUexZ7BB2AvsGR8Sp4Mxw7rgoHA+Xj6vAHcGdwQ3hJnELeCm8Jt4G749n43PwpfhGfDf+On4Cv0CQJmgT7AghhCTCJkIloZVwkfCA8JJIJKoRrYmBRC5xI7GSeIx4mThGfEuSIemRXEjRJCFpB+kQ6RzpLuklmUzWIjuSo8gC8g5yM/kC+RH5jQRFwkjCS4ItsUGiRqJDYkjiuSReUlPSSXK1ZK5kheQJyeuSM1J4KS0pFymm1HqpGqmTUiNSc9IUaVNpf+lU6RLpI9JXpKdksDJaMm4ybJkCmYMyF2TGKQhFneJCYVE2UxopFykTVAxVm+pFTaIWU7+jDlBnZWVkl8mGyWbL1sielh2lITQtmhcthVZKO04bpr1borTEaQlnyfYlrUuGlszLLZVzlOPIFcm1yd2WeydPl3eTT5bfJd8p/1ABpaCnEKiQpbBf4aLCzFLqUtulrKVFS48vvacIK+opBimuVTyo2K84p6Ss5KGUrlSldEFpRpmm7KicpFyufEZ5WoWiYq/CVSlXOavylC5Ld6Kn0CvpvfRZVUVVT1Whar3qgOqCmrZaqFq+WpvaQ3WCOkM9Xr1cvUd9VkNFw08jT6NF454mXpOhmai5V7NPc15LWytca6tWp9aUtpy2l3audov2Ax2yjoPOGp0GnVu6GF2GbrLuPt0berCehV6iXo3edX1Y31Kfq79Pf9AAbWBtwDNoMBgxJBk6GWYathiOGdGMfI3yjTqNnhtrGEcZ7zLuM/5oYmGSYtJoct9UxtTbNN+02/R3Mz0zllmN2S1zsrm7+QbzLvMXy/SXcZbtX3bHgmLhZ7HVosfig6WVJd+y1XLaSsMq1qrWaoRBZQQwShiXrdHWztYbrE9Zv7WxtBHYHLf5zdbQNtn2iO3Ucu3lnOWNy8ft1OyYdvV2o/Z0+1j7A/ajDqoOTIcGh8eO6o5sxybHSSddpySno07PnU2c+c7tzvMuNi7rXM65Iq4erkWuA24ybqFu1W6P3NXcE9xb3Gc9LDzWepzzRHv6eO7yHPFS8mJ5NXvNelt5r/Pu9SH5BPtU+zz21fPl+3b7wX7efrv9HqzQXMFb0ekP/L38d/s/DNAOWBPwYyAmMCCwJvBJkGlQXlBfMCU4JvhI8OsQ55DSkPuhOqHC0J4wybDosOaw+XDX8LLw0QjjiHUR1yIVIrmRXVHYqLCopqi5lW4r96yciLaILoweXqW9KnvVldUKq1NWn46RjGHGnIhFx4bHHol9z/RnNjDn4rziauNmWS6svaxnbEd2OXuaY8cp40zG28WXxU8l2CXsTphOdEisSJzhunCruS+SPJPqkuaT/ZMPJX9KCU9pS8Wlxqae5Mnwknm9acpp2WmD6frphemja2zW7Fkzy/fhN2VAGasyugRU0c9Uv1BHuEU4lmmfWZP5Jiss60S2dDYvuz9HL2d7zmSue+63a1FrWWt78lTzNuWNrXNaV78eWh+3vmeD+oaCDRMbPTYe3kTYlLzpp3yT/LL8V5vDN3cXKBVsLBjf4rGlpVCikF84stV2a9021DbutoHt5turtn8sYhddLTYprih+X8IqufqN6TeV33zaEb9joNSydP9OzE7ezuFdDrsOl0mX5ZaN7/bb3VFOLy8qf7UnZs+VimUVdXsJe4V7Ryt9K7uqNKp2Vr2vTqy+XeNc01arWLu9dn4fe9/Qfsf9rXVKdcV17w5wD9yp96jvaNBqqDiIOZh58EljWGPft4xvm5sUmoqbPhziHRo9HHS4t9mqufmI4pHSFrhF2DJ9NProje9cv+tqNWytb6O1FR8Dx4THnn4f+/3wcZ/jPScYJ1p/0Pyhtp3SXtQBdeR0zHYmdo52RXYNnvQ+2dNt293+o9GPh06pnqo5LXu69AzhTMGZT2dzz86dSz83cz7h/HhPTM/9CxEXbvUG9g5c9Ll4+ZL7pQt9Tn1nL9tdPnXF5srJq4yrndcsr3X0W/S3/2TxU/uA5UDHdavrXTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxSfNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALEwAACxMBAJqcGAAACw5JREFUeF7t2Hvs92Mdx3Eicg63Uw5JzCERiYk0zZjGMpsYI8YYYYycIkaRzWazLMu6x8gxx5AmxpQxETlkYiLn8zFnd89n7mv7fL57/7g15YrXH49/rj/4/X739Xq9vtd3thkzZry3t6d9aqY5MRfmxmcwL+bHAlgIn8UimIYlsBSWxrJYHitgRayEVfAlrI6vYG2sg/WwPjbERtgYm2BTfBtbYitsjW2wLbbHjtgZu2J37Im9sS/2x4E4BD/Ej3AUfozjcDxOwIk4CSfjFJyKX+I0nIGzcA7Ox4W4BJfhClyJq3ANrsP1uAE34mbcgj/jdtyJu3EP7sV9eAB/x0N4BI/hiZmexDN4Fs/hRbyEl/HKR2xGp6qfNT6+zIKZMBtmxKyYGbPTcmSmzJYZM2tmzuyZQbNoJs2mGTWrZtbsmmGzbKbNthk362be7NsBdoGdYDfYEXaFnWF32CF2iZ1it9gxdo2dY/fYQXaRnWQ32VF2lZ1ld9lhdpmdZrfZcXadnWf32YF2oZ1oN9qRdqWdaXfaoXapnWq32rF2rZ1r99rBdrGdbDfb0Xa1nW132+F2uZ1ut9vxdr2db/e7AW6Bm+A2uBFuxbu7UW3KQHk48va02THHzP9oG6B50AZoQbTxWRSLYUn4Qy+D5dAGyF9wZawGf/E1sBb8g6wL/0AbYDg+m6Ean+2wA3bCLtgNe2Av+I+2Hw7AQTgUR+BIHINj8VNMNTzT4eU5E2fjXFyAi3EpLsdUo3MT2ujchr/gLnjJ/4b74eV/EP+AoXgchuVptKF5AYbKgL2K1/AG3sRbeAdV+UZ80pgFM2E2zIhZMTNmxwyZpTZMZsysmTmzZwbNopk0m2bUrJpZs2uG2xiZ7anGyE6wG+wIu8LOsDvsELvETplqiOwiO8lusqPsKjvL7rLD7DI7zW6z4+w6O8/uswPtwmqE7M7hCNmtdqxda+favXawXWwn2812dBsgu9sOt8vtdLvdjm8jZPe3AXIThgPkZsxebspAeTjy7gBNvoCqAVoYkwPkevpLfAHtBeTSrgp/6TXxfgPUXj9boBqg72FygPaBnx78xzsYh+Fw+CnjaFQD9DMMB+h0tAE6D16qizA5QFfjWgxfPX9CG6A74Kerv8JPW8MBehjDF89TMCTPow2Qn+4mB+jtmaowRnzStDxMDlB7GZklM2W2zNjwRWQGhwNkRs2qmTW7bYDM9PA1ZObN/uQA2RF2hZ3RBsgusVPaANk11QDZTXaUXWVn2V12mF1mp00OkN1XDZBdWb2CqgGyg+1iO9lubi8gO9vubi+g4QDZ9e83QG7GhzZA1QtoPkwOkE+0xdG+gpt8AfnLTb6A3u/rN1d8c0w1QNULyH+s4QuoGqD3+uptOmZ1gPwUNByg9gK6FcMB8lPV5AD56etRDF9AfnUwfAG1AXp9pjZAeQFFvMsstAFqOZkcIDNltoYvILM3+QIafiXXBsgsT76AzHz1ApqVAaq+iqsGaPgCqgZoqheQXWlnTr6Aqq/hJl9Aw6/ghi8gO91ut+MnB8gt+K+9gCL+v1T3OCK6Ux6OVAGP6Fl1jyOiO+XhSBXwiJ5V9zgiulMejlQBj+hZdY8jojvl4UgV8IieVfc4IrpTHo5UAY/oWXWPI6I75eFIFfCInlX3OCK6Ux6OVAGP6Fl1jyOiO+XhSBXwiJ5V9zgiulMejlQBj+hZdY8jojvl4UgV8IieVfc4IrpTHo5UAY/oWXWPI6I75eFIFfCInlX3OCK6Ux6OVAGP6Fl1jyOiO+XhSBXwiJ5V9zgiulMejlQBj+hZdY8jojvl4UgV8IieVfc4IrpTHo5UAY/oWXWPI6I75eFIFfCInlX3OCK6Ux6OVAGP6Fl1jyOiO+XhSBXwiJ5V9zgiulMejlQBj+hZdY8jojvl4UgV8IieVfc4IrpTHo5UAY/oWXWPI6I75eFIFfCInlX3OCK6Ux6OVAGP6Fl1jyOiO+XhSBXwiJ5V9zgiulMejlQBj+hZdY8jojvl4UgV8IieVfc4IrpTHo5UAY/oWXWPI6I75eFIFfCInlX3OCK6Ux6OVAGP6Fl1jyOiO+XhSBXwiJ5V9zgiulMejlQBj+hZdY8jojvl4UgV8IieVfc4IrpTHo5UAY/oWXWPI6I75eFIFfCInlX3OCK6Ux6OVAGP6Fl1jyOiO+XhSBXwiJ5V9zgiulMejlQBj+hZdY8jojvl4UgV8IieVfc4IrpTHo5UAY/oWXWPI6I75eFIFfCInlX3OCK6Ux6OVAGP6Fl1jyOiO+XhSBXwiJ5V9zgiulMejlQBj+hZdY8jojvl4cjb02bHHJgTc2FuzIN5MT8WxEJYGNOwOJbE57AMlsPyWAErYWWsitWxJtbCOlgX62MDfBMbYxNshs2xBb6DrbENtsMO2Am7YDfsgb2wD/bDATgIh+FwHIljcCyOxwk4ESfhZJyCUzEdp+NMnI3zcAEuwqW4HFfiKlyD63A9bsBNuBm34DbcgbtxD+7FfXgAD+JhPIrH8CSewjN4Di/gJbyCV/EaXsebeAvvYEZE/DsLZsJsmBGzYmbMjhkyS2bKbJkxs2bmzJ4ZNItm0myaUbNqZs2uGTbLZtpsm3GzbubNvh1gF9gJdoMdYVfYGXaHHWKX2Cl2ix1j19g5do8dZBfZSXaTHWVX2Vl2lx1ml9lpdpsdZ9fZeXafHWgX2ol2ox1pV9qZdqcdapfaqXarHWvX2rl2rx1sF9vJdrMdbVfb2Xa3HW6X2+l2ux1v19v5dr8b4Ba4CW6DG+FWuBmzl5syUB6OvDtAn5r5H32/AVoUi2EJ+EMvjeEArYhVsBr8pdfA2vgq1sNwgL4F/3ibog3QVpjVAdof/uMdjDZAR+Fo/ASzOkBnwcv0a7QBugJtgK7GtfBS/hHDAbodXuK70AbofgwH6BE8jifwNAzJ82gD9DL+iQxQRK0aIDNjdtoAmSmzZcbMmpkze8MBMpttgMys2TXDwwEy42bdzJv9NkB2Qhsgu8LOsDtmdYDsJLvJjmoDZHfZYXbZrA6QHdkGyO60Q+3S4QDZtXau3WsH28V2st1sRw8HyA63y+10u92On5UBcjM+tAFqL6BPow3QfPB/vgCGA+RK+sMuheEL6ItoL6DhAE2+gDbERmgD1F5AW6IN0Hcx1QB9H+0FdCD8FHEojoD/uH7KeK8B+gWmYzhA58JPNRfjN/DTzu/QBshPQ3+An45uhJf1VnzQAfLT2bOYaoDeQAYoYmw4QGZkqgEyW2bsgw6QWTbTZtuMm3Uz3wbILrAT7AY7wq6wMyYHyG55rwGym+wou8rOsrvssPYCstumGiA7sQ2QXTl8AdmldqrdOvkCGg5QewHZ1cMXkF1up9vtwwGy+90At6ANkBvxP30B+UO4hP5Qi6B9DecP7XIui8+jvYD8Bdsr6MvwCegSfw0u89fxDfgHa1/DtVeQf9j2NZx/8G2xPXbEztgVu2NP7I194aeHH+AQ+KliOETHoRqin6O9hE7DGfgVzsH5uBCX4DL8Fl7A38Mn+fA11MaofR3nZb4Tw6/khoP0EAyEXw0YkjZKfnIbDtOLMFx+xfBRqsqgB9XPGh9fZsFMDIemfd3WctS+bjNj1eCYSbNpRodfu5nh4avHjJt1M2/27QC7wE6wG+wIu8LOsDvsELvETqmGxw4aDo8dZVfZWXaXHWaX2Wl2mx1n19l5dp8d2MbHbmzj014/dqhdaqfarXasXWvn2r12cHv92M3tBWRn2912uF3evn6z4+16O78N0H/4Apox278A1NQWyDyXSJ0AAAAASUVORK5CYII="
       },
       {
-        "$id": "324",
+        "$id": "253",
         "Name": "plain_background",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "325",
+        "$id": "254",
         "Name": "separators",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "326",
+        "$id": "255",
         "Name": "drs_available",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "327",
+        "$id": "256",
         "Name": "drs_enabled",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
       },
       {
-        "$id": "328",
+        "$id": "257",
         "Name": "settings",
         "Extension": ".png",
         "Optimized": true,
         "Data": "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"
+      },
+      {
+        "$id": "258",
+        "Name": "border_green",
+        "Extension": ".png",
+        "Optimized": true,
+        "Data": "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"
       }
     ]
   },
   "Metadata": {
-    "$id": "329",
+    "$id": "259",
     "Category": "Overlay",
     "Description": "Copy of Sidekick from AC by Topuz",
     "Author": "Havner",
     "ScreenCount": 1.0,
     "InGameScreensIndexs": {
-      "$id": "330",
+      "$id": "260",
       "$values": [
         0
       ]
     },
     "IdleScreensIndexs": {
-      "$id": "331",
+      "$id": "261",
       "$values": [
         0
       ]
@@ -3592,13 +2775,13 @@
     "MainPreviewIndex": 0,
     "IsOverlay": true,
     "ShowInTaskBar": true,
-    "Width": 430.0,
+    "Width": 416.0,
     "Height": 54.0,
     "OverlaySizeWarning": false,
     "MetadataVersion": 2.0,
     "EnableOnDashboardMessaging": true,
     "PitScreensIndexs": {
-      "$id": "332",
+      "$id": "262",
       "$values": [
         0
       ]
