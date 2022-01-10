@@ -1,7 +1,7 @@
 {
   "$id": "1",
   "Version": 2,
-  "Id": "badde5bf-e78c-4359-855f-e5b132cd37f9",
+  "Id": "7e04b2dc-d422-4cc8-84ab-ac4e911622e8",
   "BaseHeight": 54,
   "BaseWidth": 416,
   "BackgroundColor": "#FF000000",
@@ -1899,7 +1899,7 @@
                 }
               },
               "RenderingSkip": 0,
-              "ShowSelection": false,
+              "ShowSelection": true,
               "CanResize": false,
               "Childrens": {
                 "$id": "171",
@@ -2757,6 +2757,7 @@
   "Metadata": {
     "$id": "259",
     "Category": "Overlay",
+    "Title": "Sidekick SimHub edition",
     "Description": "Copy of Sidekick from AC by Topuz",
     "Author": "Havner",
     "ScreenCount": 1.0,

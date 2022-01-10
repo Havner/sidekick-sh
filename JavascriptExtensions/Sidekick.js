@@ -468,8 +468,7 @@ function SKSH_showDRSEnabled()
 function SKSH_getTirePressPSI(tyrePressProp)
 {
 	var press = $prop(tyrePressProp);
-	if (!unitPress)
-		unitPress = $prop('TyrePressureUnit');
+	var unitPress = $prop('TyrePressureUnit');
 	if (unitPress == 'Kpa')
 		press *= 0.145038;
 	else if (unitPress == 'Bar')
@@ -480,8 +479,7 @@ function SKSH_getTirePressPSI(tyrePressProp)
 function SKSH_getTirePressBAR(tyrePressProp)
 {
 	var press = $prop(tyrePressProp);
-	if (!unitPress)
-		unitPress = $prop('TyrePressureUnit');
+	var unitPress = $prop('TyrePressureUnit');
 	if (unitPress == 'Psi')
 		press *= 0.0689476;
 	else if (unitPress == 'Kpa')
@@ -492,8 +490,7 @@ function SKSH_getTirePressBAR(tyrePressProp)
 function SKSH_getTirePressKPA(tyrePressProp)
 {
 	var press = $prop(tyrePressProp);
-	if (!unitPress)
-		unitPress = $prop('TyrePressureUnit');
+	var unitPress = $prop('TyrePressureUnit');
 	if (unitPress == 'Psi')
 		press *= 6.89476;
 	else if (unitPress == 'Bar')

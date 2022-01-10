@@ -211,12 +211,28 @@ Tyre pressures can be shown in BAR, PSI and KPA. Detected with the
 current game running. Color gradient configurable in the
 config. Separate options per unit.
 
-By default the whole section will show brake temperatures when
-braking. Can be disabled in the config. Same remark with the units and
-gradient as in tyre pressures.
+Brake tempurates can be shown in Celcius, Fahrenheit and
+Kelvin. Switchable in SimHub settings. Color gradient configurable in
+the config. Separate options per unit.
 
-It will also show damage when damaged by default. Can also be disabled
-in config.
+Damage is game dependent:
+- RF2 shows 8 little squares. They represent 8 sections of a car. Can
+  be green (OK), blue (minor damage), red (major damage). Also
+  background and 4 wheel sections can blink. It means that something
+  has fallen of.
+- AMS2 shows 6 numbers. Middle front is aero. Middle back is
+  engine. Rest are 4 suspension sections. Zero is represented as -.
+  More that 100 is represented as XX.
+- AC/ACC shows 4 numbers. Front, back and left right damage is shown.
+  Zero is represented as -. More that 100 is represented as XX.
+
+Those damage displays usually show a little bit less info than the
+in-game ones, but I'm limited by available telemetry here. Nothing I
+can do about that.
+
+By default the whole section will show brake temperatures when
+braking. Can be disabled in the config. It will also show damage when
+damaged by default. Can also be disabled in config.
 
 7. Configuration
 

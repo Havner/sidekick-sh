@@ -14,7 +14,7 @@
 // - shortcuts for switching section's pages
 
 // plain is black transparent, as in original Sidekick
-const usePlainBackground = true;
+const usePlainBackground = false;
 
 // in place of wear/temps/press, section 5
 const showDamageWhenDamaged = 10000;   // for how long in miliseconds, 0 to disable
@@ -23,7 +23,7 @@ const showBrakeTempsWhileBraking = true;
 // in miliseconds, shows last lap time and last lap diff to best after a lap
 const showLastLapFor = 5000;
 
-// list of cars classes that should have DRS enabled in rF2 (AC autodetets)
+// list of cars classes that should have DRS enabled in rF2 (AC autodetects)
 const classesWithDrs = ['Formula Pro', 'BMW M4 Class 1 2021'];
 
 // marks gear and speed in blue (AMS2 telemetry is broken here)

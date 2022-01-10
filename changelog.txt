@@ -1,3 +1,9 @@
+0.7.1
+- bugfix from reupload: fix for broken section 5 shortcut
+- bugfix: tyre pressures might not be displayed properly
+- unified colors for rf2 damage display
+- readme updates
+
 0.7
 - AC support including ERS and DRS (same as in original sidekick)
 - ACC support
