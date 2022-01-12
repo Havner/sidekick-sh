@@ -1,4 +1,4 @@
-// version 0.7
+// version 0.7.2
 
 // This is not a config file, nothing to change here
 // unless you want to modify overlay's behaviour

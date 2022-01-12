@@ -1,3 +1,6 @@
+0.7.2
+- another color fine tuning for rf2 damage display (detached color and blink)
+
 0.7.1
 - bugfix from reupload: fix for broken section 5 shortcut
 - bugfix: tyre pressures might not be displayed properly
