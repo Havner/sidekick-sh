@@ -1,4 +1,4 @@
-// version 0.7.2
+// version 0.7.3
 
 // This is not a config file, nothing to change here
 // unless you want to modify overlay's behaviour
@@ -439,30 +439,43 @@ function SKSH_classSupportsDrs()
 
 function SKSH_useDRS()
 {
-	var useDRS = false;
+	var drs = false;
 	switch ($prop('DataCorePlugin.CurrentGame')) {
 		case 'AssettoCorsa':
-			useDRS = true;
+			drs = $prop('GameRawData.StaticInfo.hasDRS') ? true : false;
 			break;
 		case 'RFactor2':
-			useDRS = SKSH_classSupportsDrs();
+			drs = DBSH_classSupportsDrs();
 			break;
 		case 'Automobilista2':
-			// no DRS in telemetry yet
-			useDRS = false;
+			drs = ($prop('GameRawData.mDrsState') & 1) ? true : false;
 			break;
 	}
-	return useDRS;
+	return drs;
 }
 
-function SKSH_showDRSAvail()
+function SKSH_showDRS()
 {
-	return (SKSH_useDRS() && $prop('DRSAvailable'));
-}
+	if (!DBSH_hasDRS())
+		return -1;
 
-function SKSH_showDRSEnabled()
-{
-	return (SKSH_useDRS() && $prop('DRSEnabled'));
+	switch ($prop('DataCorePlugin.CurrentGame')) {
+		case 'AssettoCorsa':
+		case 'RFactor2':
+			if ($prop('DRSEnabled'))
+				return 2;
+			if ($prop('DRSAvailable'))
+				return 1;
+			break;
+		case 'Automobilista2':
+			if (($prop('GameRawData.mDrsState') & 16))
+				return 2;
+			if (($prop('GameRawData.mDrsState') & 12))
+				return 1;
+			break;
+	}
+
+	return 0;
 }
 
 function SKSH_getTirePressPSI(tyrePressProp)

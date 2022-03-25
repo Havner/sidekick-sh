@@ -1,7 +1,7 @@
 {
   "$id": "1",
   "Version": 2,
-  "Id": "576723bd-fbb7-4b32-9d38-c6a0aacd42cf",
+  "Id": "875ac34a-96d5-428d-8d87-45521b0097b7",
   "BaseHeight": 54,
   "BaseWidth": 416,
   "BackgroundColor": "#FF000000",
@@ -528,7 +528,7 @@
                   "Formula": {
                     "$id": "51",
                     "Interpreter": 1,
-                    "Expression": "return SKSH_showDRSAvail();"
+                    "Expression": "return (SKSH_showDRS() == 1);\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -577,7 +577,7 @@
               "BorderTop": 0,
               "Id": "edccf177-d29c-4b39-a69a-37551eba1b61",
               "IsFreezed": true,
-              "IsSelected": false,
+              "IsSelected": true,
               "Name": "DRS enabled",
               "RenderingSkip": 0,
               "Sid": 0,
@@ -588,7 +588,7 @@
                   "Formula": {
                     "$id": "57",
                     "Interpreter": 1,
-                    "Expression": "return SKSH_showDRSEnabled();\r\n"
+                    "Expression": "return (SKSH_showDRS() == 2);\r\n"
                   },
                   "Mode": 2,
                   "TargetPropertyName": "Visible"
@@ -2166,7 +2166,7 @@
               "BorderTop": 0,
               "Id": "d2ea7e2e-daf9-439f-b763-cdf48904f86b",
               "IsFreezed": true,
-              "IsSelected": true,
+              "IsSelected": false,
               "Name": "Section 5 - Damage",
               "RenderingSkip": 0,
               "Sid": 0,

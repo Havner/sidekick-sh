@@ -1,5 +1,5 @@
 Sidekick SimHub edition
-Version: 0.7.2
+Version: 0.7.3
 Idea: Topuz
 Author: Havner
 

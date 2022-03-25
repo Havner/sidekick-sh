@@ -1,4 +1,4 @@
-// Version 0.7.2
+// Version 0.7.3
 
 // Make sure not to break this file's syntax as this is JS code
 // and it's required for the overlay to work properly

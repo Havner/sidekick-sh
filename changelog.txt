@@ -1,3 +1,6 @@
+0.7.3
+- add Automobilista 2 DRS support
+
 0.7.2
 - another color fine tuning for rf2 damage display (detached color and blink)
 
